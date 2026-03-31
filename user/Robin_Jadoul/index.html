@@ -1,0 +1,2988 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/user/Robin_Jadoul/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:34:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; Robin_Jadoul</title>
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+  <!-- Page Specific Metadata -->
+  <meta name="description" content="A fun, free platform to learn about cryptography through solving challenges and cracking insecure code. Can you reach the top of the leaderboard?" />
+
+  <meta property="og:title" content="Robin_Jadoul &ndash; CryptoHack" />
+  <meta property="og:description" content="A fun, free platform to learn about cryptography through solving challenges and cracking insecure code. Can you reach the top of the leaderboard?" />
+
+  <meta name="twitter:title" content="Robin_Jadoul &ndash; CryptoHack" />
+  <meta name="twitter:description" content="A fun, free platform to learn about cryptography through solving challenges and cracking insecure code. Can you reach the top of the leaderboard?" />
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="../../index.html" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="../../static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="../../static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../../courses/index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../../challenges/index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+<div class="categoryDescription userDescription">
+    <div class="categoryTitle">
+      <h1 class="username-title coral-text">Robin_Jadoul</h1>
+    </div>
+    <div class="categoryImage">
+        <img src="../../static/img/user.png" width="200" alt="Two robots">
+    </div>
+</div>
+
+
+
+
+<div class="userData">
+<div class="userPoints">
+
+<p>Joined: <b><span class="flask-moment" data-timestamp="2020-03-26T19:00:01Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:00:01Z</span></b></p>
+<p>Rank: <b>#193</b></p>
+ <p>Country:&nbsp; <a href="../../scoreboard/indexabc4.html?country=be"><i class="flag-icon flag-icon-be"></i></a></p>
+ <p>Website: <a href="https://ur4ndom.dev/" class="userWebsite" target="_blank" rel="noopener">https://ur4ndom.dev</a></p>
+</div>
+
+<div class="userLevel card">
+<div class="rankData">
+  <p>
+    Level: <b class="coral-text"><span id="currentLevelName">1</span></b><br>
+    <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i><span id="userScore">13095</span></span>
+    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood"></i>33</span>
+    <span><i class="fas fa-pencil-alt green-text tooltipped" data-tooltip="Solutions Submitted"></i>27</span>
+    <span><i class="fas fa-thumbs-up cyan-text tooltipped" data-tooltip="Solution Upvotes"></i>825</span>
+
+  </p>
+  <p id="nextLevelInfo">0 points to level up</p>
+</div>
+<div class="progressBar">
+<div id="userProgressBar" class="progressBar progress tooltipped" data-tooltip="0% Complete" style="width: 0%;"></div>
+</div>
+</div>
+
+
+</div>
+
+<h3>Trophy Case</h3>
+
+<div class="trophyCase card">
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-golder.svg" width="75" alt="gold-trophy" data-tooltip="Introduction">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-golder.svg" width="75" alt="gold-trophy" data-tooltip="General">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-gold.svg" width="75" alt="gold-trophy" data-tooltip="Symmetric Ciphers">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-golder.svg" width="75" alt="gold-trophy" data-tooltip="Maths">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-golder.svg" width="75" alt="gold-trophy" data-tooltip="RSA">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-golder.svg" width="75" alt="gold-trophy" data-tooltip="Diffie-Hellman">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-gold.svg" width="75" alt="gold-trophy" data-tooltip="ECC">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-golder.svg" width="75" alt="gold-trophy" data-tooltip="Hashes">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-golder.svg" width="75" alt="gold-trophy" data-tooltip="Web">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-gold.svg" width="75" alt="gold-trophy" data-tooltip="Post-Quantum">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy.svg" width="75" alt="empty-trophy" data-tooltip="Isogenies">
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-silver.svg" width="75" alt="silver-trophy" data-tooltip="Zkp">
+  
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+  <img class="tooltipped" src="../../static/img/icons/trophy-golder.svg" width="75" alt="gold-trophy" data-tooltip="Misc">
+  
+
+
+
+
+
+</div>
+
+
+<h3>Submitted Solutions</h3>
+<div class="recentUserSolves">
+  <table>
+      <tbody>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-08-11T15:04:24Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-08-11T15:04:24Z</span></td>
+              <td class="col s3">SpongeBob SquarePants / Battle for Bikini Bottom - Rehydrated (HTB Cyber Apocalypse)</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 0</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-08-08T04:00:35Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-08-08T04:00:35Z</span></td>
+              <td class="col s3">Functional (ICC Athens)</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 0</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-24T21:44:25Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-24T21:44:25Z</span></td>
+              <td class="col s3">RSA or HMAC? Part 2</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 8</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-15T20:38:05Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-15T20:38:05Z</span></td>
+              <td class="col s3">Jeff&#39;s LFSR</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 14</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-08T14:45:53Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-08T14:45:53Z</span></td>
+              <td class="col s3">RSA Backdoor Viability</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 18</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-09-24T12:32:25Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-09-24T12:32:25Z</span></td>
+              <td class="col s3">Transparency</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 117</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-08-20T19:35:28Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-08-20T19:35:28Z</span></td>
+              <td class="col s3">Let&#39;s Decrypt</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 15</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-08-20T19:25:30Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-08-20T19:25:30Z</span></td>
+              <td class="col s3">PriMeD5</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 10</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T22:27:52Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T22:27:52Z</span></td>
+              <td class="col s3">Bespoke Padding</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 4</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T22:03:59Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T22:03:59Z</span></td>
+              <td class="col s3">Real Eisenstein</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 4</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T18:03:08Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T18:03:08Z</span></td>
+              <td class="col s3">Nothing Up My Sleeve</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 10</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T16:10:01Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T16:10:01Z</span></td>
+              <td class="col s3">Paper Plane</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 12</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:41:39Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:41:39Z</span></td>
+              <td class="col s3">Structure of AES</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 87</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:32:44Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:32:44Z</span></td>
+              <td class="col s3">Broken RSA</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 19</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-17T01:33:01Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-17T01:33:01Z</span></td>
+              <td class="col s3">Static Client 2</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 13</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-17T01:28:27Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-17T01:28:27Z</span></td>
+              <td class="col s3">Toshi&#39;s Treasure</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 13</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-17T01:18:10Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-17T01:18:10Z</span></td>
+              <td class="col s3">Prime and Prejudice</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 32</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-09T00:52:30Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-09T00:52:30Z</span></td>
+              <td class="col s3">Modulus Inutilis</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 22</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-08T19:38:21Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-08T19:38:21Z</span></td>
+              <td class="col s3">Static Client</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 24</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-07T18:49:02Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-07T18:49:02Z</span></td>
+              <td class="col s3">Inferius Prime</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 7</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-07T18:35:11Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-07T18:35:11Z</span></td>
+              <td class="col s3">Adrien&#39;s Signs</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 204</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-07T18:13:34Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-07T18:13:34Z</span></td>
+              <td class="col s3">Modular Binomials</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 40</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-07T18:02:16Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-07T18:02:16Z</span></td>
+              <td class="col s3">Encoding Challenge</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 90</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-07T18:00:20Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-07T18:00:20Z</span></td>
+              <td class="col s3">Micro Transmissions</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 15</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-07T17:49:55Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-07T17:49:55Z</span></td>
+              <td class="col s3">Curveball</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 8</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-07T17:42:42Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-07T17:42:42Z</span></td>
+              <td class="col s3">Bit by Bit</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 20</span></td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-07T16:21:03Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-07T16:21:03Z</span></td>
+              <td class="col s3">Lo-Hi Card Game</td>
+              <td class="col s3">
+                
+              </td>
+              <td class="col s3"><span><i class="fas fa-thumbs-up cyan-text"></i> 19</span></td>
+          </tr>
+          
+      </tbody>
+  </table>
+</div>
+<br>
+
+
+
+
+<h3>Solved Challenges</h3>
+
+<div class="recentUserSolves">
+  <table>
+      <tbody>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-20T18:56:41Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-20T18:56:41Z</span></td>
+              <td class="col s3">ZKPs</td>
+              <td class="col s3">Hamiltonicity 2</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 175</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-20T18:56:29Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-20T18:56:29Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Hamiltonicity 2 (CryptoHack)</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-19T23:57:27Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-19T23:57:27Z</span></td>
+              <td class="col s3">ZKPs</td>
+              <td class="col s3">Hamiltonicity 1</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-19T23:44:04Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-19T23:44:04Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Hamiltonicity (CryptoHack)</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-16T18:38:23Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-16T18:38:23Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">Merkle Trees</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-16T15:13:53Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-16T15:13:53Z</span></td>
+              <td class="col s3">ZKPs</td>
+              <td class="col s3">OR Proof</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 75</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-16T15:13:51Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-16T15:13:51Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">OR Proof (CryptoHack)</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-16T14:45:22Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-16T14:45:22Z</span></td>
+              <td class="col s3">ZKPs</td>
+              <td class="col s3">Too Honest</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-16T14:37:40Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-16T14:37:40Z</span></td>
+              <td class="col s3">ZKPs</td>
+              <td class="col s3">Non-Interactive</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 35</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-16T12:22:40Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-16T12:22:40Z</span></td>
+              <td class="col s3">ZKPs</td>
+              <td class="col s3">Honest Verifier Zero Knowledge</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-16T11:07:43Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-16T11:07:43Z</span></td>
+              <td class="col s3">ZKPs</td>
+              <td class="col s3">Special Soundness</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-16T10:50:36Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-16T10:50:36Z</span></td>
+              <td class="col s3">ZKPs</td>
+              <td class="col s3">Proofs of Knowledge</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-16T10:27:48Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-16T10:27:48Z</span></td>
+              <td class="col s3">ZKPs</td>
+              <td class="col s3">ZKP Introduction</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 5</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-08-14T12:29:34Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-08-14T12:29:34Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Additional problems (CSC Belgium)</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T12:02:34Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T12:02:34Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Unbalanced (ICC Athens)</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T12:01:10Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T12:01:10Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">WOTS Up 2</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 90</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T12:00:54Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T12:00:54Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">WOTS Up</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 75</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T12:00:41Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T12:00:41Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Twist and shout (ECSC 2023 (Norway))</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T12:00:30Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T12:00:30Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Tough decisions (ECSC 2023 (Norway))</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T12:00:16Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T12:00:16Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">RRSSAA (ECSC 2023 (Norway))</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T12:00:06Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T12:00:06Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Put a ring on it (ECSC 2023 (Norway))</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T11:59:57Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T11:59:57Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Irish flan (ECSC 2023 (Norway))</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T11:59:44Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T11:59:44Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Hide and seek (ECSC 2023 (Norway))</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-03-09T11:59:31Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-03-09T11:59:31Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Blind (ECSC 2023 (Norway))</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-14T23:37:41Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-14T23:37:41Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Megalomaniac 3</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-14T22:23:27Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-14T22:23:27Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Megalomaniac 2</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-14T22:23:22Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-14T22:23:22Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Megalomaniac 1</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-11T11:09:51Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-11T11:09:51Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Real Curve Crypto</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 200</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-10T15:42:29Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-10T15:42:29Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">MDFlag</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 125</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-10T14:03:03Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-10T14:03:03Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Digestive</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-10T13:41:48Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-10T13:41:48Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Authenticated Handshake</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-10T13:26:33Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-10T13:26:33Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Decrypting TLS 1.3</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 35</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-10T13:22:17Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-10T13:22:17Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Decrypting TLS 1.2</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-09T22:44:04Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-09T22:44:04Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Noise Cheap</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 90</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-09T17:04:42Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-09T17:04:42Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Missing Modulus</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 80</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-09T15:23:06Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-09T15:23:06Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Nativity</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-09T14:49:24Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-09T14:49:24Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Noise Free</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-09T14:37:11Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-09T14:37:11Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">LWE Low Bits Message</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2024-01-09T14:31:43Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2024-01-09T14:31:43Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">LWE High Bits Message</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 15</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2023-06-04T15:38:43Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2023-06-04T15:38:43Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">RSA vs RNG</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-12-30T00:44:24Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-12-30T00:44:24Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">From Private to Public Key LWE</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-12-30T00:22:52Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-12-30T00:22:52Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">LWE Intro</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-12-30T00:20:10Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-12-30T00:20:10Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">LWE Background</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 5</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-08-11T14:56:40Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-08-11T14:56:40Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">SpongeBob SquarePants / Battle for Bikini Bottom - Rehydrated (HTB Cyber Apocalypse)</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-08-11T14:55:18Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-08-11T14:55:18Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">ed25519 magic (ICC Athens)</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-08-08T03:56:41Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-08-08T03:56:41Z</span></td>
+              <td class="col s3">CTF Archive</td>
+              <td class="col s3">Functional (ICC Athens)</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 0</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-06-24T14:23:28Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-06-24T14:23:28Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Beatboxer</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-06-24T13:11:28Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-06-24T13:11:28Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">No Way Back Home</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-06-23T21:31:13Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-06-23T21:31:13Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Saying Hello</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-06-23T21:22:12Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-06-23T21:22:12Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">TLS Handshake</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 15</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-06-23T21:17:31Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-06-23T21:17:31Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Sharks on the Wire</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-06-23T21:13:18Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-06-23T21:13:18Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Secure Protocols</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 5</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2022-02-18T16:43:31Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2022-02-18T16:43:31Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">LFSR Destroyer</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 250</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-09-17T14:23:04Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-09-17T14:23:04Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">The Matrix Revolutions</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 125</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-25T13:29:46Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-25T13:29:46Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">The Matrix Reloaded</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-25T09:58:34Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-25T09:58:34Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Double and Broken</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-25T09:47:59Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-25T09:47:59Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Montgomery&#39;s Ladder</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-25T09:14:19Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-25T09:14:19Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Roll your Own</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 125</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-25T09:06:23Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-25T09:06:23Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">SSH Keys</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 35</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-24T23:34:48Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-24T23:34:48Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">The Matrix</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 75</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-24T23:27:16Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-24T23:27:16Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Dancing Queen</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-24T21:42:19Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-24T21:42:19Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">RSA or HMAC? Part 2</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-06-24T18:08:08Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-06-24T18:08:08Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">Hash Stuffing</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-02-06T19:25:51Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-02-06T19:25:51Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Bruce Schneier&#39;s Password: Part 2</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 250</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-28T20:59:58Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-28T20:59:58Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">L-Win</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-28T19:50:34Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-28T19:50:34Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">Mixed Up</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-28T19:32:00Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-28T19:32:00Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Oh SNAP</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-28T19:13:28Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-28T19:13:28Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Bruce Schneier&#39;s Password</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-28T19:01:52Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-28T19:01:52Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">JSON in JSON</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-18T14:35:22Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-18T14:35:22Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">Invariant</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 250</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-15T20:32:33Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-15T20:32:33Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Jeff&#39;s LFSR</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-08T14:34:49Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-08T14:34:49Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">RSA Backdoor Viability</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 175</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-08T13:50:21Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-08T13:50:21Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">No Difference</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 175</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-08T10:54:19Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-08T10:54:19Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Trust Games</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-07T15:17:11Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-07T15:17:11Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Logon Zero</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 80</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2021-01-07T14:54:24Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2021-01-07T14:54:24Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Edwards Goes Degenerate</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-11-12T22:31:45Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-11-12T22:31:45Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Cofactor Cofantasy</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-11-12T18:48:11Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-11-12T18:48:11Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">RSA or HMAC?</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 35</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-11-12T18:45:27Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-11-12T18:45:27Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">JWT Secrets</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-11-12T18:42:59Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-11-12T18:42:59Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">No Way JOSE</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-11-12T18:37:58Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-11-12T18:37:58Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">JWT Sessions</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-11-12T18:36:25Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-11-12T18:36:25Z</span></td>
+              <td class="col s3">Crypto on the Web</td>
+              <td class="col s3">Token Appreciation</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 5</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-11-12T18:27:26Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-11-12T18:27:26Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">Jack&#39;s Birthday Hash</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-11-12T18:17:56Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-11-12T18:17:56Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">Jack&#39;s Birthday Confusion</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-09-12T14:42:27Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-09-12T14:42:27Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">Twin Keys</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-09-11T10:29:56Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-09-11T10:29:56Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Transparency</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-09-11T10:28:59Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-09-11T10:28:59Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Let&#39;s Decrypt Again</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 175</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-08-21T21:05:26Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-08-21T21:05:26Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Ellipse Curve Cryptography</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 125</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-08-21T17:46:53Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-08-21T17:46:53Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">No Random, No Bias</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-08-20T18:57:50Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-08-20T18:57:50Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">PriMeD5</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-08-20T18:18:16Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-08-20T18:18:16Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Let&#39;s Decrypt</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 80</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-31T18:11:37Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-31T18:11:37Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Too Many Errors</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-31T17:35:39Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-31T17:35:39Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Find the Lattice</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-31T15:44:51Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-31T15:44:51Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Unencryptable</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 125</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-31T01:13:04Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-31T01:13:04Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">MD0</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 80</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-31T01:02:08Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-31T01:02:08Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Forbidden Fruit</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-30T23:02:14Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-30T23:02:14Z</span></td>
+              <td class="col s3">Hash Functions</td>
+              <td class="col s3">Collider</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-30T22:54:30Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-30T22:54:30Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Triple DES</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-30T22:23:55Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-30T22:23:55Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Backpack Cryptography</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-30T20:22:11Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-30T20:22:11Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Gaussian Reduction</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-30T20:13:42Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-30T20:13:42Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">What&#39;s a Lattice?</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-30T20:10:37Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-30T20:10:37Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Gram Schmidt</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-30T20:07:24Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-30T20:07:24Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Size and Basis</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 15</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-30T20:06:03Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-30T20:06:03Z</span></td>
+              <td class="col s3">Lattices</td>
+              <td class="col s3">Vectors</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T21:50:22Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T21:50:22Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Real Eisenstein</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T17:55:00Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T17:55:00Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Nothing Up My Sleeve</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T16:02:27Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T16:02:27Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Paper Plane</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T15:39:30Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T15:39:30Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Bespoke Padding</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T15:14:59Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T15:14:59Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Moving Problems</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:54:11Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:54:11Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Bringing It All Together</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:52:47Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:52:47Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Diffusion through Permutation</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:50:27Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:50:27Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Confusion through Substitution</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:44:48Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:44:48Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Round Keys</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:40:38Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:40:38Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Structure of AES</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 15</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:39:19Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:39:19Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Resisting Bruteforce</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:38:46Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:38:46Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Keyed Permutations</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 5</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:21:20Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:21:20Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Broken RSA</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-05-01T14:14:13Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-05-01T14:14:13Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Modular Square Root</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 35</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-17T00:56:45Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-17T00:56:45Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Prime and Prejudice</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 200</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-16T21:32:37Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-16T21:32:37Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Elliptic Nodes</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-16T20:42:37Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-16T20:42:37Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Crossed Wires</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-16T20:23:08Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-16T20:23:08Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Quadratic Residues</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-16T20:21:18Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-16T20:21:18Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Toshi&#39;s Treasure</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-16T19:21:45Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-16T19:21:45Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Static Client 2</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-16T19:08:13Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-16T19:08:13Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Legendre Symbol</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 35</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-16T19:05:25Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-16T19:05:25Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">XOR Properties</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 15</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-05T20:58:19Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-05T20:58:19Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Micro Transmissions</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-04T22:54:01Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-04T22:54:01Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Lo-Hi Card Game</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-04T20:54:37Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-04T20:54:37Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Curveball</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-04-04T20:12:37Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-04-04T20:12:37Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Bit by Bit</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-28T20:04:57Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-28T20:04:57Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Fast Primes</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 75</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T12:56:55Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T12:56:55Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Vote for Pedro</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T12:36:56Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T12:36:56Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Blinding Light</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 120</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T12:19:02Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T12:19:02Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Signing Server</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T12:14:19Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T12:14:19Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Endless Emails</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 150</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T11:55:45Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T11:55:45Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Null or Never</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T11:45:43Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T11:45:43Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Ron was Wrong, Whit is Right</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 90</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T11:26:07Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T11:26:07Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Infinite Descent</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T11:23:02Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T11:23:02Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">ProSign 3</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T11:05:45Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T11:05:45Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Scalar Multiplication</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 35</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T03:28:50Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T03:28:50Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Exceptional Curves</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T02:58:12Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T02:58:12Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Smooth Criminal</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T02:38:13Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T02:38:13Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Efficient Exchange</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T02:31:30Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T02:31:30Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Curves and Logs</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T02:20:34Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T02:20:34Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Point Addition</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T02:17:34Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T02:17:34Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Point Negation</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T02:09:47Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T02:09:47Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Additive</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 70</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T02:05:24Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T02:05:24Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Static Client</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:58:49Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:58:49Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Export-grade</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:56:35Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:56:35Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Parameter Injection</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:50:13Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:50:13Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Marin&#39;s Secrets</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:43:36Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:43:36Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Everything is Big</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 70</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:42:23Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:42:23Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Manyprime</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:41:19Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:41:19Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Modulus Inutilis</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:39:58Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:39:58Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Salty</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:37:43Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:37:43Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Everything is Still Big</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:33:17Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:33:17Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Square Eyes</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 35</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:31:19Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:31:19Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Monoprime</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:30:01Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:30:01Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Inferius Prime</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:26:34Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:26:34Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Factoring</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 15</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:26:11Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:26:11Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">RSA Signatures</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-27T01:24:08Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-27T01:24:08Z</span></td>
+              <td class="col s3">Elliptic Curves</td>
+              <td class="col s3">Background Reading</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 5</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T22:40:54Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T22:40:54Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">CTRIME</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 70</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T22:35:38Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T22:35:38Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">RSA Decryption</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T22:35:07Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T22:35:07Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Private Keys</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T22:34:27Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T22:34:27Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Euler&#39;s Totient</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T22:33:56Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T22:33:56Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Public Keys</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 15</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T22:33:35Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T22:33:35Z</span></td>
+              <td class="col s3">RSA</td>
+              <td class="col s3">Modular Exponentiation</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T22:32:01Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T22:32:01Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Bean Counter</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T22:11:43Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T22:11:43Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Stream of Consciousness</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 80</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T21:56:15Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T21:56:15Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Symmetry</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T21:52:48Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T21:52:48Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Lazy CBC</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T21:45:55Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T21:45:55Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">ECB Oracle</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T21:16:49Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T21:16:49Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Flipping Cookie</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T21:06:01Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T21:06:01Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">ECB CBC WTF</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 55</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T20:58:54Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T20:58:54Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Passwords as Keys</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 50</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T20:50:16Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T20:50:16Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Script Kiddie</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 70</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T20:42:18Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T20:42:18Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Deriving Symmetric Keys</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T20:40:40Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T20:40:40Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Computing Shared Secrets</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T20:39:41Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T20:39:41Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Computing Public Values</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T20:39:07Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T20:39:07Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Generators of Groups</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T20:38:20Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T20:38:20Z</span></td>
+              <td class="col s3">Diffie-Hellman</td>
+              <td class="col s3">Working with Fields</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T20:24:38Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T20:24:38Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">No Leaks</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T20:15:50Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T20:15:50Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Armory</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 100</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:53:41Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:53:41Z</span></td>
+              <td class="col s3">Misc</td>
+              <td class="col s3">Gotta Go Fast</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:43:27Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:43:27Z</span></td>
+              <td class="col s3">Symmetric Ciphers</td>
+              <td class="col s3">Modes of Operation Starter</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 15</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:40:38Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:40:38Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Adrien&#39;s Signs</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 80</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:37:02Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:37:02Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Successive Powers</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 60</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:34:32Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:34:32Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Modular Binomials</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 80</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:29:45Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:29:45Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Extended GCD</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:28:59Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:28:59Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">CERTainly not</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:22:44Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:22:44Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Privacy-Enhanced Mail?</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:20:19Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:20:19Z</span></td>
+              <td class="col s3">Mathematics</td>
+              <td class="col s3">Chinese Remainder Theorem</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:17:44Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:17:44Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Modular Inverting</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 25</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:17:18Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:17:18Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Modular Arithmetic 2</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:16:07Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:16:07Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Modular Arithmetic 1</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:13:25Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:13:25Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Greatest Common Divisor</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 15</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:12:56Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:12:56Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Lemur XOR</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:11:33Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:11:33Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">You either know, XOR you don&#39;t</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 30</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:10:59Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:10:59Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Favourite byte</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 20</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:10:24Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:10:24Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">XOR Starter</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:09:42Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:09:42Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Encoding Challenge</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 40</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:03:21Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:03:21Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Bytes and Big Integers</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:02:42Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:02:42Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Base64</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 10</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:02:21Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:02:21Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">Hex</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 5</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:02:04Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:02:04Z</span></td>
+              <td class="col s3">General</td>
+              <td class="col s3">ASCII</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 5</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:01:25Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:01:25Z</span></td>
+              <td class="col s3">Introduction</td>
+              <td class="col s3">Network Attacks</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 5</span>
+                  
+                    <span><i class="fas fa-tint red-text tooltipped" data-tooltip="First Blood" style="padding-left: 0.3em;"></i></span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:01:03Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:01:03Z</span></td>
+              <td class="col s3">Introduction</td>
+              <td class="col s3">Great Snakes</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 3</span>
+                  
+              </td>
+          </tr>
+          
+          <tr class="userrow visible row">
+              <td class="col s3"><span class="flask-moment" data-timestamp="2020-03-26T19:00:50Z" data-function="format" data-format="D MMM YY" data-refresh="0" style="display: none">2020-03-26T19:00:50Z</span></td>
+              <td class="col s3">Introduction</td>
+              <td class="col s3">Finding Flags</td>
+              <td class="col s3">
+                  <span><i class="fas fa-star gold-text tooltipped" data-tooltip="Points"></i> 2</span>
+                  
+              </td>
+          </tr>
+          
+      </tbody>
+  </table>
+</div>
+
+        </div>
+        <script src="../../static/js/jquery.min.js"></script>
+        <script src="../../static/js/materialize.min.js"></script>
+        <script defer src="../../static/js/confetti.browser.min.js"></script>
+        <script src="../../static/js/api.js"></script>
+        <script src="../../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+<script>
+  var userScore = 13095;
+  function calculateUserProgress(userPoints) {
+      for (var i = 0; i < pointsLevels.length; i++) {
+          if (userPoints < pointsLevels[i]) {
+              var pointsDiff = userPoints - pointsLevels[i-1]
+              var levelDiff = pointsLevels[i] - pointsLevels[i-1]
+              var percentComplete = 100 * (pointsDiff / levelDiff);
+              $("#currentLevelName").text(i);
+              $("#userProgressBar").css("width", percentComplete + "%");
+              $("#nextLevelInfo").text((pointsLevels[i] - userPoints) + " points to next level");
+              $("#userProgressBar").attr("data-tooltip", percentComplete.toFixed(2) + "% Complete" );
+              return userPoints;
+          }
+      }
+  }
+  calculateUserProgress(userScore);
+</script>
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../../faq/index.html">FAQ</a><br>
+        <a href="../../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../../courses/intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../../courses/modular/index.html">Modular Arithmetic</a><br>
+        <a href="../../courses/symmetric/index.html">Symmetric Cryptography</a><br>
+        <a href="../../courses/public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../../courses/elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../../challenges/general/index.html">General</a><br>
+        <a href="../../challenges/aes/index.html">Symmetric Ciphers</a><br>
+        <a href="../../challenges/maths/index.html">Mathematics</a><br>
+        <a href="../../challenges/rsa/index.html">RSA</a><br>
+        <a href="../../challenges/diffie-hellman/index.html">Diffie-Hellman</a><br>
+        <a href="../../challenges/ecc/index.html">Elliptic Curves</a><br>
+        <a href="../../challenges/hashes/index.html">Hash Functions</a><br>
+        <a href="../../challenges/web/index.html">Crypto on the Web</a><br>
+        <a href="../../challenges/post-quantum/index.html">Lattices</a><br>
+        <a href="../../challenges/isogenies/index.html">Isogenies</a><br>
+        <a href="../../challenges/zkp/index.html">Zero-Knowledge Proofs</a><br>
+        <a href="../../challenges/misc/index.html">Miscellaneous</a><br>
+        <a href="../../challenges/ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:41:06Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:41:06Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/user/Robin_Jadoul/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:34:49 GMT -->
+</html>

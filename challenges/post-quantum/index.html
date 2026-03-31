@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/challenges/post-quantum/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; Lattices challenges</title>
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+<link rel="stylesheet" href="../../static/css/katex.min.css" >
+<script defer src="../../static/js/katex.min.js"></script>
+<script defer src="../../static/js/katex-auto-render.min.js"></script>
+<script defer src="../../static/js/katex-render-options.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, katex_render_options);
+    });
+</script>
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cryptohack.org" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="https://cryptohack.org/static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="https://cryptohack.org/static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../../courses/index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+
+
+
+<div class="categoryDescription">
+  
+  <div class="categoryText">
+    <h2 class="categoryTitle">Lattices</h2>
+    <p>Research into quantum computing has posed several questions and challenges for cryptography. The most popular public-key algorithms which the world has been relying on for decades - factorization (used in RSA), and discrete logarithm problems (used in both finite field and elliptic-curve Diffie-Hellman) can theoretically be solved in polynomial time on a quantum computer using Shor's algorithm.<br /><br />Shor's algorithm shows that factoring integers would be extremely fast on an ideal, large quantum computer. "Ideal, large" are important caveats here, since as of 2022, the largest number that has been publicly factored using Shor's algorithm is 21. Still, advances in quantum technology have motivated the development of post-quantum cryptography (PQC), which is based on algorithms which even quantum computers cannot break efficiently, according to current knowledge.<br /><br />Post-quantum cryptography focusses on developing asymmetric/public-key algorithms. This is because symmetric algorithms and hash functions seem to do much better in a post-quantum world. The best algorithm for attacking symmetric ciphers, Grover's algorithm, halves their security level. Therefore doubling the keysize should be enough; for instance, AES-256 should retain 128 bits of security. On the other hand, RSA keys would have to be <a href="https://cr.yp.to/papers/pqrsa-20170419.pdf">1 terabyte large</a> to achieve a reasonable level of security against Shor's algorithm.<br /><br />The NIST Post-Quantum Cryptography Standardization process began in 2017 to find the best asymmetric algorithms to be used in protocols like TLS in future. Good algorithms must not only resist classical and quantum attacks but should also have small public and private keys and should execute quickly. Of the proposed schemes, Lattice-based cryptography has shown the most promise in terms of balancing security and performance. <br /><br />Lattices are also a powerful tool in cryptanalysis. The Lenstra–Lenstra–Lovász (LLL) lattice basis reduction algorithm has been used to break knapsack cryptosystems, RSA with particular parameters, and NTRUEncrypt. This category begins with a series of challenges that build up an intuition of how lattices work and are used in cryptanalysis.</p>
+  </div>
+  <div class="categoryImage">
+  <img src="../../static/img/category/post-quantum.png" alt="">
+  </div>
+  
+
+</div>
+
+
+<div class="row">
+    <div class="col s12 m6 noPadding">
+        <div class="left">
+        <select onchange="filterCategories(this);">
+            <option value="*">Show all stages</option>
+            
+            <option value="lattices">Lattices</option>
+            
+            <option value="lwe">Learning With Errors 1</option>
+            
+            <option value="lwe2">Learning With Errors 2</option>
+            
+        </select>
+        </div>
+    </div>
+    <div class="col s12 m6 noPadding">
+      <p class="toggleCheckbox"><input type="checkbox" id="toggleSolved" class="filled-in"><label for="toggleSolved">Hide Solved Challenges</label></p>
+    </div>
+</div>
+
+<span class="stage" data-stage="lattices">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Lattices</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="lattices" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="120" data-stage="lattices">
+            <div id="header-vectors" data-challenge="vectors" class="collapsible-header">
+                
+                <i id="check-vectors" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-vectors" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Vectors</div>
+                <span class="right">
+                    
+                    10 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../vectors/solves/index.html">
+                        <span id="solves-vectors">5395 Solves</span>
+                    </a>
+                    
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Before defining a lattice or talking about how lattices appear in cryptography, let's review some of the basics of linear algebra. The following challenges should be considered as revision, if this is totally new to you, you might need to do a bit of background reading. As usual, we recommend "An Introduction to Mathematical Cryptography" by Hoffstein, Pipher, Silverman, as well as this <a href="https://web.archive.org/web/20220508113525/https://www.cryptool.org/download/ctb/CTB-Chapter_Lattice-Introduction_en.pdf">introduction to lattices</a> and their applications.<br><br>A vector space $V$ over a field $F$ is a set defined with two binary operators. For a vector $v \in V$, and a scalar $a \in F$, <em>vector addition</em> takes two vectors and produces another vector: $v + w = z,$ for $v, w, z \in V$ and <em>scalar multiplication</em> takes a vector and a scalar and produces a vector: $a \cdot v = w,$ for $v, w \in V, a \in F$.<br><br><span class="note"><i class="fas fa-pencil-alt"></i>You will probably have first seen vectors in the context of a two dimensional vector space defined over the reals. We'll use this here too as an example!</span><br><br>Let's consider a two dimensional vector space over the reals. A vector $v \in V$ can be considered as a pair of numbers: $v = (a,b)$ for $a,b \in R$. Vector addition works as $v + w = (a,b) + (c,d) = (a+c, b+d)$, and scalar multiplication by $c \cdot v = c \cdot (a,b) = (c \cdot a, c \cdot b)$.<br><br>One can also define the <em>inner product</em> (also called the <em>dot product</em>), which takes two vectors and returns a scalar. Formally we think of this as $v \cdot w = a$ for $v,w \in V, a \in F$. In our two-dimensional example, the inner product works as $v \cdot w = (a,b) \cdot (c,d) = a \cdot c + b \cdot d$.<br><br>Time for the flag! Given a three dimensional vector space defined over the reals, where $v = (2,6,3)$, $w = (1,0,0)$ and $u = (7,7,2)$, calculate $3 \cdot (2 \cdot v - w) \cdot 2 \cdot u$.
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-vectors" class="preventToggle" data-challenge="vectors" data-points="10">
+                    <div class="input-field">
+                        <input id="flag-vectors" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-vectors">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="123" data-stage="lattices">
+            <div id="header-basis" data-challenge="basis" class="collapsible-header">
+                
+                <i id="check-basis" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-basis" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Size and Basis</div>
+                <span class="right">
+                    
+                    15 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../basis/solves/index.html">
+                        <span id="solves-basis">5153 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-basis">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../basis/solutions/index.html">
+                        16 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    We say a set of vectors $v_{1}, v_{2}, \ldots, v_{k} \in V$ are linearly independent if the only solution to the equation:<br><br><span class="mathDisplay"> $a_{1} \cdot v_{1} + a_{2} \cdot v_{2} + \ldots + a_{k} \cdot v_{k} = 0$ </span><br><br>is for $a_{1} = a_{2} = \ldots = a_{k} = 0$.<br><br><span class="note"><i class="fas fa-lightbulb"></i>To visualise this, think of a vector directed out of a point. Given a set of linearly independent vectors, the only way to return back to the original point is by moving along the original vector. No combination of any of the other vectors will get you there.</span><br><br>A basis is a set of linearly independent vectors $v_{1}, v_{2}, \ldots, v_{n} \in V$ such that any vector $w \in V$ can be written as:<br><br><span class="mathDisplay"> $w = a_{1} \cdot v_{1} + a_{2} \cdot v_{2} + \ldots + a_{k} \cdot v_{n}$ </span><br><br>The number of elements in the basis is also the dimension of the vector space.<br><br>We define the size of a vector, denoted $||v||$, using the inner product of the vector with itself: $||v||^{2} = v \cdot v$.<br><br>A basis is orthogonal if for a vector basis $v_{1}, v_{2}, \ldots, v_{n} \in V$, the inner product between any two different vectors is zero: $v_{i} \cdot v_{j} = 0, i \neq j$.<br><br>A basis is orthonormal if it is orthogonal and $||v_{i}|| = 1$, for all $i$.<br><br>That's a lot of stuff, but we'll be needing it. Time for the flag. Given the vector $v = (4, 6, 2, 5)$, calculate its size.
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-basis" class="preventToggle" data-challenge="basis" data-points="15">
+                    <div class="input-field">
+                        <input id="flag-basis" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-basis">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="118" data-stage="lattices">
+            <div id="header-gramschmidt" data-challenge="gramschmidt" class="collapsible-header">
+                
+                <i id="check-gramschmidt" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-gramschmidt" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Gram Schmidt</div>
+                <span class="right">
+                    
+                    30 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../gramschmidt/solves/index.html">
+                        <span id="solves-gramschmidt">3836 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-gramschmidt">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../gramschmidt/solutions/index.html">
+                        27 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    In the last challenge we saw that there is a special kind of basis called an orthogonal basis. Given a basis $v_{1}, v_{2}, \ldots, v_{n} \in V$ for a vector space, the Gram-Schmidt algorithm calculates an orthogonal basis $u_{1}, u_{2}, \ldots, u_{n} \in V$.<br><br>In "An Introduction to Mathematical Cryptography", <i>Jeffrey Hoffstein, Jill Pipher, Joseph H. Silverman</i>, the Gram-Schmidt algorithm is given as:<br><br><span class="mathBlock"> <b>Algorithm for Gram-Schmidt</b><br> <br> $u_{1} = v_{1}$<br> Loop $i = 2,3\ldots,n$<br> &nbsp;&nbsp; Compute $\mu_{ij} = v_{i} \cdot u_{j} / ||u_{j}||^2, 1 \leq j < i$.<br> &nbsp;&nbsp; Set $u_{i} = v_{i} - \mu_{ij} \cdot u_{j}$ (Sum over $j$ for $1 \leq j < i$)<br> End Loop <br> </span><br><br>To test your code, let's grab the flag. Given the following basis vectors:<br><br><span class="mathDisplay"> $v_{1} = (4,1,3,-1), \;\; v_{2} = (2,1,-3,4), \;\; v_{3} = (1,0,-2,7), \;\; v_{4} = (6, 2, 9, -5)$. </span><br><br>use the Gram-Schmidt algorithm to calculate an orthogonal basis. The flag is the float value of the second component of $u_{4}$ to 5 significant figures.<br><br><span class="note"><i class="fas fa-brain"></i>Note that this algorithm doesn't create an ortho<em>normal</em> basis! It's a small change to implement this. Think about what you would have to change. If you're using someone else's algorithm and the flag is incorrect, this might be the issue. If everything seems good and you're still not having your answer accepted, check your rounding when you take 5.s.f. for the solution.</span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-gramschmidt" class="preventToggle" data-challenge="gramschmidt" data-points="30">
+                    <div class="input-field">
+                        <input id="flag-gramschmidt" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-gramschmidt">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="117" data-stage="lattices">
+            <div id="header-lattices" data-challenge="lattices" class="collapsible-header">
+                
+                <i id="check-lattices" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lattices" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">What&#39;s a Lattice?</div>
+                <span class="right">
+                    
+                    40 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lattices/solves/index.html">
+                        <span id="solves-lattices">4008 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lattices">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lattices/solutions/index.html">
+                        15 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    We're now ready to start talking about lattices. Given a set of linearly independent vectors $v_{1}, v_{2}, \ldots, v_{n} \in R^m$, the lattice $L$ generated by $v_{1}, v_{2}, \ldots, v_{n}$ is the set of linearly independent vectors $v_{1}, v_{2}, \ldots, v_{n}$ with <em>integer coefficients</em>.<br><br><span class="mathDisplay"> $L = {a_{1} \cdot v_{1} + a_{2} \cdot v_{2} + \ldots + a_{k} \cdot v_{k} : a_{1}, a_{2}, \ldots, a_{n} \in \mathbb{Z}}$. </span><br><br>The basis for the lattice $L$ is any set of independent vectors that generates $L$. The choice of basis is far from unique. In the image below, we show a two dimensional lattice with two different basis vectors given by $u_{1}, u_{2}$ and $v_{1}, v_{2}$.<br><br><p style="text-align: center; margin: -3em 0;"> <img class="svgDiagram" style="max-width: 80%;" src="../../static/img/lattice.svg" alt="diagram of lattice"> </p><br><br>Using a basis, we can reach any point within the lattice with integer multiples of the basis vectors. The basis vectors also define the <em>fundamental domain</em>:<br><br><span class="mathDisplay"> $F(v_{1},\ldots,v_{n}) = {t_{1} v_{1} + t_{2} v_{2} + \ldots + t_{n} v_{n} :  0 \leq t_{i} < 1}$. </span><br><br>As a two dimensional example, the fundamental domain is the parallelogram with sides $u_{1}$ and $u_{2}$.<br><br>We can calculate the volume of the fundamental domain from the basis vectors. As an example, let us take a two dimensional lattice with basis vectors $v = (2,5), u = (3,1)$. Create a matrix $A$ with rows corresponding to the basis vectors: $A = [[2,5],[3,1]]$. The volume of the fundamental domain is the magnitude of the determinant of A: $\text{vol}(F) = |\det(A)| = |2 \cdot 1 - 5 \cdot 3| = |-13| = 13$.<br><br>For the flag, calculate the volume of the fundamental domain with the basis vectors $v_{1} = (6, 2, -3), v_{2} = (5, 1, 4), v_{3} = (2, 7, 1)$.
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lattices" class="preventToggle" data-challenge="lattices" data-points="40">
+                    <div class="input-field">
+                        <input id="flag-lattices" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lattices">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="122" data-stage="lattices">
+            <div id="header-gauss" data-challenge="gauss" class="collapsible-header">
+                
+                <i id="check-gauss" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-gauss" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Gaussian Reduction</div>
+                <span class="right">
+                    
+                    50 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../gauss/solves/index.html">
+                        <span id="solves-gauss">3555 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-gauss">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../gauss/solutions/index.html">
+                        26 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    If you look closely enough, lattices start appearing everywhere in cryptography. Sometimes they appear through manipulation of a crypto system, breaking parameters which were not generated securely enough. The most famous example of this is Coppersmith's attack against RSA cryptography.<br><br>Lattices can also be used to build cryptographic protocols, whose security is based on two fundamental "hard" problems:<br><br>The <b>Shortest Vector Problem</b> (SVP): find the shortest non-zero vector in a lattice $L$. In other words, find the non-zero vector within $v \in L$ such that $||v||$ is minimised.<br><br>The <b>Closest Vector Problem</b> (CVP): Given a vector $w \in R^m$ that is not in $L$, find the vector $v \in L$ that is the closest to $w$, i.e. find the vector $v \in L$ such that $||v - w||$ is minimised.<br><br>The SVP is hard for a generic lattice, but for simple enough cases there are efficient algorithms to compute either a solution or an approximation for the SVP. When the dimension of the lattice is four or less, we can compute this exactly in polynomial time; for higher dimensions, we have to settle for an approximation.<br><br>Gauss developed his algorithm to find an optimal basis for a two-dimensional lattice given an arbitrary basis. Moreover, the output $v_1$ of the algorithm is a shortest nonzero vector in $L$, and so solves the SVP.<br><br><span class="note"><i class="fas fa-lightbulb"></i>For higher dimensions, there's a basis lattice reduction algorithm called the LLL algorithm, named after Lenstra, Lenstra and Lovász. If you play CTFs regularly, you'll already know about it. The LLL algorithm runs in polynomial time. For now though, lets stay in two dimensions.</span><br><br>Gauss's algorithm roughly works by subtracting multiples of one basis vector from the other until it's no longer possible to make them any smaller. As this works in two-dimensions, it's nice to visualise. Here's a description of the algorithm from "An Introduction to Mathematical Cryptography", <i>Jeffrey Hoffstein, Jill Pipher, Joseph H. Silverman</i>:<br><br><span class="mathBlock"> <b>Algorithm for Gaussian Lattice Reduction</b><br> <br> Loop <br> &nbsp;&nbsp; (a) If $||v_2|| < ||v_1||$, swap $v_1, v_2$<br> &nbsp;&nbsp; (b) Compute $m = \lfloor v_1 \cdot v_2 / v_1 \cdot v_1 \rceil$<br> &nbsp;&nbsp; (c) If $m = 0$, return $v_1, v_2$<br> &nbsp;&nbsp; (d) $v_2 = v_2 - m \cdot v_1$<br> Continue Loop <br> </span><br><br>Note the similarity to Euclid's GCD algorithm with the "swap" and "reduction" steps, and that we have to round the float, as on a lattice we may only use integer coefficients for our basis vectors.<br><br>For the flag, take the two vectors $v = (846835985, 9834798552), u = (87502093, 123094980)$ and by applying Gauss's algorithm, find the optimal basis. The flag is the inner product of the new basis vectors.
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-gauss" class="preventToggle" data-challenge="gauss" data-points="50">
+                    <div class="input-field">
+                        <input id="flag-gauss" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-gauss">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="121" data-stage="lattices">
+            <div id="header-find" data-challenge="find" class="collapsible-header">
+                
+                <i id="check-find" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-find" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Find the Lattice</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../find/solves/index.html">
+                        <span id="solves-find">2291 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-find">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../find/solutions/index.html">
+                        22 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    As we've seen, lattices contain hard problems which can form trapdoor functions for cryptosystems. We also find that in cryptanalysis, lattices can break cryptographic protocols which seem at first to be unrelated to lattices.<br><br>This challenge uses modular arithmetic to encrypt the flag, but hidden within the protocol is a two-dimensional lattice. We highly recommend spending time with this challenge and finding how you can break it with a lattice. This is a famous example with plenty of resources available, but knowing how to spot the lattice within a system is often the key to breaking it.<br><br>As a hint, you will be able to break this challenge using the Gaussian reduction from the previous challenge.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_ca1901b901faf91d690cb35998d0b80e.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/output_bc9603ab4045eea70eae450862d4be91.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-find" class="preventToggle" data-challenge="find" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-find" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-find">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="119" data-stage="lattices">
+            <div id="header-backpack" data-challenge="backpack" class="collapsible-header">
+                
+                <i id="check-backpack" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-backpack" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Backpack Cryptography</div>
+                <span class="right">
+                    
+                    120 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../backpack/solves/index.html">
+                        <span id="solves-backpack">1513 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-backpack">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../backpack/solutions/index.html">
+                        11 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I love this cryptosystem so much, I carry it everywhere in my backpack. To lighten the load, I make sure I don't pack anything with high densities.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_83f1e856dc3e1d8c6628abb227a797cb.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/output_e2fe6134f7dd580dcedacdbe71846d0e.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/VincBreaker/index.html">VincBreaker</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-backpack" class="preventToggle" data-challenge="backpack" data-points="120">
+                    <div class="input-field">
+                        <input id="flag-backpack" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-backpack">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="lwe">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Learning With Errors 1</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="lwe" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="219" data-stage="lwe">
+            <div id="header-lwe-background" data-challenge="lwe-background" class="collapsible-header">
+                
+                <i id="check-lwe-background" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-background" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">LWE Background</div>
+                <span class="right">
+                    
+                    5 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-background/solves/index.html">
+                        <span id="solves-lwe-background">1612 Solves</span>
+                    </a>
+                    
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    <span class="note"><i class="fas fa-pencil-alt"></i>Before beginning this section you should have completed at least the "Lattices" section above.</span><br><br>Throughout CryptoHack and especially in the RSA chapter, lattice reduction using LLL has proven to be a very powerful cryptanalysis tool. It excels at the related problems of finding short vectors in a lattice (SVP) and finding the closest vector to a point not in the lattice (CVP and BDD). LLL also finds surprising applications through Coppersmith's method.<br><br>However, lattice reduction algorithms for the Learning With Errors problem (LWE) only work up to a certain point. By making the lattice dimension or errors large, or providing a large/obfuscated basis, basis reduction will no longer return the shortest vector in the lattice. This is the intuition that makes LWE a "hard" problem suitable for cryptography.<br><br>What is the name of the computer scientist and mathematician who introduced the LWE problem in 2005?<br /><br /><b>Resources:</b><br />&nbsp; - <a href="https://static.aminer.org/pdf/PDF/000/570/324/the_two_faces_of_lattices_in_cryptology.pdf" target="_blank">The Two Faces of Lattices in Cryptology</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/ireland/index.html">ireland</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-background" class="preventToggle" data-challenge="lwe-background" data-points="5">
+                    <div class="input-field">
+                        <input id="flag-lwe-background" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-background">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="216" data-stage="lwe">
+            <div id="header-lwe-intro" data-challenge="lwe-intro" class="collapsible-header">
+                
+                <i id="check-lwe-intro" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-intro" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">LWE Intro</div>
+                <span class="right">
+                    
+                    10 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-intro/solves/index.html">
+                        <span id="solves-lwe-intro">1262 Solves</span>
+                    </a>
+                    
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Learning With Errors (LWE) refers to the computational problem of learning a linear function $f(A)$ which takes values over a ring, given many noisy samples of the function. These samples look like the pair $(A, \langle A, S \rangle + e)$, where $S$ is the secret element which defines the linear function, $e$ is some small error term from a known distribution, and $A$ is a known element of the ring. Note that $\langle A, S \rangle$ denotes the matrix multiplication of a matrix $A$ with vector $S$.<br><br>Cryptosystems based on LWE are quite varied, but they usually have several common features:<br><br><ul> <li>They use modular arithmetic under two different moduli: the plaintext modulus and the ciphertext modulus.</li> <li>The secret key is an element of a vector space modulo n.</li> <li>Messages are encrypted by adding an encoded noisy message to a large dot-product.</li> </ul><br><br>The noisy message is a properly-encoded sum of the message and a small error or noise term.<br><br>The dot-product is between the secret key and a random element of the vector space, where this random element is provided as part of the ciphertext.<br><br>This looks like $(A, \langle A,S \rangle + \text{encoded}(m, e))$, where $A$ is an element of the vector space.<br><br>If the secret key is known, then the dot-product can be subtracted out, leaving only the encoded message and noise. Thanks to the special way in which the message and noise are encoded, the noise can be removed from the encoding, leaving only the message behind.<br><br>There are two common approaches to storing the message and noise in LWE systems: you can either store the message in the high-bits of the LWE sample and the noise in the low-bits, or vice-versa.<br><br><ul> <li>Some examples of LWE schemes where the message is stored in the high-bits are <a href="https://cims.nyu.edu/~regev/papers/qcrypto.pdf" target="_blank">Regev09</a> and BFV.</li> <li>An example of an LWE scheme where the message is stored in the low-bits is BGV.</li> </ul><br><br>What algorithm could be used to recover the message from the linear equations in polynomial time, if there was no added error?<br /><br /><b>Resources:</b><br />&nbsp; - <a href="https://cims.nyu.edu/~regev/papers/lwesurvey.pdf" target="_blank">The Learning with Errors Problem</a><br />&nbsp; - <a href="https://web.archive.org/web/20231008081450/https://cryptopedia.dev/posts/kyber/" target="_blank">Kyber - How does it work?</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/ireland/index.html">ireland</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-intro" class="preventToggle" data-challenge="lwe-intro" data-points="10">
+                    <div class="input-field">
+                        <input id="flag-lwe-intro" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-intro">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="221" data-stage="lwe">
+            <div id="header-lwe-high-bits" data-challenge="lwe-high-bits" class="collapsible-header">
+                
+                <i id="check-lwe-high-bits" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-high-bits" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">LWE High Bits Message</div>
+                <span class="right">
+                    
+                    15 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-high-bits/solves/index.html">
+                        <span id="solves-lwe-high-bits">905 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lwe-high-bits">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lwe-high-bits/solutions/index.html">
+                        5 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Now we're going to jump in and decrypt a message that's hidden in the high bits of a toy LWE system.<br><br><b>Parameters:</b><br><br><ul> <li>vector space dimension $n$</li> <li>ciphertext modulus $q$</li> <li>plaintext modulus $p$ (can only encrypt messages $m < p$)</li> <li>scaling factor $\Delta = \text{round}(q / p)$</li> </ul><br><br><b>Key-gen:</b><br><br><ul> <li>The secret key $S$ is a random element of the vector space $\mathbb{Z}_q^n$.</li> </ul><br><br><b>Ciphertext format:</b><br><br><ul> <li>Ciphertexts consist of a pair $A, b$, where $A$ is an element of the vector space $\mathbb{Z}_q^n$, and $b$ is an element of $\mathbb{Z}_q$.</li> </ul><br><br><b>Encryption given message $m$:</b><br><br><ol> <li>Sample $A$, a random element of the vector space $\mathbb{Z}_q^n$</li> <li>Sample the error-term $e$, an integer in the range $[-\Delta / 2, \Delta / 2]$. (Note: often the error is sampled from a discrete Gaussian distribution, but uniform sampling is fine)</li> <li>Compute $b = \langle A,S \rangle + \Delta \cdot m + e$</li> <li>Return the pair $(A, b)$</li> </ol><br><br><b>Decryption given ciphertext $(A, b)$:</b><br><br><ol> <li>Compute $x = b - \langle A,S \rangle \mod q$ and then interpret $x$ as an integer (<i>not</i> modulo $q$)</li> <li>Compute $m = \text{round}(x / \Delta)$, where the division and rounding happens over the integers</li> <li>return m</li> </ol><br><br>In this system, decryption works because after the mask $\langle A,S \rangle$ has been removed, the remaining equation for the noisy message $\Delta \cdot m + e$ holds over the integers, so there is no modular wraparound due to $q$. As such, removing the error term $e$ can be done by rounding integer-division. This requires the parameters to be chosen so that $\Delta \cdot m + e < q/2$ holds.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/lwe-high-bits_a83f7bfc0f6e3bfd1b962842feb5d91d.sage" download>lwe-high-bits.sage</a><br />&nbsp; - <a href="../../static/challenges/output_575f13474e5a8cc76e938508bce813c2.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/ireland/index.html">ireland</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-high-bits" class="preventToggle" data-challenge="lwe-high-bits" data-points="15">
+                    <div class="input-field">
+                        <input id="flag-lwe-high-bits" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-high-bits">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="218" data-stage="lwe">
+            <div id="header-lwe-low-bits" data-challenge="lwe-low-bits" class="collapsible-header">
+                
+                <i id="check-lwe-low-bits" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-low-bits" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">LWE Low Bits Message</div>
+                <span class="right">
+                    
+                    20 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-low-bits/solves/index.html">
+                        <span id="solves-lwe-low-bits">839 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lwe-low-bits">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lwe-low-bits/solutions/index.html">
+                        4 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Now we're going to jump in and decrypt a message that's hidden in the low bits of a toy LWE system. The noise is stored in the high bits.<br><br><b>Parameters:</b><br><br><ul> <li>vector space dimension $n$</li> <li>ciphertext modulus $q$</li> <li>plaintext modulus $p$ (can only encrypt messages $m < p$)</li> <li>must have $q$, $p$ be coprime</li> </ul><br><br><b>Key-gen:</b><br><br><ul> <li>The secret key $S$ is a random element of the vector space $\mathbb{Z}_q^n$.</li> </ul><br><br><b>Ciphertext format:</b><br><br><ul> <li>Ciphertexts consist of a pair $A, b$, where $A$ is an element of the vector space $\mathbb{Z}_q^n$, and $b$ is an element of $\mathbb{Z}_q$.</li> </ul><br><br><b>Encryption given message $m$:</b><br><br><ol> <li>Sample $A$, a random element of the vector space $\mathbb{Z}_q^n$</li> <li>Sample the error-term $e$, an integer in the range $[-(q/p)/2, (q/p)/2]$. Note: often the error is sampled from a discrete Gaussian distribution, but uniform sampling is fine</li> <li>Compute $b = \langle A, S \rangle + m + p \cdot e$</li> <li>Return the pair $(A, b)$</li> </ol><br><br><b>Decryption given ciphertext $(A, b)$:</b><br><br><ol> <li>Compute $x = b - \langle A, S \rangle$ centered modulo $q$ and then interpret $x$ as an integer (<i>not</i> modulo $q$). Note: this centered modular reduction must produce a result between $(-q/2, q/2]$ as opposed to usual modular reduction producing a result between $[0, q-1]$</li> <li>Compute $m = x \mod p$, where the division and rounding happens over the integers</li> <li>return m</li> </ol><br><br>In this system, decryption works because after the mask $\langle A, S \rangle$ has been removed, the remaining equation for the noisy message $m + p \cdot e$ holds over the integers, so there is no modular wraparound due to $q$. As such, removing the error term $e$ can be done by reducing modulo $p$. This requires the parameters to be chosen so that $m + p \cdot e < q/2$ holds.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/lwe-low-bits_a2c45284086e181a601486fe22f873ff.sage" download>lwe-low-bits.sage</a><br />&nbsp; - <a href="../../static/challenges/output_9eb8e78124c8c48ec9eb687bf1d10a4e.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/ireland/index.html">ireland</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-low-bits" class="preventToggle" data-challenge="lwe-low-bits" data-points="20">
+                    <div class="input-field">
+                        <input id="flag-lwe-low-bits" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-low-bits">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="217" data-stage="lwe">
+            <div id="header-lwe-private-public" data-challenge="lwe-private-public" class="collapsible-header">
+                
+                <i id="check-lwe-private-public" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-private-public" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">From Private to Public Key LWE</div>
+                <span class="right">
+                    
+                    25 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-private-public/solves/index.html">
+                        <span id="solves-lwe-private-public">898 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lwe-private-public">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lwe-private-public/solutions/index.html">
+                        1 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    This can be turned into a public key cryptosystem by using the "additively homomorphic" property of LWE. That is, given an encryption $\langle A, b \rangle$ encrypting the number $m$, it is possible for anyone to turn this into a valid encryption of $m + m_2$ for any number $m_2$. Explicitly, this is done by computing $\langle A, b + m_2 \rangle$ for low-bit messages (high-bit noise) and $\langle A, b + \Delta \cdot m_2 \rangle$ for high-bit messages (low-bit noise).<br><br><span class="note"><i class="fas fa-brain"></i> While this additively homomorphic property is more straightforward to see when the message is stored in low-bits, it is also present when the message is stored in high-bits.</span><br><br>Similarly, adding two LWE ciphertexts produces a new valid ciphertext which encrypts the sum of the corresponding plaintexts. The owner of the private key can use this property to turn LWE into a public-key system by releasing many different "encryptions of zero" as the public key. For Alice to use this information to encrypt, she first chooses a random subset of these "encryptions of zero" and add them together. By the second additively homomorphic property, this is also a valid encryption of zero. Next, Alice creates a new encoding of her message $m$, and adds this encoded message to this new encryption of zero. By the first additively homomorphic property, this is a valid encryption of $m$. This procedure requires the distribution from which the noise samples are drawn to be carefully chosen so that the final error term is (with high probability) below the threshold needed to decrypt.<br><br>In order for this to be secure, it must be hard for an adversary to determine which public key samples were summed to produce the LWE ciphertext. To ensure this, the number of "encryptions of zero" in the public key must be significantly larger than the LWE dimension. As such, the size of the public key scales as $O(n^2 \log(q))$ bits, making LWE cryptosystems have large public keys.<br><br>What is the size of a Kyber1024 public key in bytes?<br /><br />Challenge contributed by <a class="gold-link" href="../../user/ireland/index.html">ireland</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-private-public" class="preventToggle" data-challenge="lwe-private-public" data-points="25">
+                    <div class="input-field">
+                        <input id="flag-lwe-private-public" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-private-public">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="lwe2">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Learning With Errors 2</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="lwe2" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="214" data-stage="lwe2">
+            <div id="header-lwe-lsb-regev" data-challenge="lwe-lsb-regev" class="collapsible-header">
+                
+                <i id="check-lwe-lsb-regev" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-lsb-regev" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Noise Free</div>
+                <span class="right">
+                    
+                    40 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-lsb-regev/solves/index.html">
+                        <span id="solves-lwe-lsb-regev">691 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lwe-lsb-regev">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lwe-lsb-regev/solutions/index.html">
+                        11 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    The addition of the noise term is what makes learning into learning with errors. How well can you learn if you don't have to deal with errors?<br /><br />Connect at <code>socket.cryptohack.org 13411</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13411_65376bbf8bb3f8b630960f62ac39f614.py" download>13411.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/ireland/index.html">ireland</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-lsb-regev" class="preventToggle" data-challenge="lwe-lsb-regev" data-points="40">
+                    <div class="input-field">
+                        <input id="flag-lwe-lsb-regev" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-lsb-regev">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="248" data-stage="lwe2">
+            <div id="header-lwe-bounded_noise" data-challenge="lwe-bounded_noise" class="collapsible-header">
+                
+                <i id="check-lwe-bounded_noise" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-bounded_noise" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Bounded Noise</div>
+                <span class="right">
+                    
+                    50 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-bounded_noise/solves/index.html">
+                        <span id="solves-lwe-bounded_noise">444 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lwe-bounded_noise">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lwe-bounded_noise/solutions/index.html">
+                        10 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I find implementing gaussian sampling to be hard and slow, so I prefer binary sampling<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/bounded_noise_e86bbb663297048112cdbd476951da41.sage" download>bounded_noise.sage</a><br />&nbsp; - <a href="../../static/challenges/output_82aed503c474858718e4d34cfbd06cff.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/deuterium/index.html">deuterium</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-bounded_noise" class="preventToggle" data-challenge="lwe-bounded_noise" data-points="50">
+                    <div class="input-field">
+                        <input id="flag-lwe-bounded_noise" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-bounded_noise">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="220" data-stage="lwe2">
+            <div id="header-lwe-nativity" data-challenge="lwe-nativity" class="collapsible-header">
+                
+                <i id="check-lwe-nativity" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-nativity" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Nativity</div>
+                <span class="right">
+                    
+                    60 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-nativity/solves/index.html">
+                        <span id="solves-lwe-nativity">439 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lwe-nativity">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lwe-nativity/solutions/index.html">
+                        11 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    LWE is easy, so I made my own implementation that works with native integers.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/nativity_3be57fcbd4a8a94592a21f621031b233.py" download>nativity.py</a><br />&nbsp; - <a href="../../static/challenges/public_key_dbd7dcf356ea5c595d390470faad2c29.txt" download>public_key.txt</a><br />&nbsp; - <a href="../../static/challenges/ciphertexts_453500a870e03399fe8e5ed3674b6030.txt" download>ciphertexts.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/ireland/index.html">ireland</a> and <a class="gold-link" href="../../user/defund/index.html">defund</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-nativity" class="preventToggle" data-challenge="lwe-nativity" data-points="60">
+                    <div class="input-field">
+                        <input id="flag-lwe-nativity" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-nativity">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="215" data-stage="lwe2">
+            <div id="header-lwe-missing-modulus" data-challenge="lwe-missing-modulus" class="collapsible-header">
+                
+                <i id="check-lwe-missing-modulus" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-missing-modulus" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Missing Modulus</div>
+                <span class="right">
+                    
+                    80 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-missing-modulus/solves/index.html">
+                        <span id="solves-lwe-missing-modulus">414 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lwe-missing-modulus">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lwe-missing-modulus/solutions/index.html">
+                        8 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I just created my first LWE cryptosystem, I hope I didn't forget anything important...<br /><br />Connect at <code>socket.cryptohack.org 13412</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13412_0e7057d3edeba39b0b5be6b929f6a83b.py" download>13412.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/ireland/index.html">ireland</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-missing-modulus" class="preventToggle" data-challenge="lwe-missing-modulus" data-points="80">
+                    <div class="input-field">
+                        <input id="flag-lwe-missing-modulus" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-missing-modulus">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="213" data-stage="lwe2">
+            <div id="header-lwe-noise-cheap" data-challenge="lwe-noise-cheap" class="collapsible-header">
+                
+                <i id="check-lwe-noise-cheap" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwe-noise-cheap" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Noise Cheap</div>
+                <span class="right">
+                    
+                    90 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwe-noise-cheap/solves/index.html">
+                        <span id="solves-lwe-noise-cheap">343 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lwe-noise-cheap">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lwe-noise-cheap/solutions/index.html">
+                        9 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    A core part of making LWE secure is having the noise terms be larger than what lattice reduction algorithms can handle.<br /><br />Connect at <code>socket.cryptohack.org 13413</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13413_0c0d299900953fdef5b48dafe6245d32.py" download>13413.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/ireland/index.html">ireland</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwe-noise-cheap" class="preventToggle" data-challenge="lwe-noise-cheap" data-points="90">
+                    <div class="input-field">
+                        <input id="flag-lwe-noise-cheap" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwe-noise-cheap">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="115" data-stage="lwe2">
+            <div id="header-toomany" data-challenge="toomany" class="collapsible-header">
+                
+                <i id="check-toomany" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-toomany" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Too Many Errors</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../toomany/solves/index.html">
+                        <span id="solves-toomany">578 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-toomany">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../toomany/solutions/index.html">
+                        11 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    To protect my flag against quantum computers, I've used a quantum-safe Learning With Errors (LWE) distribution on Z_127 to encrypt it. The LWE sample generator is not quite finished though, sometimes it outputs a faulty sample...<br /><br />Connect at <code>socket.cryptohack.org 13390</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13390_7ed55387d10ab932e673c9df3cc8bbfc.py" download>13390.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/joachim/index.html">joachim</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-toomany" class="preventToggle" data-challenge="toomany" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-toomany" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-toomany">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+
+        </div>
+        <script src="../../static/js/jquery.min.js"></script>
+        <script src="../../static/js/materialize.min.js"></script>
+        <script defer src="../../static/js/confetti.browser.min.js"></script>
+        <script src="../../static/js/api.js"></script>
+        <script src="../../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+
+
+<script>
+    var challenges_open = JSON.parse(localStorage.getItem("challenges-open")) || {"backpack": true, "basis": true, "find": true, "gauss": true, "gramschmidt": true, "lattices": true, "vectors": true};
+    Object.keys(challenges_open).forEach(function(el){
+        $(".collapsible-header#header-" + el).addClass("active");
+    });
+
+    $(".collapsible-header").on("click", function(){
+        var chall = $(this).data('challenge');
+        if(challenges_open.hasOwnProperty(chall)) {
+            delete challenges_open[chall];
+        } else {
+            challenges_open[chall] = true;
+            $('html, body').animate({
+                    scrollTop: $(this).offset().top -100
+            }, 700);
+        }
+        localStorage.setItem("challenges-open", JSON.stringify(challenges_open));
+    });
+
+    $(".preventToggle").on("click", function(){
+        event.stopPropagation();
+    });
+
+    var state = $(".collapsible-header.active").length == 0;
+    function updateButton(){
+        if(state){
+            $("#toggleState").html("Expand all challenges");
+        } else {
+            $("#toggleState").html("Collapse all challenges");
+        }
+
+    }
+    updateButton(state);
+    function toggle() {
+        if(state) {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+        } else {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        }
+        state = !state;
+        updateButton(state);
+    }
+    function filterCategories(t) {
+        var v = t.options[t.selectedIndex].value;
+        if(v == "*")
+            $(".stage").show();
+        else {
+            $(".stage[data-stage=" + v + "]").show();
+            $(".stage[data-stage!=" + v + "]").hide();
+        }
+    }
+    function toggleSolved(){
+      $('.fas.fa-star').each(function() {
+        if($(this).css('display') == 'block'){
+          if($(this).parent().next().css('display') == 'block'){
+              $(this).parent().toggle();
+              $(this).parent().click();
+              $(this).parent().next().hide();
+          }
+          else{
+            $(this).parent().toggle();
+          }
+        }
+      });
+    }
+
+
+    $("#toggleSolved").on("click", function(e){
+        // e.preventDefault();
+        toggleSolved();
+        // var text = $(this).next().text();
+        // $(this).next().text(
+        // text == "Hide Solved Challenges" ? "Show Solved Challenges" : "Hide Solved Challenges");
+    });
+
+
+    $("#toggleState").on("click", function(e){
+        // e.preventDefault();
+        toggle();
+    });
+    $(".stage-collapse").on("click", function(e){
+        // e.preventDefault();
+        var stage = $(this).data('collapse');
+        var header_selector = ".challenge[data-stage=" + stage + "] .collapsible-header";
+        var state = $(header_selector + ".active").length != 0;
+        if(state)
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        else
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+    });
+    $("form").submit(function(e) {
+        // Loading button
+        var loadBtn = $(this).find(".loader");
+        loadBtn.show();
+
+        var id = $(this).data("challenge");
+        var points = $(this).data("points");
+        var flag = $("#flag-" + id).val();
+        // var updatedScore = score + points;
+        console.log(id);
+        console.log(flag);
+        api.makeCall("/submit/" + id + ".json", {flag: flag, _csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function(data) {
+            if(data.code) {
+                loadBtn.hide();
+                Materialize.toast(data.message, 4000);
+            }
+            else {
+                // Materialize.toast("Correct flag, nice one!", 4000);
+                $("#uncheck-" + id).hide();
+                $("#check-" + id).show();
+                $("#header-" + id).click();
+
+                // update solves box
+                var solves_text = data.solves == 1 ? "Solve" : "Solves";
+                $("#solves-" + id).html(data.solves + " " + solves_text);
+                $("#solves-" + id).parent().show();
+                $("#solutions-" + id).show();
+                $("#youvesolved-" + id).show();
+                $("#empty-" + id).hide();
+                $("#flagform-" + id).hide();
+                if (window.handleCorrectFlag) { window.handleCorrectFlag(id); }
+
+                // update points at top
+                console.log(score);
+                console.log(points);
+                score = calculateLevel(score, points);
+                loadBtn.hide();
+                setTimeout(function(){ launchConfetti(); }, 250);
+            }
+        });
+        return false;
+    });
+</script>
+
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../../faq/index.html">FAQ</a><br>
+        <a href="../../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../../courses/intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../../courses/modular/index.html">Modular Arithmetic</a><br>
+        <a href="../../courses/symmetric/index.html">Symmetric Cryptography</a><br>
+        <a href="../../courses/public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../../courses/elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../general/index.html">General</a><br>
+        <a href="../aes/index.html">Symmetric Ciphers</a><br>
+        <a href="../maths/index.html">Mathematics</a><br>
+        <a href="../rsa/index.html">RSA</a><br>
+        <a href="../diffie-hellman/index.html">Diffie-Hellman</a><br>
+        <a href="../ecc/index.html">Elliptic Curves</a><br>
+        <a href="../hashes/index.html">Hash Functions</a><br>
+        <a href="../web/index.html">Crypto on the Web</a><br>
+        <a href="index.html">Lattices</a><br>
+        <a href="../isogenies/index.html">Isogenies</a><br>
+        <a href="../zkp/index.html">Zero-Knowledge Proofs</a><br>
+        <a href="../misc/index.html">Miscellaneous</a><br>
+        <a href="../ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:30:48Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:30:48Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/challenges/post-quantum/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:23 GMT -->
+</html>

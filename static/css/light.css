@@ -1,0 +1,514 @@
+/*
+Accessible colors
+ */
+
+ /*
+ white #F9EAE1;
+ red from image: fc3c1d
+ gold from image: feb32b
+ #blue bg 0c1221
+ #coral e85154
+ purple 6420e0
+ red from image f04e23
+  */
+
+/*
+General
+ */
+
+html.light-mode body{
+   background-color: #ffffff;
+   color: #10294c;
+ }
+
+html.light-mode .highlight{
+  color: #f04e23;
+}
+
+html.light-mode .highlight a{
+  color: #f04e23;
+}
+
+html.light-mode .highlight a:visited, html.light-mode .highlight a:hover{
+  color: #f04e23;
+}
+
+html.light-mode .coral-text{
+   color: #f04e23;
+ }
+
+html.light-mode a.logo-link, html.light-mode a:visited.logo-link, html.light-mode a:hover.logo-link{
+    color: #f04e23;
+}
+
+html.light-mode a, html.light-mode a:visited{
+  color: #6420e0;
+}
+
+html.light-mode a:hover{
+  color: #6420e0;
+}
+
+html.light-mode .mainWrapper a, html.light-mode .mainWrapper a:visited,
+html.light-mode .categoryText a, html.light-mode .categoryText a:visited{
+  border-bottom: 1px #ffffff00 solid;
+  transition: border 0.3s ease;
+}
+
+html.light-mode .mainWrapper a:hover,
+html.light-mode .categoryText a:hover{
+  border-bottom: 1px #6420e0 solid;
+}
+
+html.light-mode #sidenav-overlay{
+  background-color: rgba(0,0,0,0.1)
+}
+
+html.light-mode .collapsible-body .challengeDescription .katex{
+  color: #10294c;
+}
+
+/*
+titleSplash
+ */
+
+html.light-mode .titleSplash h1{
+  color: #f04e23;
+}
+
+ /*
+footer
+  */
+
+html.light-mode footer{
+    box-shadow: none;
+    border-top: 1px solid rgba(249, 245, 255,1);
+    background-color: #fdfcff;
+}
+
+html.light-mode footer a, html.light-mode footer a:visited{
+  color: #6420e0;
+  border-bottom: 1px rgba(249, 245, 255,0.3) solid;
+  transition: border 0.3s ease;
+}
+
+html.light-mode footer a:hover{
+  border-bottom: 1px #6420e0 solid;
+}
+
+html.light-mode footer .footerIcon a, html.light-mode footer .footerIcon a:hover, html.light-mode footer .footerIcon a:visited{
+  border: 0
+}
+
+/*
+form
+ */
+
+
+/*
+card
+ */
+
+html.light-mode .registerMessage{
+  background-color: rgba(249, 245, 255,1);
+}
+
+html.light-mode .cardTop{
+  background-color: #fff;
+  border-bottom: 1px #eaeaea solid;
+ }
+
+html.light-mode .card-small:hover .cardInfo{
+  background-color: #fff;
+}
+
+html.light-mode .z-depth-2{
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.06),0 6px 20px 0 rgba(0,0,0,0.08);
+}
+
+html.light-mode .card{
+  box-shadow: 0 0 1.75rem rgba(0,0,0,.1);
+  color: #0c1221;
+}
+
+html.light-mode .card-small:hover{
+  box-shadow: 0 0 1rem rgba(0,0,0,.15)
+}
+
+html.light-mode .welcomeCard{
+  color: #0c1221;
+  background-color: #fff;
+}
+
+/*
+table
+ */
+
+html.light-mode tbody tr:nth-child(odd){
+  background-color: rgba(0,0,0,0.035);
+}
+
+
+html.light-mode .input-field label{
+  color: #3a00a5;
+}
+
+html.light-mode .truthTable{
+  box-shadow: 0 0 1rem rgba(0,0,0,.2);
+}
+
+html.light-mode thead{
+  border-color: #f04e23;
+}
+
+html.light-mode .collection{
+  padding: 0 5px;
+}
+
+/*
+data
+ */
+
+html.light-mode .dataFlex table{
+  box-shadow: none;
+}
+
+html.light-mode .dataFlex h5{
+  /* padding-left: 10px; */
+}
+
+html.light-mode table a, html.light-mode table a:visited{
+  border-bottom: 1px #ffffff00 solid;
+  transition: border 0.3s ease;
+}
+
+html.light-mode table a:hover{
+  border-bottom: 1px #6420e0 solid;
+}
+
+/*
+progress bar
+ */
+
+html.light-mode .progressBar{
+  background-color: #feb32b20
+}
+
+html.light-mode .progress{
+  background-color: #feb32b;
+}
+
+/*
+nav
+ */
+
+html.light-mode .side-nav.fixed a{
+    color: #a4bdd7ab
+}
+
+html.light-mode .side-nav.fixed a:hover{
+    color: #062a4e;
+}
+
+
+html.light-mode nav a.button-collapse i{
+  color: #062a4e;
+}
+
+html.light-mode .top-nav, html.light-mode .side-nav{
+  background-color: #ffffff;
+}
+
+html.light-mode .side-text{
+  color: #062a4e;
+  transition: color 0.3s ease;
+}
+
+html.light-mode nav ul li a, html.light-mode nav ul li a:visited{
+  color: #062a4e;
+}
+
+html.light-mode nav ul li a:hover{
+  color: #f04e23;
+}
+
+html.light-mode .side-nav li:hover{
+  background-color: #ffffff;
+}
+
+html.light-mode .side-nav li:hover .side-text{
+  color: #f04e23;
+}
+
+/*
+challenge
+ */
+
+html.light-mode .collapsible-header{
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+html.light-mode .collapsible-header:hover, html.light-mode .collapsible-header.active{
+  color: #fff;
+}
+
+html.light-mode .collapsible-header.active a, html.light-mode .collapsible-header:hover a{
+  color: #fc3c1d;
+}
+
+html.light-mode .collapsible-body a, html.light-mode .collapsible-body a:visited{
+  border-bottom: 1px #ffffff00 solid;
+  transition: border 0.3s ease;
+}
+
+html.light-mode .collapsible-body a:hover{
+  border-bottom: 1px #6420e0 solid;
+  transition: border 0.3s ease;
+}
+
+html.light-mode .collapsible-body input[type=text]{
+  background-color: rgba(249, 245, 255,1);
+}
+
+html.light-mode p.solvedMessage{
+  background-color: rgba(249, 245, 255,1);
+}
+
+
+html.light-mode code, html.light-mode .codeBlock, html.light-mode pre{
+  background-color: rgba(249, 245, 255,1);
+  color: #6420e0;
+}
+
+html.light-mode .note{
+  background-color: #ffffff;
+  border-color: #6420e0;
+  box-shadow: 0 5px 12px 0 rgba(0,0,0,0.03),0 6px 20px 0 rgba(0,0,0,0.08);
+}
+
+html.light-mode .note i{
+  color: #6420e0;
+}
+
+html.light-mode .hljs{
+  background: #fefefe;
+}
+
+html.light-mode .mathBlock,
+html.light-mode .mathDisplay{
+  background-color: rgba(27,31,35,.05);
+  color: #062a4e;
+}
+
+html.light-mode .levelUpCard{
+  background-color: #fff;
+  color: inherit;
+}
+
+
+html.light-mode .dropdown-content{
+  background-color: #fff;
+}
+
+html.light-mode .dropdown-content li:hover{
+  background-color: #fff;
+}
+
+html.light-mode .dropdown-content li span:hover{
+  color: #fc3c1d;
+}
+
+html.light-mode .dropdown-content li.active{
+  background-color: #062a4e;
+  color: #fff;
+}
+
+html.light-mode .dropdown-content li.active span{
+  color: #fff;
+}
+
+html.light-mode .dropdown-content li.active span:hover{
+  background-color: #062a4e;
+  color: #fff;
+}
+
+html.light-mode .pagination li.active a:hover{
+  color: #fff;
+}
+
+/*
+course
+*/
+
+html.light-mode .course-card{
+    border-color: #f04e23;
+}
+
+html.light-mode .course-tag{
+    background-color: #f04e23;
+    color: #fff;
+}
+
+html.light-mode .course-nav-btn{
+    color: #6420e05e!important;
+    background-color: #fff;
+    border: 2px #6420e05e solid;
+    transition: all 0.2s!important;
+    box-shadow: none;
+}
+
+html.light-mode .course-nav-btn.solved,
+html.light-mode .course-nav-btn:hover{
+    color: #6420e0!important;
+    background-color: #fff;
+    border: 2px #6420e0 solid;
+}
+
+html.light-mode .course-start-btn,
+html.light-mode .course-start-btn:hover{
+    color: #fff !important;
+    background-color: #6420e0;
+    line-height: 2.7em;
+    letter-spacing: 0;
+}
+
+html.light-mode .course-start-btn-secondary,
+html.light-mode .course-start-btn-secondary:hover{
+    color: #6420e0 !important;
+    background-color: #fff;
+    border: 3px #6420e0 solid;
+    line-height: calc(2.7em - 6px);
+    letter-spacing: 0;
+}
+
+html.light-mode .course-complete{
+    color: #6420e0;
+}
+
+/*
+faq
+ */
+
+ html.light-mode .faqWrap a, html.light-mode .faqWrap a:visited{
+   border-bottom: 1px #ffffff00 solid;
+   transition: border 0.3s ease;
+ }
+
+ html.light-mode .faqWrap a:hover{
+   border-bottom: 1px #6420e0 solid;
+ }
+
+html.light-mode .themeChange{
+   background-color: rgba(249, 245, 255,1);
+ }
+
+html.light-mode .themeChange label{
+  color: #0c1221;
+}
+
+html.light-mode .themeChange [type="radio"]:checked+label:after{
+  background-color: #6420e0;
+  border-color: #6420e0;
+}
+
+
+
+/*
+solutions page
+ */
+
+
+html.light-mode .solutionShadow,
+html.light-mode .add-solution{
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.06),0 6px 20px 0 rgba(0,0,0,0.08);
+}
+
+
+
+html.light-mode .solution-footer{
+  background-color: rgba(249, 245, 255,0.8);
+}
+
+html.light-mode .solutions-list .collapsible-header{
+  background-color: #062a4e;
+  color: #fff;
+}
+
+html.light-mode .solution-footer .fa-trash-alt{
+  color: #062a4e;
+}
+
+html.light-mode .solution-footer .fa-trash-alt:hover{
+  color: #fc3c1d
+}
+
+html.light-mode .thumbs i{
+  color: #062a4e;
+}
+
+html.light-mode .thumbs a,
+html.light-mode .thumbs a:hover{
+  border: none;
+}
+
+html.light-mode .thumbs .fa-thumbs-down:hover,
+html.light-mode .thumbs .fa-thumbs-down.highlight{
+  color: #fc3c1d;
+}
+
+
+
+/*
+user
+ */
+
+html.light-mode .settingsLink{
+   border: 2px #6420e0 solid;
+ }
+
+html.light-mode .settingsLink:hover{
+   background: rgba(249, 245, 255, 0.5);
+ }
+
+html.light-mode input[type="text"].discordToken{
+   border: 2px #6420e0 solid;
+   background: #fff;
+   color: #6420e0;
+ }
+ html.light-mode input[type="text"].discordToken::selection{
+   background-color: #6420e00a;
+ }
+
+ html.light-mode img.svgDiagram{
+   filter: invert();
+ }
+
+ html.light-mode .card.careers-info b{
+   color: #6420e0;
+ }
+
+ html.light-mode .career-apply textarea.materialize-textarea:disabled {
+   color: #6420e0;
+   border-bottom: 0;
+ }
+ html.light-mode .career-apply textarea.materialize-textarea:disabled + label {
+   color: #10294c;
+ }
+
+
+
+
+ html.light-mode .information-banner{
+     background-color: #fff;
+     color: #0c1221;
+ }
+
+ html.light-mode .information-banner a,
+ html.light-mode .information-banner a:visited{
+   background-color: #feb32b;
+   color: #0c1221;
+ }
+
+html.light-mode .information-banner #bannerclose:hover{
+   color: #6420e0;
+ }

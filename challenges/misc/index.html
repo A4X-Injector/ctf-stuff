@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/challenges/misc/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; Misc challenges</title>
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+<link rel="stylesheet" href="../../static/css/katex.min.css" >
+<script defer src="../../static/js/katex.min.js"></script>
+<script defer src="../../static/js/katex-auto-render.min.js"></script>
+<script defer src="../../static/js/katex-render-options.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, katex_render_options);
+    });
+</script>
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cryptohack.org" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="https://cryptohack.org/static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="https://cryptohack.org/static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../../courses/index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+
+
+
+<div class="categoryDescription">
+  
+  <div class="categoryText">
+    <h2 class="categoryTitle">Misc</h2>
+    <p>A bunch of interesting stuff that doesn't fit anywhere else.</p>
+  </div>
+  <div class="categoryImage">
+  <img src="../../static/img/category/misc.png" alt="">
+  </div>
+  
+
+</div>
+
+
+<div class="row">
+    <div class="col s12 m6 noPadding">
+        <div class="left">
+        <select onchange="filterCategories(this);">
+            <option value="*">Show all stages</option>
+            
+            <option value="otp">One Time Pad</option>
+            
+            <option value="prng">PRNGs</option>
+            
+            <option value="lfsr">LFSR</option>
+            
+            <option value="elgamal">ElGamal</option>
+            
+            <option value="ssss">Secret Sharing Schemes</option>
+            
+            <option value="passwords">Password Complexity</option>
+            
+        </select>
+        </div>
+    </div>
+    <div class="col s12 m6 noPadding">
+      <p class="toggleCheckbox"><input type="checkbox" id="toggleSolved" class="filled-in"><label for="toggleSolved">Hide Solved Challenges</label></p>
+    </div>
+</div>
+
+<span class="stage" data-stage="otp">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>One Time Pad</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="otp" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="13" data-stage="otp">
+            <div id="header-gofast" data-challenge="gofast" class="collapsible-header">
+                
+                <i id="check-gofast" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-gofast" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Gotta Go Fast</div>
+                <span class="right">
+                    
+                    40 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../gofast/solves/index.html">
+                        <span id="solves-gofast">2211 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-gofast">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../gofast/solutions/index.html">
+                        32 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I won't have to worry about running out of entropy, I'm going to have my OTP generated forever with this new script!<br /><br />Connect at <code>socket.cryptohack.org 13372</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13372_04f86bd9467973586aed791d07f5d765.py" download>13372.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-gofast" class="preventToggle" data-challenge="gofast" data-points="40">
+                    <div class="input-field">
+                        <input id="flag-gofast" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-gofast">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="12" data-stage="otp">
+            <div id="header-noleaks" data-challenge="noleaks" class="collapsible-header">
+                
+                <i id="check-noleaks" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-noleaks" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">No Leaks</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../noleaks/solves/index.html">
+                        <span id="solves-noleaks">1676 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-noleaks">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../noleaks/solutions/index.html">
+                        45 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Each time you connect, I generate a new one time pad. I also check for leaks, so there's no chance you can learn anything about my secrets!<br /><br />Connect at <code>socket.cryptohack.org 13370</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13370_f382761c27b6c87f4222a1c417a00acd.py" download>13370.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-noleaks" class="preventToggle" data-challenge="noleaks" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-noleaks" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-noleaks">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="prng">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>PRNGs</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="prng" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="87" data-stage="prng">
+            <div id="header-lcg1" data-challenge="lcg1" class="collapsible-header">
+                
+                <i id="check-lcg1" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lcg1" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Lo-Hi Card Game</div>
+                <span class="right">
+                    
+                    120 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lcg1/solves/index.html">
+                        <span id="solves-lcg1">874 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lcg1">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lcg1/solutions/index.html">
+                        9 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I'm opening a virtual casino and this is my first game. It's all luck-based and biased towards the house so I'll be a multi-millionaire in no time.<br /><br />Connect at <code>socket.cryptohack.org 13383</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13383_529fcfd4b89604c8b3e79e6ec43dbb99.py" download>13383.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lcg1" class="preventToggle" data-challenge="lcg1" data-points="120">
+                    <div class="input-field">
+                        <input id="flag-lcg1" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lcg1">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="99" data-stage="prng">
+            <div id="header-roulette" data-challenge="roulette" class="collapsible-header">
+                
+                <i id="check-roulette" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-roulette" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Nothing Up My Sleeve</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../roulette/solves/index.html">
+                        <span id="solves-roulette">522 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-roulette">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../roulette/solutions/index.html">
+                        8 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    My first casino game was a big hit, but there was an issue with the RNG. Some players cheated and others thought it wasn't fair. This time I've picked a better RNG from a cryptographic standard, and I'm mixing in some lucky numbers chosen by the players so that everyone is happy.<br /><br />Connect at <code>socket.cryptohack.org 13387</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13387_470641ed098d10c444f9efb8d86af05f.py" download>13387.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-roulette" class="preventToggle" data-challenge="roulette" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-roulette" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-roulette">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="228" data-stage="prng">
+            <div id="header-rsa-vs-rng" data-challenge="rsa-vs-rng" class="collapsible-header">
+                
+                <i id="check-rsa-vs-rng" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-rsa-vs-rng" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">RSA vs RNG</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../rsa-vs-rng/solves/index.html">
+                        <span id="solves-rsa-vs-rng">484 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-rsa-vs-rng">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../rsa-vs-rng/solutions/index.html">
+                        8 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Here's a new fast way I've found for generating RSA keys for smart cards.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/rsa-vs-rng_abed7c4efbaae65394e7f00f48130da4.py" download>rsa-vs-rng.py</a><br />&nbsp; - <a href="../../static/challenges/flag_9713440954a452ff8c5e5b05247f19fe.enc" download>flag.enc</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/jschnei/index.html">jschnei</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-rsa-vs-rng" class="preventToggle" data-challenge="rsa-vs-rng" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-rsa-vs-rng" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-rsa-vs-rng">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="129" data-stage="prng">
+            <div id="header-lcg2" data-challenge="lcg2" class="collapsible-header">
+                
+                <i id="check-lcg2" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lcg2" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Trust Games</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lcg2/solves/index.html">
+                        <span id="solves-lcg2">419 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lcg2">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lcg2/solutions/index.html">
+                        6 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Following the issues with our casino games, we're testing a stronger random number generator. Can you win our trust by finding an attack on our latest model?<br /><br />Connect at <code>socket.cryptohack.org 13396</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13396_bcae019ec7234105fc3ef66c27405b08.py" download>13396.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/%24in/index.html">$in</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lcg2" class="preventToggle" data-challenge="lcg2" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-lcg2" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lcg2">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="lfsr">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>LFSR</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="lfsr" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="149" data-stage="lfsr">
+            <div id="header-lwin" data-challenge="lwin" class="collapsible-header">
+                
+                <i id="check-lwin" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lwin" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">L-Win</div>
+                <span class="right">
+                    
+                    120 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lwin/solves/index.html">
+                        <span id="solves-lwin">531 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lwin">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lwin/solutions/index.html">
+                        9 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Can you recover the input for a simple Linear Feedback Shift Register with unknown taps?<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/lwin_b0d2eaa5344ed00a3d85dc96af015e8f.py" download>lwin.py</a><br />&nbsp; - <a href="../../static/challenges/output_7e5c4d93fa5d065d105e32efd7ef9682.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Cryptanalyse/index.html">Cryptanalyse</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lwin" class="preventToggle" data-challenge="lwin" data-points="120">
+                    <div class="input-field">
+                        <input id="flag-lwin" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lwin">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="135" data-stage="lfsr">
+            <div id="header-jeff" data-challenge="jeff" class="collapsible-header">
+                
+                <i id="check-jeff" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-jeff" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Jeff&#39;s LFSR</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../jeff/solves/index.html">
+                        <span id="solves-jeff">406 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-jeff">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../jeff/solutions/index.html">
+                        10 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Jeff heard that LFSRs used as stream ciphers aren't very secure, so he combined three LFSRs together. Foolproof, right?<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/jeff_6f0cbc35544fb45343cd6ee532358f89.py" download>jeff.py</a><br />&nbsp; - <a href="../../static/challenges/output_d5e714c9cb62f14696f21db9c5a4a2e5.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Cryptanalyse/index.html">Cryptanalyse</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-jeff" class="preventToggle" data-challenge="jeff" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-jeff" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-jeff">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="158" data-stage="lfsr">
+            <div id="header-lfsr-destroyer" data-challenge="lfsr-destroyer" class="collapsible-header">
+                
+                <i id="check-lfsr-destroyer" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-lfsr-destroyer" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">LFSR Destroyer</div>
+                <span class="right">
+                    
+                    250 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../lfsr-destroyer/solves/index.html">
+                        <span id="solves-lfsr-destroyer">206 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-lfsr-destroyer">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../lfsr-destroyer/solutions/index.html">
+                        10 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    You are well on your way to mastering LFSRs if you can crack this. Hurry, your time is limited!<br /><br />Connect at <code>socket.cryptohack.org 13404</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13404_78642b9589677ed93133947f4f24428c.py" download>13404.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Cryptanalyse/index.html">Cryptanalyse</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-lfsr-destroyer" class="preventToggle" data-challenge="lfsr-destroyer" data-points="250">
+                    <div class="input-field">
+                        <input id="flag-lfsr-destroyer" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-lfsr-destroyer">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="elgamal">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>ElGamal</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="elgamal" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="88" data-stage="elgamal">
+            <div id="header-bit" data-challenge="bit" class="collapsible-header">
+                
+                <i id="check-bit" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-bit" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Bit by Bit</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../bit/solves/index.html">
+                        <span id="solves-bit">672 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-bit">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../bit/solutions/index.html">
+                        4 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I heard ElGamal has some cool properties. I've encrypted every bit with a different secret, so you'll never recover my flag.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_b7cb6015e70a394f3e58fdf2a61aa06f.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/output_1078aca02f2ab796a8c51773f3c332ee.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-bit" class="preventToggle" data-challenge="bit" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-bit" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-bit">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="ssss">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Secret Sharing Schemes</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="ssss" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="14" data-stage="ssss">
+            <div id="header-armory" data-challenge="armory" class="collapsible-header">
+                
+                <i id="check-armory" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-armory" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Armory</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../armory/solves/index.html">
+                        <span id="solves-armory">780 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-armory">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../armory/solutions/index.html">
+                        6 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Here's my improvement on Shamir's scheme with deterministically derived shares. Great for storing Bitcoin private keys and other secret data.<br> You've only got the first share and you need 3 to unlock the flag so you have no chance.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/armory_25821b41f40b195ef1c8d8ff97749a15.py" download>armory.py</a><br />&nbsp; - <a href="../../static/challenges/share_f6dca6a2f215b12ddebb68a90380542d.txt" download>share.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-armory" class="preventToggle" data-challenge="armory" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-armory" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-armory">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="94" data-stage="ssss">
+            <div id="header-toshitreasure" data-challenge="toshitreasure" class="collapsible-header">
+                
+                <i id="check-toshitreasure" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-toshitreasure" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Toshi&#39;s Treasure</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../toshitreasure/solves/index.html">
+                        <span id="solves-toshitreasure">555 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-toshitreasure">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../toshitreasure/solutions/index.html">
+                        13 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    You are hyperreality and you are playing an online treasure hunt with your team mpeg, codecrafting, RichGirlOnLSD and pogo.<br><br>There's one million dollars in a Bitcoin wallet - which nobody yet knows the address for - awaiting the first team to gain 5 of 6 SSSS shares and combine them to a private key. Each member of your team has found one share and you're ready to do the key ceremony to unlock the prize.<br><br><span class="note"><i class="fas fa-pencil-alt"></i>The SSSS implementation is simply the <a href="https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing#Python_example" target="_blank" rel="noopener">example code on Wikipedia</a>, with the 13th Mersenne prime. The server will tell you your share in the first message.</span> <br><br>You've all agreed to split the million dollars equally, however in a final moment of greed you decide you want it all for yourself!<br><br>Here's your evil plan:<br><br>  1. Disrupt the first combination by submitting a fake share. The others assume a mistake was made and try again.<br><br>  2. This time, submit a fake share such that the combined secret is a private key for a wallet that you own containing just $1k. This will confuse your teammates and make them think they have been cheated by the game creators, not you.<br><br>  3. Unlock the real wallet and use the funds to escape to an island nation where nobody will ever be able to find you.<br /><br />Connect at <code>socket.cryptohack.org 13384</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/hyper_privkey_1eee27d16c969fba26d706ffcb33b2f5.txt" download>hyper_privkey.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-toshitreasure" class="preventToggle" data-challenge="toshitreasure" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-toshitreasure" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-toshitreasure">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="passwords">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Password Complexity</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="passwords" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="147" data-stage="passwords">
+            <div id="header-schneierfact842" data-challenge="schneierfact842" class="collapsible-header">
+                
+                <i id="check-schneierfact842" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-schneierfact842" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Bruce Schneier&#39;s Password</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../schneierfact842/solves/index.html">
+                        <span id="solves-schneierfact842">693 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-schneierfact842">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../schneierfact842/solutions/index.html">
+                        6 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    <a href="https://www.schneierfacts.com/facts/842" target="_blank">https://www.schneierfacts.com/facts/842</a><br><br><span class="note"><i class="fas fa-pencil-alt"></i>The challenge server is running 64-bit Linux, which might explain if you are seeing different results locally.</span><br /><br />Connect at <code>socket.cryptohack.org 13400</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13400_dcf3cb755904e5c762a1dff3b4db64ff.py" download>13400.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/esrever/index.html">esrever</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-schneierfact842" class="preventToggle" data-challenge="schneierfact842" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-schneierfact842" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-schneierfact842">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="148" data-stage="passwords">
+            <div id="header-schneierfact842_2" data-challenge="schneierfact842_2" class="collapsible-header">
+                
+                <i id="check-schneierfact842_2" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-schneierfact842_2" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Bruce Schneier&#39;s Password: Part 2</div>
+                <span class="right">
+                    
+                    250 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../schneierfact842_2/solves/index.html">
+                        <span id="solves-schneierfact842_2">237 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-schneierfact842_2">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../schneierfact842_2/solutions/index.html">
+                        15 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Bruce Schneier's password was too easy to Bruce-force, so some Schneiertational complexity was added.<br /><br />Connect at <code>socket.cryptohack.org 13401</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13401_ec4ac92cc54df2ed096a0acee93be11e.py" download>13401.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/esrever/index.html">esrever</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-schneierfact842_2" class="preventToggle" data-challenge="schneierfact842_2" data-points="250">
+                    <div class="input-field">
+                        <input id="flag-schneierfact842_2" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-schneierfact842_2">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+
+        </div>
+        <script src="../../static/js/jquery.min.js"></script>
+        <script src="../../static/js/materialize.min.js"></script>
+        <script defer src="../../static/js/confetti.browser.min.js"></script>
+        <script src="../../static/js/api.js"></script>
+        <script src="../../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+
+
+<script>
+    var challenges_open = JSON.parse(localStorage.getItem("challenges-open")) || {"gofast": true, "noleaks": true};
+    Object.keys(challenges_open).forEach(function(el){
+        $(".collapsible-header#header-" + el).addClass("active");
+    });
+
+    $(".collapsible-header").on("click", function(){
+        var chall = $(this).data('challenge');
+        if(challenges_open.hasOwnProperty(chall)) {
+            delete challenges_open[chall];
+        } else {
+            challenges_open[chall] = true;
+            $('html, body').animate({
+                    scrollTop: $(this).offset().top -100
+            }, 700);
+        }
+        localStorage.setItem("challenges-open", JSON.stringify(challenges_open));
+    });
+
+    $(".preventToggle").on("click", function(){
+        event.stopPropagation();
+    });
+
+    var state = $(".collapsible-header.active").length == 0;
+    function updateButton(){
+        if(state){
+            $("#toggleState").html("Expand all challenges");
+        } else {
+            $("#toggleState").html("Collapse all challenges");
+        }
+
+    }
+    updateButton(state);
+    function toggle() {
+        if(state) {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+        } else {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        }
+        state = !state;
+        updateButton(state);
+    }
+    function filterCategories(t) {
+        var v = t.options[t.selectedIndex].value;
+        if(v == "*")
+            $(".stage").show();
+        else {
+            $(".stage[data-stage=" + v + "]").show();
+            $(".stage[data-stage!=" + v + "]").hide();
+        }
+    }
+    function toggleSolved(){
+      $('.fas.fa-star').each(function() {
+        if($(this).css('display') == 'block'){
+          if($(this).parent().next().css('display') == 'block'){
+              $(this).parent().toggle();
+              $(this).parent().click();
+              $(this).parent().next().hide();
+          }
+          else{
+            $(this).parent().toggle();
+          }
+        }
+      });
+    }
+
+
+    $("#toggleSolved").on("click", function(e){
+        // e.preventDefault();
+        toggleSolved();
+        // var text = $(this).next().text();
+        // $(this).next().text(
+        // text == "Hide Solved Challenges" ? "Show Solved Challenges" : "Hide Solved Challenges");
+    });
+
+
+    $("#toggleState").on("click", function(e){
+        // e.preventDefault();
+        toggle();
+    });
+    $(".stage-collapse").on("click", function(e){
+        // e.preventDefault();
+        var stage = $(this).data('collapse');
+        var header_selector = ".challenge[data-stage=" + stage + "] .collapsible-header";
+        var state = $(header_selector + ".active").length != 0;
+        if(state)
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        else
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+    });
+    $("form").submit(function(e) {
+        // Loading button
+        var loadBtn = $(this).find(".loader");
+        loadBtn.show();
+
+        var id = $(this).data("challenge");
+        var points = $(this).data("points");
+        var flag = $("#flag-" + id).val();
+        // var updatedScore = score + points;
+        console.log(id);
+        console.log(flag);
+        api.makeCall("/submit/" + id + ".json", {flag: flag, _csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function(data) {
+            if(data.code) {
+                loadBtn.hide();
+                Materialize.toast(data.message, 4000);
+            }
+            else {
+                // Materialize.toast("Correct flag, nice one!", 4000);
+                $("#uncheck-" + id).hide();
+                $("#check-" + id).show();
+                $("#header-" + id).click();
+
+                // update solves box
+                var solves_text = data.solves == 1 ? "Solve" : "Solves";
+                $("#solves-" + id).html(data.solves + " " + solves_text);
+                $("#solves-" + id).parent().show();
+                $("#solutions-" + id).show();
+                $("#youvesolved-" + id).show();
+                $("#empty-" + id).hide();
+                $("#flagform-" + id).hide();
+                if (window.handleCorrectFlag) { window.handleCorrectFlag(id); }
+
+                // update points at top
+                console.log(score);
+                console.log(points);
+                score = calculateLevel(score, points);
+                loadBtn.hide();
+                setTimeout(function(){ launchConfetti(); }, 250);
+            }
+        });
+        return false;
+    });
+</script>
+
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../../faq/index.html">FAQ</a><br>
+        <a href="../../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../../courses/intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../../courses/modular/index.html">Modular Arithmetic</a><br>
+        <a href="../../courses/symmetric/index.html">Symmetric Cryptography</a><br>
+        <a href="../../courses/public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../../courses/elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../general/index.html">General</a><br>
+        <a href="../aes/index.html">Symmetric Ciphers</a><br>
+        <a href="../maths/index.html">Mathematics</a><br>
+        <a href="../rsa/index.html">RSA</a><br>
+        <a href="../diffie-hellman/index.html">Diffie-Hellman</a><br>
+        <a href="../ecc/index.html">Elliptic Curves</a><br>
+        <a href="../hashes/index.html">Hash Functions</a><br>
+        <a href="../web/index.html">Crypto on the Web</a><br>
+        <a href="../post-quantum/index.html">Lattices</a><br>
+        <a href="../isogenies/index.html">Isogenies</a><br>
+        <a href="../zkp/index.html">Zero-Knowledge Proofs</a><br>
+        <a href="index.html">Miscellaneous</a><br>
+        <a href="../ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:30:51Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:30:51Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/challenges/misc/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:24 GMT -->
+</html>

@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/challenges/zkp/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; ZKPs challenges</title>
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+<link rel="stylesheet" href="../../static/css/katex.min.css" >
+<script defer src="../../static/js/katex.min.js"></script>
+<script defer src="../../static/js/katex-auto-render.min.js"></script>
+<script defer src="../../static/js/katex-render-options.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, katex_render_options);
+    });
+</script>
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cryptohack.org" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="https://cryptohack.org/static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="https://cryptohack.org/static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../../courses/index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+
+
+
+<div class="categoryDescription">
+  
+  <div class="categoryText">
+    <h2 class="categoryTitle">ZKPs</h2>
+    <p>Zero-knowledge proofs (ZKPs) are a technique that enable one party (the prover) to demonstrate to another party (the verifier) the truth of a certain statement without revealing any additional information besides the fact that the statement is true. The foundation for ZKPs was laid in 1985 by Goldwasser, Micali, Rackoff, Babai, and Moran, who won the first Gödel Prize for their contribution to theoretical computer science.<br /><br />ZKPs are an active field of research, and have many practical applications, including authentication systems, verified computing, and privacy-preserving blockchains.</p>
+  </div>
+  <div class="categoryImage">
+  <img src="../../static/img/category/zkp.png" alt="">
+  </div>
+  
+
+</div>
+
+
+<div class="row">
+    <div class="col s12 m6 noPadding">
+        <div class="left">
+        <select onchange="filterCategories(this);">
+            <option value="*">Show all stages</option>
+            
+            <option value="zkp-intro">Sigma Protocol</option>
+            
+            <option value="zkp-challenges">ZKP Challenges</option>
+            
+        </select>
+        </div>
+    </div>
+    <div class="col s12 m6 noPadding">
+      <p class="toggleCheckbox"><input type="checkbox" id="toggleSolved" class="filled-in"><label for="toggleSolved">Hide Solved Challenges</label></p>
+    </div>
+</div>
+
+<span class="stage" data-stage="zkp-intro">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Sigma Protocol</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="zkp-intro" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="258" data-stage="zkp-intro">
+            <div id="header-zkpintro" data-challenge="zkpintro" class="collapsible-header">
+                
+                <i id="check-zkpintro" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-zkpintro" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">ZKP Introduction</div>
+                <span class="right">
+                    
+                    5 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../zkpintro/solves/index.html">
+                        <span id="solves-zkpintro">1424 Solves</span>
+                    </a>
+                    
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    A zero-knowledge proof (ZKP) is a technique that enables one party (the prover) to demonstrate to another party (the verifier) the truth of a certain statement without revealing any additional information besides the fact that the statement is true. The core idea behind zero-knowledge proofs is that while it's straightforward to prove you have certain knowledge by disclosing it, the real challenge lies in proving you have that knowledge without actually revealing the knowledge itself or any details about it.<br><br><b>Properties</b><br><br>At a high-level, effective zero-knowledge proof algorithms embody three critical properties, "Completeness", "Soundness", and "Zero-Knowledge", which we will be exploring in detail over the following challenges.<br><br><b>Interactions</b><br><br>In a basic setting, meaningful zero-knowledge proofs require some form of interaction between the prover and the verifier. Typically, this interaction involves the verifier asking the prover one or more random questions. The randomness of these questions, coupled with the prover's correct responses, convinces the verifier of the prover's knowledge. Without this interaction, a verifier could potentially share the proof with a third party, falsely implying that they also possess the secret knowledge.<br><br><span class="note"><i class="fas fa-pencil-alt"></i>In specific models it's possible to have non-interactive zero-knowledge proofs thanks to the Fiat–Shamir heuristic, which we'll look at later.</span><br><br><b>Example</b><br><br>An example which is often used to intuitively understand the principle of zero-knowledge proof:<br><br>You need to prove to your color-blind friend Victor that two identically shaped balls—one red, one green—are distinct without revealing which is which, you use a specific proof system. You show him the balls, and he, unable to distinguish their colors, tests you. Victor hides the balls, shows one, and either switches it or not before showing one again. You must identify if he switched the ball. Repeating this process enough times (e.g., 50 times), and since you can reliably identify switches due to seeing colors, Victor becomes convinced the balls are different without learning which is red or green. This demonstration doesn't reveal any additional information, and so, is an example of a zero-knowledge proof.<br><br><b>Flag</b><br><br>The flag is <code>crypto{...}</code> with <code>...</code> completed with the year that Goldwasser et al published "The Knowledge Complexity of Interactive Proof Systems".<br /><br />Challenge contributed by <a class="gold-link" href="../../user/Ectario/index.html">Ectario</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-zkpintro" class="preventToggle" data-challenge="zkpintro" data-points="5">
+                    <div class="input-field">
+                        <input id="flag-zkpintro" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-zkpintro">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="256" data-stage="zkp-intro">
+            <div id="header-sigma-intro" data-challenge="sigma-intro" class="collapsible-header">
+                
+                <i id="check-sigma-intro" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-sigma-intro" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Proofs of Knowledge</div>
+                <span class="right">
+                    
+                    20 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../sigma-intro/solves/index.html">
+                        <span id="solves-sigma-intro">751 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-sigma-intro">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../sigma-intro/solutions/index.html">
+                        8 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Zero knowledge proofs are a tool in modern cryptography which allows you to prove that you know some witness which satisfies a relation, without revealing what the witness is. This has applications everywhere from signature schemes and privacy preserving cryptocurrencies, to one of the building blocks of secure multiparty computation. <br><br>For this first set of challenges, we are going to be looking at a protocol for proving knowledge of a discrete logarithm. The Prover (P) wants to prove to the Verifier (V) that she knows some witness $w$ such that $ g^{w} =y \mod p$ where $g$ generates a group $\Fp^*$ where computing the Discrete Logarithm (DLOG) is hard. <br><br><span class="note"><i class="fas fa-brain"></i>More generally, we talk about a proving knowledge of the public information (the "statement") and the witness satisfying some relation, for example, for the DLOG  relation $R_{\text{dlog}}$. We have statement $(p,q,g,y)$ defining a subgroup of $\Fp^{*}$ generated by $g$ of order $q$, where $p,q$ are prime, and $y$ is an element of the subgroup. The "Witness" $w$ is then the discrete logarithm of $y$ with respect to $g$, which we denote as tuple $((p,q,g,y),w) \in R_{\text{dlog}}$ </span><br><br>We start with a simple interactive protocol by Schnorr to prove knowledge of a discrete logarithm for public parameters $x=(p,q,g,y)$ and private input $w$ where $g^{w}=y \mod p$.<br><br><img style="max-width: min(100%, 800px); display: block; margin: 3em auto;" src="../../static/img/zk.png" alt="DLOG Sigma Protocol"><br><br><span class="note"><i class="fas fa-brain"></i> Note that $z$ is computed modulo $q$. This is because these operations are happening in the "exponent" of the verification equation, where the group generated by $g$ has order $q$.</span><br><br>Note the three message form of this protocol:<br><br><ol> <li>P sends some message $a$ to V</li> <li>V sends a random $t$-bit string to P (the challenge)</li> <li>P sends some message $z$ to V. V now decides to accept or reject $(\top,\bot)$ based on $(x,a,e,z)$</li> </ol><br><br>This is an instance of a so-called <em>Sigma protocol</em>, often denoted $\Sigma$-Protocol. A type of zero-knowledge proof with many nice properties.<br><br>To show that something of this structure is a $\Sigma$-Protocol, there are three additional properties the protocol has to satisfy, which we will now introduce over the next three challenges:<br><br><ul> <li>Completeness: if P,V run the protocol on public input $x$ and private input $w$, where $(x,w) \in R$, then V returns $\top$.  <li>Special Soundness: "If P can convince V, then P knows $w$" <li>SHVZK: "V doesn't learn anything about $w$ from P" </ul><br><br>We will discuss Special Soundness and SHVZK (Special-Honest-Verifier-Zero-Knowledge) more in following challenges. For now, lets start with Completeness!<br><br><span class="note"><i class="fas fa-brain"></i> The aim of this challenge series is to give a first introduction to the key concepts of modern zero knowledge protocols. For those wishing to see a more formal treatment, I recommend resources such as the <a href="https://cs.au.dk/~ivan/Sigma.pdf">$\Sigma$-Protocols lecture notes by Damgård</a> on which served as the inspiration for some of these challenges.</span><br><br>Can you implement P's side of the protocol, and prove to the server that you know a witness $w$ that satisfies the relation $y = g^{w} \mod P$, making it return <code>accept</code>?<br><br><span class="note"><i class="fas fa-pencil-alt"></i> Note: The next few challenges in this set aren't built to be difficult "CTF" challenges, but rather built to give you an intuition for how we construct and prove the security of Zero Knowledge protocols. For people interested in learning, it's recommended for your solve scripts to try and follow the protocol/challenge suggestions in your solve scripts as well. (For example, making sure to sample $r$ randomly each time rather than fixing it, etc.) </span><br /><br />Connect at <code>socket.cryptohack.org 13425</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13425_eae1ef15ed9cf9c7ea84ae9e7e27ccab.py" download>13425.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/killerdog/index.html">killerdog</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-sigma-intro" class="preventToggle" data-challenge="sigma-intro" data-points="20">
+                    <div class="input-field">
+                        <input id="flag-sigma-intro" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-sigma-intro">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="250" data-stage="zkp-intro">
+            <div id="header-sigma-special-soundness" data-challenge="sigma-special-soundness" class="collapsible-header">
+                
+                <i id="check-sigma-special-soundness" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-sigma-special-soundness" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Special Soundness</div>
+                <span class="right">
+                    
+                    25 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../sigma-special-soundness/solves/index.html">
+                        <span id="solves-sigma-special-soundness">678 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-sigma-special-soundness">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../sigma-special-soundness/solutions/index.html">
+                        8 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    The last challenge showed that this protocol satisfies (perfect) completeness!  That is, if a prover and verifier follow the protocol on valid inputs, and the prover knows the real witness, the verifier will always accept.<br><br>The second property a protocol must have to be a $\Sigma$-Protocol is Special Soundness.  We will call the messages sent between P and V, $(a,e,z)$, a "transcript". <br><br>Special soundness is defined (roughly) as follows: Given any two accepting transcripts $(a,e,z)$ and $(a,e',z')$ proving the same relation, where $e \neq e'$, you can efficiently compute a witness for this relation.<br><br>For our current protocol, this means that for a given $P,q,g,y$ and accepting transcripts $(a,e,z)$ and $(a,e',z')$ where $e \neq e'$, we can efficiently compute a witness $w$ such that $g^w = y \mod P$.<br><br><span class="note"><i class="fas fa-brain"></i>This doesn't require that the $w$ computed is the same one that the Prover was using. While in our current case $w$ is unique, so it must be the same, there exist other classes of relations where there are many valid witnesses. And computing any valid witness is enough for special soundness.</span><br><br>This property is very powerful, and is the essence of what we mean when we talk about "proving knowledge" of something. <br><br>Imagine a Prover has sent an $a$ to the Verifier, and receives a random challenge $e$ back, the Prover now has to produce a $z$ such that the verifier accepts the transcript.<br><br>If the prover can do this, then either the Prover was only able to complete the transcript for one specific $e$, (in which case he got $1/2^t$ lucky, and his probability of convincing the verifier is negligible in the security parameter.) Or the Prover was able to complete the transcript for more than one $e$ challenge.<br><br>However, being able to complete a transcript for more than one $e$ challenge is equivalent to being able to produce at least two accepting transcripts locally, which is equivalent to computing the witness.<br><br>So any Prover who can convince the verifier he knows $w$ with non negligible probability knows $w$, (or is able to efficiently compute it, which we treat as equivalent.)<br><br><span class="note"><i class="fas fa-brain"></i> You can see special soundness as saying "if the prover can produce a $z$ which the verifier accepts for at least two challenges after committing to an $a$, then $w$, or information to compute $w$, is somewhere in his head." </span><br><br>For this challenge, you are the verifier, and the prover will accidentally reuse the same $a$ over two runs. Show that this lets you extract $w$ from her!<br><br><span class="note"><i class="fas fa-pencil-alt"></i>Look at the relation between $z, e, z', e'$ and $r$</span><br /><br />Connect at <code>socket.cryptohack.org 13426</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13426_2434b3b3f4044a63115e18e476f420db.py" download>13426.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/killerdog/index.html">killerdog</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-sigma-special-soundness" class="preventToggle" data-challenge="sigma-special-soundness" data-points="25">
+                    <div class="input-field">
+                        <input id="flag-sigma-special-soundness" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-sigma-special-soundness">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="255" data-stage="zkp-intro">
+            <div id="header-sigma-shvzk" data-challenge="sigma-shvzk" class="collapsible-header">
+                
+                <i id="check-sigma-shvzk" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-sigma-shvzk" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Honest Verifier Zero Knowledge</div>
+                <span class="right">
+                    
+                    30 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../sigma-shvzk/solves/index.html">
+                        <span id="solves-sigma-shvzk">609 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-sigma-shvzk">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../sigma-shvzk/solutions/index.html">
+                        6 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    The previous challenge showed that this protocol satisfies Special Soundness! <br><br>That is, if P can convince V that he knows $w$ with non-negligible probability, then we are able to efficiently "extract" $w$ from P, which shows that $w$ (or material to efficiently compute the $w$) "exists" somewhere inside the prover.<br><br><span class="note"><i class="fas fa-brain"></i><em>Special Soundness vs Soundness</em>: Soundness is the property that a prover who doesn't know the witness cannot convince the verifier to accept with probability higher than 1/challenge space. Special soundness is a stronger property used when discussing $\Sigma$-Protocols and directly implies soundness, (can you see why?) but also provides many other nice properties for $\Sigma$-Protocols like witness extraction, some of which we will use later.</span><br><br>The final property is <em>(Special-)Honest-Verifier-Zero-Knowledge</em>. This is a bit of a mouthful, so lets break it down.<br><br><em>Honest Verifier</em>: This property is specifically looking at the case of a prover interacting with an <em>honest</em> verifier. That is a verifier who will follow the protocol exactly. Specifically this means that $e$ is guaranteed to be a uniformly random $t$-bit bitstring, and independent of all other values in the protocol.<br><br><em>Zero Knowledge</em>: This property means that the Verifier learns "nothing" about the witness. The way we prove this is by showing that there exists an efficient simulator S, who on input $S(x,e)$, can produce a satisfying transcript $(a,e,z)$ which is <em>indistinguishable</em> from a transcript of a real interaction between a Prover and a Verifier. <br><br>In our specific case this means, $S((p,q,g,y), e)$ -> $(a,e,z)$ where $(a,e,z)$ is an accepting transcript proving knowledge of some witness $w$ such that $y = g^w \mod p$.<br><br><span class="note"><i class="fas fa-brain"></i>The word indistinguishable here is important. In formal proofs you need to show that the distributions of each message in the transcript generated by the simulator are (computationally/statistically) indistinguishable from message produced in the real protocol between an honest prover/verifier.</span><br><br><span class="note"><i class="fas fa-brain"></i> <em>Special</em>: In SHVZK the simulator takes $(\texttt{parameters},e)$ and produces $(a,e,z)$ whereas in HVZK the simulator is allowed to choose $e$ itself. There are efficient generic transformations which make an HVZK protocol into a SHVZK protocol, so the difference isn't important here. </span><br><br>Note that the simulator <em>never received $w$ as an input</em>, so it doesn't know the witness. And it has to be efficient, so (assuming the discrete logarithm problem is hard) it can't efficiently compute $w$ either. <br><br>The trick here is that the simulator is allowed to select its $a$ value <em>after</em> seeing the challenge, allowing it to then sample a uniformly random $z \in \Fq^*$, and then compute an $a$ such that $(a,e,z)$ satisfies the verifiers checks! <br><br>Note the following observations:<br><br><ol> <li>If there exists Simulator which can efficiently produce a satisfying transcript $(a,e,z)$ from only public data, then it follows that a verifier having access to an accepting $(a,e,z)$ should give it no advantage in computing the witness $w$. This is because the Verifier can just create arbitrary many accepting $(a,e,z)$ transcripts itself by just running the Simulator locally.</li> <li>The only difference in the real protocol is that the verifier generates challenge $e$ after seeing $a$. However, since an honest verifier is sampling $e$ uniformly at random, it can't actually influence the protocol in any way as a result of having seen $a$ before it chose $e$. Indeed the $e$ value could just as well have been randomly sampled by and sent from the Prover!</li> <li>Due to (2), the fact that the verifier sees $a$ first, then sees $e$, then $z$, should give it no advantage in learning $w$ compared to just having seen the complete transcript at the end. And by (1), seeing the complete transcript doesn't teach it anything about $w$, since it could have computed any number equivalent transcripts locally without even talking to the Prover.</li> </ol><br><br>This shows that for an Honest verifier, if there exists such a simulator, then from completing the protocol with P the verifier <em>doesn't learn anything extra that it couldn't have efficiently computed locally</em>, other than the fact that P knows $w$.<br><br><span class="note"><i class="fas fa-brain"></i> This technique gives the simulator "more power" than the Prover would have in the real world. However, it does not create a gap between what the Verifier is able to learn from P in the Simulator world and the real world. This is a very common technique for proving that a protocol is zero knowledge. In this case it's allowing the simulator to select $a,z$ out of order, but other protocols might use things like programmable random oracles, a trapdoored common reference string or some other simulator "advantage" to allow simulation or extraction.</span><br><br>For this challenge, you'll construct such a simulator :)<br><br><span class="note"><i class="fas fa-pencil-alt"></i>Note: hint: Start by generating a uniformly random $z$ (this is required for the indistinguishability property mentioned above), then look at what the verifier actually checks, to work out how to compute an $a$ such that $(a,e,z)$ is an accepting transcript.</span><br /><br />Connect at <code>socket.cryptohack.org 13427</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13427_ee325da3215875e43f67b397f8d111c7.py" download>13427.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/killerdog/index.html">killerdog</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-sigma-shvzk" class="preventToggle" data-challenge="sigma-shvzk" data-points="30">
+                    <div class="input-field">
+                        <input id="flag-sigma-shvzk" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-sigma-shvzk">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="257" data-stage="zkp-intro">
+            <div id="header-sigma-nizk" data-challenge="sigma-nizk" class="collapsible-header">
+                
+                <i id="check-sigma-nizk" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-sigma-nizk" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Non-Interactive</div>
+                <span class="right">
+                    
+                    35 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../sigma-nizk/solves/index.html">
+                        <span id="solves-sigma-nizk">565 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-sigma-nizk">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../sigma-nizk/solutions/index.html">
+                        6 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    We have now shown that the Schnorr protocol for proving knowledge of a discrete logarithm relation is a $\Sigma$-Protocol! We did this by showing that it has the correct 3 move pattern, and satisfies the properties of Completeness, Special Soundness and SHVZK (Special Honest-Verifier Zero-Knowledge.)<br><br>While this took a little bit of work to prove, being a $\Sigma$-Protocol carries many nice advantages. For example, in this challenge we will explore how any $\Sigma$-Protocol can be made into a non-interaction zero knowledge proof (NIZK) essentially for free, using a generic transformation, first formalised by Fiat and Shamir!<br><br>Recall how SHVZK noted that for the honest verifier case, the only input the verifier has to the protocol is to supply a uniformly random $t$-bit string, after the prover has committed to an $a$ value.<br><br>It follows that the receiver doesn't necessarily need to sample this randomness itself, as long as it is uniformly randomly sampled <emph>after</emph> the prover has committed to his $a$ value. Luckily we have a primitive in cryptography which takes an input, and returns a (supposedly) uniformly random value based on that input: a hash function!<br><br>The observation of Fiat and Shamir was that we can replace the random value from the prover by the output of a hash function run on the first message of the protocol, and get the same security properties.<br><br>Note that this does allows the Prover to re-sample many $e$ values very quickly by just brute forcing $a$ values locally. However from the Special Soundness and SHVZK we know that for a given $a$, a Prover who does not know the witness $w$ will only be able to answer at most one $e$ with a valid $z$. This means each query to the hash function will have a $1$ in $2^{t}$ probability of leading to a valid transcript $(a, e=\text{hash}(a), z)$, so the chances of a (polynomial in the security parameter) bounded cheating prover forging a proof is negligible.<br><br><span class="note"><i class="fas fa-pencil-alt"></i> Note: the exact values put into the hash are very important here. In general you want to hash all the public inputs and first messages, and in more complicated protocols (and in CTFs) it is very common to see vulnerabilities based on Fiat-Shamir transforms where not the entire input was hashed, letting malicious provers modify parts of their initial message/public input data after computing $e$, and forging proofs in this way. </span><br><br><span class="note"><i class="fas fa-brain"></i> Unnecessary theory for those interested: The notion of a "Proof of Knowledge" (as formalised by Bellare and Goldreich in '92) is as follows: If there exists an extractor, which given black box access to an efficient Prover P, can efficiently extract a witness $w$, then P "knows" $w$.<br><br>For a special-sound sigma protocol, the following is an extractor (E) which can recover $w$ given black-box rewinding access to P:<br><br><ol> <li>E receives $a$ from P, sends some random $e$, and receives $z$</li> <li>E then rewinds P back to it's state just after it sent $a$</li> <li>E then resamples a random $e'$ and sends that to P, and receives a $z'$ from P.</li> <li>E now has two satisfying transcripts $(a,e,z)$,$(a,e',z')$ where $e \neq e'$, so by special soundness can recover $w$</li> </ol><br><br>This rewinding technique is a standard way of showing that for some well defined prover, simply being able to rewind it to an earlier state is enough for it to leak $w$.<br><br>For Fiat Shamir, you may notice this extractor no longer works if $e=H(a)$ is always the same. This is where cryptographers model hash functions as something called a <em>Random Oracle</em> (RO). RO's are an idealised version of a hash function, which upon receiving an input for the first time returns a uniformly random value, and notes down what it returned. If it receives the same message again it returns the same value as previously. <br><br>Fiat-Shamir NIZK's are typically proved secure in the Programmable Random Oracle model, where we give the extractor the ability to see queries to the RO and control the initial output of the RO. The extractor then observes when P calls RO($a$), makes it return one random value, rewinds P and the RO back to before the query, and makes the RO return a different random value the second time.<br><br>These transformations (and their limitations) are generally assumed knowledge within the research community, and one of the strengths of constructions like $\Sigma$-Protocols is that showing your protocol is one is enough to let you handwave away the "nizk-ification" as "using Fiat Shamir in the RO model we get...". But for those interested in a formal treatment, see fx. <a href="https://eprint.iacr.org/2023/147.pdf">this result from Eurocrypt '22</a></span><br><br>What is especially cool about this transformation (beside it making the protocol fully non interactive) is that it also removes all of the verifiers inputs from the protocol. This means that there is nothing a malicious verifier can actually do to try and break the protocol/diverge from what an honest verifier would do. So the fact that the sigma protocol is Honest Verifier Zero Knowledge, means this generic Fiat-Shamir transform also makes the protocol Zero-Knowledge even against malicious adversaries.<br><br>This has made this protocol a provably secure, efficient way of securely and non interactively proving knowledge of a secret DLOG relation, against potentially malicious verifiers.<br><br>In this challenge you'll construct a Fiat-Shamir NIZK proving knowledge of the DLOG relation.<br /><br />Connect at <code>socket.cryptohack.org 13428</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13428_1607c0c5ffb6d27cc09b7a9fd1fab436.py" download>13428.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/killerdog/index.html">killerdog</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-sigma-nizk" class="preventToggle" data-challenge="sigma-nizk" data-points="35">
+                    <div class="input-field">
+                        <input id="flag-sigma-nizk" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-sigma-nizk">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="251" data-stage="zkp-intro">
+            <div id="header-sigma-too-honest" data-challenge="sigma-too-honest" class="collapsible-header">
+                
+                <i id="check-sigma-too-honest" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-sigma-too-honest" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Too Honest</div>
+                <span class="right">
+                    
+                    50 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../sigma-too-honest/solves/index.html">
+                        <span id="solves-sigma-too-honest">522 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-sigma-too-honest">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../sigma-too-honest/solutions/index.html">
+                        7 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Recall that we only proved Schnorr's protocol to be SHVZK, and while this was enough to make maliciously secure NIZK's, this leaves the question of "what could happen if V isn't honest?"<br><br>This challenge is an implementation of Girault's identification protocol for proving knowledge of a witness for a DLOG relation, but modulo some composite $N$ instead of a prime. <br><br>You are the verifier, and the prover will show that they know the flag using an interactive $\Sigma$-Protocol. Extract the flag by selecting a malicious $e$.<br><br><span class="note"><i class="fas fa-brain"></i>Note that proving something to be a $\Sigma$-Protocol only makes it secure against an "honest" verifier. If we want to use a protocol in a setting where the verifier can't be trusted to be honest, you can either make the proof non-interactive, or convert the SHVZK protocol into a maliciously secure ZK protocol, (there exist generic transformations which generally add another round of interaction.)</span><br /><br />Connect at <code>socket.cryptohack.org 13429</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13429_2520b4ebce10bd8b830bc5dc3d67da2b.py" download>13429.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/oberon/index.html">oberon</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-sigma-too-honest" class="preventToggle" data-challenge="sigma-too-honest" data-points="50">
+                    <div class="input-field">
+                        <input id="flag-sigma-too-honest" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-sigma-too-honest">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="253" data-stage="zkp-intro">
+            <div id="header-sigma-or-proof" data-challenge="sigma-or-proof" class="collapsible-header">
+                
+                <i id="check-sigma-or-proof" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-sigma-or-proof" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">OR Proof</div>
+                <span class="right">
+                    
+                    75 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../sigma-or-proof/solves/index.html">
+                        <span id="solves-sigma-or-proof">398 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-sigma-or-proof">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../sigma-or-proof/solutions/index.html">
+                        4 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    We have already seen how proving a protocol to be a $\Sigma$-Protocol essentially gives us a NIZK transformation for free. But it also opens up a wide range of results, constructions and tools from literature which allow us to easily compose simpler $\Sigma$-Protocols, using them as the building blocks for much more complicated functionalities.<br><br>One of these basic constructions is the OR-proof. That is, given two $\Sigma$-Protocols $\Sigma_{1}$ and $\Sigma_{2}$, there is a generic transform which will give us a new $\Sigma$-Protocol $\Sigma_{3}$ which is the OR of $\Sigma_{1}$ and $\Sigma_{2}$.<br><br><span class="note"><i class="fas fa-brain"></i> Let prover P be given inputs $x_{0},x_{1},w$, where $w$ is a witness such that either $(x_{0},w) \in R$ or $(x_{1},w) \in R$. The $\Sigma_{OR}$ protocol will allow P to prove he knows a witness to one of these cases, without revealing which he knows the witness to.<br><br>This is a very useful primitive for building more advanced protocols, allowing you to compose the OR of knowledge of a witness for arbitrary many relations together into one protocol.<br> </span><br><br>The protocol is as follows, for public inputs $(x_{0}, x_{1})$ where P has a witness for $x_{b}$:<br><br><ol> <li>For protocol $(1-b)$, P samples a random $e_{1-b}$, then runs the simulator from $\Sigma_{1-b}$ to get accepting transcript $(a_{1-b},e_{1-b},z_{1-b})$</li> <li>For Protocol $b$, P computes $a_{b}$ honestly</li> <li>P sends $(a_{0}, a_{1})$ to V</li> <li>V sends random challenge $s$ to P</li> <li>P sets $e_{b} = s \oplus e_{1-b}$</li> <li>P uses $(a_{b},e_{b},w_{b})$ to honestly compute $z_{b}$, getting accepting transcript $a_{b},e_{b},z_{b}$</li> <li>P sends $t_{0}=(a_{0},e_{0},z_{0}),t_{1}=(a_{1},e_{1},z_{1})$ to V</li> <li>V accepts if $e_{0} \oplus e_{1} = s$, and both transcripts $t_{0}$ and $t_{1}$ are accepting w.r.t the relevant public parameters.</li> </ol><br><br><span class="note"><i class="fas fa-brain"></i>The intuition behind this protocol is as follows. We know from SHVZK that if we get to choose $e$ before $a$, then we can forge a transcript which is indistinguishable from a real accepting transcript. In the OR protocol, the prover is essentially providing a valid transcript for both $\Sigma_{0}$ and $\Sigma_{1}$, where the $e$ values have to $xor$ to the verifiers challenge. This lets the prover select exactly one of the $e$ values itself. For the branch it does not have a witness for it uses its SHVZK simulator with this selected $e$, creating a full transcript locally and sending the $a$ for that transcript, and then honestly creates the other transcript running the real protocol against the verifier, with the xor of it's simulated $e$ and the verifiers challenge as the honest protocol challenge.</span><br><br>The basic idea is P simulates the half of the protocol he has no witness for, by picking that challenge. This results in the $s$ received from the verifier uniquely determining the challenge for the other protocol, but he knows the witness for that half so he can complete the remaining half honestly.<br><br>In this challenge you will show that the OR proof is a $\Sigma$-Protocol, by going through completeness, extracting a witness to show special-soundness and simulating a transcript to show SHVZK.<br><br><b>This challenge is hosted on the CTF archive. Find the corresponding challenge in that category, solve it, then enter the flag here.</b><br /><br />Challenge contributed by <a class="gold-link" href="../../user/killerdog/index.html">killerdog</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-sigma-or-proof" class="preventToggle" data-challenge="sigma-or-proof" data-points="75">
+                    <div class="input-field">
+                        <input id="flag-sigma-or-proof" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-sigma-or-proof">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="249" data-stage="zkp-intro">
+            <div id="header-sigma-hamiltonicity" data-challenge="sigma-hamiltonicity" class="collapsible-header">
+                
+                <i id="check-sigma-hamiltonicity" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-sigma-hamiltonicity" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Hamiltonicity 1</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../sigma-hamiltonicity/solves/index.html">
+                        <span id="solves-sigma-hamiltonicity">281 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-sigma-hamiltonicity">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../sigma-hamiltonicity/solutions/index.html">
+                        3 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    So far we've only been looking at $\Sigma$-Protocols with one round, where there is a large enough challenge space that the probability of randomly sampling a specific $e$ is negligible in the security parameter. While this works well for $\Sigma$-Protocols like Schnorrs, there are other classes of relations we wish to prove witnesses of where this pattern isn't so convenient.<br><br>In this challenge we are going to look at an example of a $\Sigma$-Protocol which uses a one bit challenge, giving the Prover a 50% chance of "guessing" the challenge correctly. While this gives a Soundness error of $1/2$, we can then repeat the protocol $t$ number of times, to bootstrap this soundness error to $2^{-t}$ until it is negligible in the security parameter.<br><br>These types of protocols are generally based around making the prover commit to some information, then being asked to do one of two actions based on what he committed to, where a prover who can answer both challenges must know the witness. While the previous $\Sigma$-Protocols we looked at were only easily realisable for problems with certain types of structure, this new technique lets us start doing zero knowledge for a huge range of types of relations. <br><br>The $\Sigma$-Protocol we are going to look at now is a $\Sigma$-Protocol for proving that a given graph includes a Hamiltonian cycle. A Hamiltonian cycle is a path through a graph which visits each node exactly once, ending at the same node which it started at. <br><br><span class="note"><i class="fas fa-brain"></i>The reason this specific protocol is interesting is because the problem of finding if a graph has a Hamiltonian cycle is part of a class of decision problems called NP-Complete. To handwave some complexity theory, this implies that any problem in NP can be embedded into an instance of the Hamiltonian cycle problem.<br>This is a very important result, because it means that if we have a $\Sigma$-Protocol for proving knowledge of a Hamiltonian cycle in a graph, we by extension have a $\Sigma$-Protocol for ANY relation in NP! <br></span><br><br>The protocol runs as follows, for Prover P and Verifier V, with public input graph $G$ with $N$ nodes, and private input $w$ being a Hamiltonian cycle in $G$.<br><br><ol> <li>P encodes $G$ as a $N \times N$ matrix, where $1$ at index $(i,j)$ signifies that $G$ has an edge going from node $i$ to node $j$, while $0$ signifies no such edge.</li> <li>P commits to each entry in $G$ using an information theoretically hiding commitment, we call this $G'$</li> <li>P samples a random permutation $\texttt{perm}$ and applies this permutation to each row and column of the$G'$</li> <li>P sends $a = G'$ to V</li> <li>V samples a challenge random bit $e'$, and sends it to P</li> <li>If $e = 1$: </li> <ul> <li>P computes the cycle in $G'$, denoted $\texttt{cycle}'$ by applying $\texttt{perm}$ to the cycle $w$</li> <li>P sets $\texttt{openings}$ to the randomness needed to open only the commitments on this cycle</li> <li>P sets $z = (\texttt{cycle}', \texttt{openings})$ </li> </ul> <li>If <Code>e = 0</Code>:</li> <ul> <li>P sets $\texttt{openings}$ to the randomness needed to open every entry in $G'$</li> <li>P sets $z = (\texttt{perm}, \texttt{openings})$ </li> </ul> <li>P sends $z$ to V</li> <li>If $e = 1$:</li> <ul> <li>V checks that $\texttt{cycle}'$ is a Hamiltonian path in $G'$</li> <li>V uses $\texttt{openings}$ to verify that all edges in the cycle are commitments to $1$</li> <li>If both satisfy, V returns \top, otherwise \bot</li> </ul> <li>If $e = 0$:</li> <ul> <li>V applies $\texttt{perm}$ to $G$ to get $G''$</li> <li>V uses $\texttt{openings}$ to open every entry in $G'$ </li> <li>If $G' = G''$, V returns \top, otherwise \bot</li> </ul> </ol><br><br>Here is an (informal) argument for why this is a $\Sigma$-Protocol. For a more formal treatment, see <a href="https://cs.au.dk/~ivan/CPT1.pdf">Lecture notes by Damgård</a>.<br><br><ol> <li>3 move form: The protocol has the $(a,e,z)$ form, where $e$ is a random (1) bit string</li> <li>Correctness: By inspection of the protocol, if P knows $w$ and follows the protocol, an honest V should always accept</li> <li>Special Soundness: Given accepting transcripts $(a,0,z),(a,1,z')$: Note $z'$ gives us $w$ which is a Hamiltonian cycle in $G'$, and $z$ gives us the permutation $G -> G'$. We can simply invert the permutation to get a $w'$ which is a Hamiltonian cycle in $G$ </li> <li>SHVZK: Basic simulator idea is: given $(G,[e_{0}, e_{1}....e_{t}])$</li> <li>for $i$ in range($t$)</li> <ol> <li>Sample random bit $e'$</li> <li>if $e' = 0$: commit to a random permutation of G and set this as $a$</li> <li>if $e' = 1$: commit to a random graph $G_2$ which you know a Hamiltonian cycle in as $a$</li> <li>if $e = e'$, generate a satisfying $z$ (either open to $G$, or open only the cycle you know in $G_2$), $(a,e,z)$ is a satisfying transcript</li> <li>Otherwise if $e \neq e'$, rewind to step 1</li> </ol> </ol><br><br>This challenge is about a Fiat-Shamir'd implementation of this protocol. To get the flag you need to convince the server that you know a Hamiltonian cycle in graph $G$, despite $G$ <emph>NOT</emph> having such a cycle. (Thereby breaking special soundness, and therefore soundness.)<br><br><span class="note"><i class="fas fa-brain"></i> Hint: Look at how the fiat shamir is implemented, something seems fishy...</span><br><br><span class="note"><i class="fas fa-pencil-alt"></i> As this protocol is somewhat complicated, we have included the script <code>example.py</code>, which uses the <code>pwntools process()</code> function to locally run the challenge.<br><br>This script will run the Prover side protocol honestly, to give you a starting point. And it will successfully solve the challenge when $G$ is set to a graph which has a Hamiltonian, which the prover knows!<br><br>Such a graph has been included in the challenge file, but will only be used by the verifier if the "LocalTest" boolean is set to True, so to locally test out the protocol you can set this to True, and run example.py to get the local flag! </span><br><br><b>This challenge is hosted on the CTF archive. Find the corresponding challenge in that category, solve it, then enter the flag here.</b><br /><br />Challenge contributed by <a class="gold-link" href="../../user/killerdog/index.html">killerdog</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-sigma-hamiltonicity" class="preventToggle" data-challenge="sigma-hamiltonicity" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-sigma-hamiltonicity" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-sigma-hamiltonicity">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="259" data-stage="zkp-intro">
+            <div id="header-sigma-hamiltonicity2" data-challenge="sigma-hamiltonicity2" class="collapsible-header">
+                
+                <i id="check-sigma-hamiltonicity2" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-sigma-hamiltonicity2" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Hamiltonicity 2</div>
+                <span class="right">
+                    
+                    175 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../sigma-hamiltonicity2/solves/index.html">
+                        <span id="solves-sigma-hamiltonicity2">171 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-sigma-hamiltonicity2">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../sigma-hamiltonicity2/solutions/index.html">
+                        3 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    In the last challenge we showed how <em>not</em> to do the Fiat-Shamir transform for a multi-round $\Sigma$-Protocol. This time we've been a little bit more careful and implemented iterated Fiat-Shamir hashing properly.<br><br>Can you break it again?<br><br><span class="note"><i class="fas fa-pencil-alt"></i> As this protocol is somewhat complicated, we have included the script <code>example.py</code>, which uses the <code>pwntools process()</code> function to locally run the challenge.<br><br>This script will run the Prover side protocol honestly, to give you a starting point. And it will successfully solve the challenge when $G$ is set to a graph which has a Hamiltonian cycle, which the prover knows!<br><br>Such a graph has been included in the challenge file, but will only be used by the verifier if the "LocalTest" boolean is set to True, so to locally test out the protocol you can set this to True, and run $example.py$ to get the local flag!</span><br><br><b>This challenge is hosted on the CTF archive. Find the corresponding challenge in that category, solve it, then enter the flag here.</b><br /><br />Challenge contributed by <a class="gold-link" href="../../user/killerdog/index.html">killerdog</a> and <a class="gold-link" href="#">Lance Roy</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-sigma-hamiltonicity2" class="preventToggle" data-challenge="sigma-hamiltonicity2" data-points="175">
+                    <div class="input-field">
+                        <input id="flag-sigma-hamiltonicity2" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-sigma-hamiltonicity2">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="254" data-stage="zkp-intro">
+            <div id="header-sigma-fischlin" data-challenge="sigma-fischlin" class="collapsible-header">
+                
+                <i id="check-sigma-fischlin" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-sigma-fischlin" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Fischlin Transform</div>
+                <span class="right">
+                    
+                    180 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../sigma-fischlin/solves/index.html">
+                        <span id="solves-sigma-fischlin">190 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-sigma-fischlin">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../sigma-fischlin/solutions/index.html">
+                        5 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Recall the definition of "Proof of Knowledge" from the NIZK challenge.<br><br><span class="note"><i class="fas fa-brain"></i>The notion of a "Proof of Knowledge" (as formalised by Bellare and Goldreich in '92) is as follows: If there exists an extractor, which given black box access to an efficient Prover P, can efficiently extract a witness $w$, then P "knows" $w$.</span><br><br>For $\Sigma$-Protocols we have used the fact that a prover, after committing to a first message $a$, answering two different challenges $e$, allows the efficient computation of a witness. This allows for a generic extractor to efficiently extract $w$ by completing a transcript, rewinding P to just after it sent $a$, and getting a second transcript with a different challenge.<br><br>For a non-interactive $\Sigma$-Protocol via the Fiat-Shamir transform, one again uses the rewinding Lemma, in conjunction with a programmable random oracle, to be able to show witness extraction.<br><br><span class="note"><i class="fas fa-brain"></i>While this is a widely used proof technique, there are some specific situations where rewinding is not possible. For example when composing arbitrary protocols together, cryptographers sometimes use something called the UC framework, where using rewinding would allow the environment to distinguish between the real world and the ideal world, breaking the security proof. Such situations led to the concept of "Straight Line Extraction", meaning an extractor that does *not* have rewinding power over the prover.</span><br><br>In this challenge we are going to look at an alternative to the Fiat-Shamir transform, which does <emph>not</emph> rely on the rewinding lemma for security! Instead extraction works with just "read" access to a Random Oracle. <br><br><span class="note"><i class="fas fa-brain"></i>More formally, given only a list of the RO calls made by Prover P, and the transcript of the proof, the extractor can recover a witness $w$ satisfying the proved relation with the same probability that P could produce a proof.</span><br><br>The Fischlin transformation <a href="https://crypto.ethz.ch/publications/files/Fischl05b.pdf">[Fischlin'05]</a> is a generic transformation similar to Fiat-Shamir, which can make an arbitrary $\Sigma$-Protocol into a straight-line extractable NIZK.<br><br><br>The idea behind the protocol is to force the Prover to make multiple queries to the random oracle with satisfying transcripts for a given $a$, (in a way that a malicious prover can't avoid doing.) Then using the special-soundness property to extract $w$ from these transcripts.<br><br>For those looking for a less formal resource, personally I found this paper by <a href="https://eprint.iacr.org/2024/526.pdf">[Chen, Lindell '24]</a> to have a nice overview of the algorithm. (Preliminaries, Section 2.)<br><br>For this challenge we have implemented Fischlins Transform roughly as described in the original paper, (with a few simplifications,) and applied it to the OR proof from the earlier challenge.<br><br>The goal of this challenge is related to a property called <em>"witness-indistinguishability"</em>, which the $\Sigma_{OR}$ protocol has, as it should not be possible for the verifier to detect which branch of the OR statement the prover is proving.<br><br><span class="note"><i class="fas fa-brain"></i>Witness-Indistinguishability (WI) is a property which says that just by interacting with the Prover, the Verifier should not be able to distinguish which witness the Prover used in his proof. Or equivalently, it should not be possible to distinguish proofs made by different provers who know different witnesses. This can be a very useful property when proving the security of protocols which are carried out between many parties.</span><br><br><b>This challenge is hosted on the CTF archive. Find the corresponding challenge in that category, solve it, then enter the flag here.</b><br /><br />Challenge contributed by <a class="gold-link" href="../../user/killerdog/index.html">killerdog</a> and <a class="gold-link" href="../../user/oberon/index.html">oberon</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-sigma-fischlin" class="preventToggle" data-challenge="sigma-fischlin" data-points="180">
+                    <div class="input-field">
+                        <input id="flag-sigma-fischlin" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-sigma-fischlin">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="252" data-stage="zkp-intro">
+            <div id="header-snark-maestro" data-challenge="snark-maestro" class="collapsible-header">
+                
+                <i id="check-snark-maestro" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-snark-maestro" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Ticket Maestro</div>
+                <span class="right">
+                    
+                    200 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../snark-maestro/solves/index.html">
+                        <span id="solves-snark-maestro">150 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-snark-maestro">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../snark-maestro/solutions/index.html">
+                        7 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    We previously showed the existence of Zero Knowledge for all of NP, through the graph Hamiltonicity $\Sigma$-Protocol.  However you may have noticed that a NIZK for proving knowledge of a Hamiltonian cycle required sending a <em>lot</em> more data than the initial DLOG $\Sigma$-Protocol.  Even just proving the witness for a 5 node graph required sending thousands of group elements.<br><br>In general, $\Sigma$-Protocols are best suited for "algebraic" statements. Here their simplicity combined with a reasonable proof size, e.g. a DLOG proof consists of only 2 group elements, make them useful in practical applications. For other statements, e.g. knowledge of a SHA-256 pre-image, Sigma protocols are less suited. <br><br>In recent years there has been a very large amount of research on techniques for how to more efficiently prove more complicated statements, including the development of the <em>Succint Noninteractive Argument of Knowledge</em> (SNARK).<br><br><span class="note"><i class="fas fa-brain"></i>The key word here is <em>succinct</em>, meaning that the size of the proof, (and verifier runtime) is very small in relation to the size of the statement or witness. Depending on context, some authors take succinct to mean "polylogarithmic in the statement/prover runtime", while others require the proof size to be constant/$O(1)$. For now we'll take it as meaning constant proof size and verifier runtime.</span><br><br>Compared to the Hamiltonicity NIZK we saw in the previous challenge, where the proof size scales with as we increase the size of the statement (the graph), a SNARK would have the same proof size and verifier runtime regardless of the size of the graph!<br><br>One of the first widely used ZK-SNARKS was <a href="https://eprint.iacr.org/2016/260.pdf">Groth16</a>, which leverages pairings, (and a trusted setup,) to have a constant proof size of only 3 group elements and a very fast verification time! While Groth16 is still popular for some use cases due to it's tiny proof size, it does require a new trusted setup for every program, which holds it back from use in some settings.<br><br>Since then many other ZK-SNARK protocols and variants have emerged, each with their own tradeoffs in prover time, verifier time, proof size, security assumptions, trusted setup requirements and so on. With some of the more popular including bulletproofs, ligero, plonk variants, halo2, and plenty more, with most projects having optimised implementations freely available on github.<br><br>For this challenge, we will move from educational python snippets to a gentle introduction to the kind of code you should expect to see in real world cryptographic implementations. The challenge is about Groth16 proofs, where the witness is the preimage of a Poseidon hash digest, Poseidon being a hash function designed to be efficient to prove things about in zero knowledge. Good luck!<br><br><span class="note"><i class="fas fa-pencil-alt"></i> While it's encouraged to work with the rust libraries involved, to get a feel for what it's like to implement these kinds of proof systems, we have also included an <code>example.py</code> file showing how to interact with the service from pure python for those who so desire.</span><br><br><b>This challenge is hosted on the CTF archive. Find the corresponding challenge in that category, solve it, then enter the flag here.</b><br /><br />Challenge contributed by <a class="gold-link" href="https://www.zksecurity.xyz/">Mathias Hall-Andersen, zksecurity.xyz</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-snark-maestro" class="preventToggle" data-challenge="snark-maestro" data-points="200">
+                    <div class="input-field">
+                        <input id="flag-snark-maestro" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-snark-maestro">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="zkp-challenges">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>ZKP Challenges</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="zkp-challenges" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="263" data-stage="zkp-challenges">
+            <div id="header-pairingbased" data-challenge="pairingbased" class="collapsible-header">
+                
+                <i id="check-pairingbased" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-pairingbased" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Pairing-Based Cryptography</div>
+                <span class="right">
+                    
+                    50 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../pairingbased/solves/index.html">
+                        <span id="solves-pairingbased">272 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-pairingbased">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../pairingbased/solutions/index.html">
+                        3 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Pairing-based cryptography refers to a branch of cryptography that focuses on constructions utilizing bilinear pairings or couplings. A pairing is a non-degenerate bilinear map (explained in Definition). <br><br>Employing these tools allows for the development of cryptographic schemes that are not feasible with just a single group satisfying cryptographic properties, such as the Decisional Diffie-Hellman (DDH) assumption.<br><br><b>Recap:</b><br><br>The DDH assumption relates to the following problem:  Let values $p$, $q$, $r$ from $\mathbb{Z}$ Let values $G$, $P$, $Q$, $R$ from an (additive) abelian group, where $P = [p]G$, $Q = [q]G$, $R = [r]G$,  the pairing function allows us to verify $p \cdot q = r$ by checking if $\text{pairing}(P, Q) = R$.<br><br><span class="note"><i class="fas fa-brain"></i>Sometimes this definition is given with some multiplication group, and so $P = G^p$ would be written instead. However, for all practical pairing based protocols the underlying groups are elliptic curves and so in this section we use additive notation for the groups of which we pair elements.  </span><br><br><b>Definition</b><br><br>A pairing is a function $e: G_1 \times G_2 \to G_T$, which is bilinear, meaning it satisfies:<br><br><ul> <li>For any integers $(a, b)$ and any group elements $(g, h)$ the equation $e([a]g, [b]h) = e(g, h)^{ab}$.</li> <li>The pairing must not be degenerate, meaning $e(g, h) = 0$ if and only if $g = 0$ or $h = 0$. Note: $0$ here means the identity element.</li> <li>For cryptographic usage, it's crucial that the pairing function $e$ can be computed in polynomial time.</li> </ul><br><br><b>Categories of Pairings</b><br><br>Pairings are mainly categorized into two families: symmetric, when the two source groups are the same ($G_1 = G_2$), and asymmetric when they differ.<br><br>Cryptographers further distinguish between strong and weak asymmetric pairings. Strong asymmetric pairings are those where establishing a homomorphism between $G_1$ and $G_2$ is difficult, and weak if otherwise. This classification is summarized into three types:<br><br><ul> <li><b>Type 1</b>: Symmetric pairings, where $G_1 = G_2$.</li> <li><b>Type 2</b>: Weak asymmetric pairings, when there exists a computable polynomial-time homomorphism $\phi: G_2 \to G_1$.</li> <li><b>Type 3</b>: Strong asymmetric pairings, where no such homomorphism between $G_1$ and $G_2$ is known.</li> </ul><br><br><b>Example of Applications in ZKP</b><br><br>The Boneh–Lynn–Shacham (BLS) digital signature is a cryptographic protocol enabling the verification of a signer's authenticity. This scheme employs bilinear pairing for the verification process, with signatures represented as elements of an elliptic curve group.<br><br><b>Key Generation</b><br><br>The process starts by choosing a random integer $x$ within the range $0 < x < r$ ($r$ the order of the generator point). This integer $x$ serves as the private key. The corresponding public key is published as $[x]g$, derived by multiplying a generator $g$ of the elliptic curve by $x$.<br><br><b>Signing</b><br><br>To sign a message $m$, the signer hashes the message bitstring $m$ to a hash $h = H(m)$. The signature $S$ is then generated as $S = [x]h$, effectively signing the hash with the private key $x$.<br><br><b>Verification</b><br><br>To verify a signature $S$ against a public key $[x]g$, one checks if the bilinear pairing of the signature and the generator $g$, $e(S, g)$, matches the pairing of the message hash and the public key, $e(H(m), [x]g)$. Successful verification indicates that the signature is authentic and was created using the corresponding private key.<br><br>This warmup challenge uses the Python module <code>py_ecc</code>, which utilizes an implementation of an optimized pairing algorithm.<br><br>$x$, $y$ are random, and the goal is to verify that $z = x \cdot y$.<br><br>Snippet for generating $[x]G$, $[y]G$, $[z]G$:<br><br><span class="codeBlock"> from py_ecc.optimized_bn128 import G_1, G_2, multiply, pairing<br> <br> ...<br> xG = multiply(G_1, x)<br> yG = multiply(G_2, y)<br> zG = pairing(yG, xG)<br> ...<br> </span><br><br>Each line in <code>output.txt</code> will represent a bit of the flag depending on whether the proof is correctly verified or not (1 if the proof is validated, 0 otherwise).<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/generate_c8c4cc90fd7a3febddb72b6ce176fdac.py" download>generate.py</a><br />&nbsp; - <a href="../../static/challenges/output_2d8920fd1c945fde7ff1ad5fc0810aa7.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Ectario/index.html">Ectario</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-pairingbased" class="preventToggle" data-challenge="pairingbased" data-points="50">
+                    <div class="input-field">
+                        <input id="flag-pairingbased" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-pairingbased">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="265" data-stage="zkp-challenges">
+            <div id="header-mistersaplinspreview" data-challenge="mistersaplinspreview" class="collapsible-header">
+                
+                <i id="check-mistersaplinspreview" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-mistersaplinspreview" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Mister Saplin&#39;s Preview</div>
+                <span class="right">
+                    
+                    80 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../mistersaplinspreview/solves/index.html">
+                        <span id="solves-mistersaplinspreview">225 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-mistersaplinspreview">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../mistersaplinspreview/solutions/index.html">
+                        3 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Mister Saplins has implemented a system to view some nodes and would like you to test it to see if it's robust.<br><br><span class="note"><i class="fas fa-brain"></i>You should complete the "Merkle Trees" challenge in the "Hashes" category before playing this challenge!</span><br /><br />Connect at <code>socket.cryptohack.org 13414</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13414_4df443a2121f5089f1e908ba332052fd.py" download>13414.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Ectario/index.html">Ectario</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-mistersaplinspreview" class="preventToggle" data-challenge="mistersaplinspreview" data-points="80">
+                    <div class="input-field">
+                        <input id="flag-mistersaplinspreview" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-mistersaplinspreview">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="261" data-stage="zkp-challenges">
+            <div id="header-couples" data-challenge="couples" class="collapsible-header">
+                
+                <i id="check-couples" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-couples" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Couples</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../couples/solves/index.html">
+                        <span id="solves-couples">215 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-couples">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../couples/solutions/index.html">
+                        2 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Couples form, others separate, but in the end the only constant remains the bilinear mapping that unites...<br /><br />Connect at <code>socket.cryptohack.org 13415</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13415_a2dc0b5a478b678eb0d2cc27a5688140.py" download>13415.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Ectario/index.html">Ectario</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-couples" class="preventToggle" data-challenge="couples" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-couples" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-couples">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="260" data-stage="zkp-challenges">
+            <div id="header-letsproveit" data-challenge="letsproveit" class="collapsible-header">
+                
+                <i id="check-letsproveit" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-letsproveit" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Let&#39;s Prove It</div>
+                <span class="right">
+                    
+                    120 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../letsproveit/solves/index.html">
+                        <span id="solves-letsproveit">194 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-letsproveit">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../letsproveit/solutions/index.html">
+                        6 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I've been told that home implementation is never a good idea. But I followed the implementation steps to the letter, so what could go wrong?<br /><br />Connect at <code>socket.cryptohack.org 13430</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13430_19b73b517a70b737c42b93115f9426ea.py" download>13430.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Ectario/index.html">Ectario</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-letsproveit" class="preventToggle" data-challenge="letsproveit" data-points="120">
+                    <div class="input-field">
+                        <input id="flag-letsproveit" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-letsproveit">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="264" data-stage="zkp-challenges">
+            <div id="header-mistersaplinstheprover" data-challenge="mistersaplinstheprover" class="collapsible-header">
+                
+                <i id="check-mistersaplinstheprover" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-mistersaplinstheprover" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Mister Saplins The Prover</div>
+                <span class="right">
+                    
+                    125 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../mistersaplinstheprover/solves/index.html">
+                        <span id="solves-mistersaplinstheprover">208 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-mistersaplinstheprover">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../mistersaplinstheprover/solutions/index.html">
+                        2 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Mister Saplins and proofs, that's 2.<br /><br />Connect at <code>socket.cryptohack.org 13432</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13432_6a34c1f5a8bd1c37685eb36fc5fcbf47.py" download>13432.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Ectario/index.html">Ectario</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-mistersaplinstheprover" class="preventToggle" data-challenge="mistersaplinstheprover" data-points="125">
+                    <div class="input-field">
+                        <input id="flag-mistersaplinstheprover" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-mistersaplinstheprover">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="262" data-stage="zkp-challenges">
+            <div id="header-letsproveitagain" data-challenge="letsproveitagain" class="collapsible-header">
+                
+                <i id="check-letsproveitagain" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-letsproveitagain" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Let&#39;s Prove It Again</div>
+                <span class="right">
+                    
+                    175 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../letsproveitagain/solves/index.html">
+                        <span id="solves-letsproveitagain">185 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-letsproveitagain">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../letsproveitagain/solutions/index.html">
+                        5 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Okay maybe last time I did it wrong, but this time I gave my project to my intern and he redid everything.<br /><br />Connect at <code>socket.cryptohack.org 13431</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13431_68413c617b29be47b6e9197b61a5a11a.py" download>13431.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Ectario/index.html">Ectario</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-letsproveitagain" class="preventToggle" data-challenge="letsproveitagain" data-points="175">
+                    <div class="input-field">
+                        <input id="flag-letsproveitagain" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-letsproveitagain">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+
+        </div>
+        <script src="../../static/js/jquery.min.js"></script>
+        <script src="../../static/js/materialize.min.js"></script>
+        <script defer src="../../static/js/confetti.browser.min.js"></script>
+        <script src="../../static/js/api.js"></script>
+        <script src="../../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+
+
+<script>
+    var challenges_open = JSON.parse(localStorage.getItem("challenges-open")) || {"sigma-fischlin": true, "sigma-hamiltonicity": true, "sigma-hamiltonicity2": true, "sigma-intro": true, "sigma-nizk": true, "sigma-or-proof": true, "sigma-shvzk": true, "sigma-special-soundness": true, "sigma-too-honest": true, "snark-maestro": true, "zkpintro": true};
+    Object.keys(challenges_open).forEach(function(el){
+        $(".collapsible-header#header-" + el).addClass("active");
+    });
+
+    $(".collapsible-header").on("click", function(){
+        var chall = $(this).data('challenge');
+        if(challenges_open.hasOwnProperty(chall)) {
+            delete challenges_open[chall];
+        } else {
+            challenges_open[chall] = true;
+            $('html, body').animate({
+                    scrollTop: $(this).offset().top -100
+            }, 700);
+        }
+        localStorage.setItem("challenges-open", JSON.stringify(challenges_open));
+    });
+
+    $(".preventToggle").on("click", function(){
+        event.stopPropagation();
+    });
+
+    var state = $(".collapsible-header.active").length == 0;
+    function updateButton(){
+        if(state){
+            $("#toggleState").html("Expand all challenges");
+        } else {
+            $("#toggleState").html("Collapse all challenges");
+        }
+
+    }
+    updateButton(state);
+    function toggle() {
+        if(state) {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+        } else {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        }
+        state = !state;
+        updateButton(state);
+    }
+    function filterCategories(t) {
+        var v = t.options[t.selectedIndex].value;
+        if(v == "*")
+            $(".stage").show();
+        else {
+            $(".stage[data-stage=" + v + "]").show();
+            $(".stage[data-stage!=" + v + "]").hide();
+        }
+    }
+    function toggleSolved(){
+      $('.fas.fa-star').each(function() {
+        if($(this).css('display') == 'block'){
+          if($(this).parent().next().css('display') == 'block'){
+              $(this).parent().toggle();
+              $(this).parent().click();
+              $(this).parent().next().hide();
+          }
+          else{
+            $(this).parent().toggle();
+          }
+        }
+      });
+    }
+
+
+    $("#toggleSolved").on("click", function(e){
+        // e.preventDefault();
+        toggleSolved();
+        // var text = $(this).next().text();
+        // $(this).next().text(
+        // text == "Hide Solved Challenges" ? "Show Solved Challenges" : "Hide Solved Challenges");
+    });
+
+
+    $("#toggleState").on("click", function(e){
+        // e.preventDefault();
+        toggle();
+    });
+    $(".stage-collapse").on("click", function(e){
+        // e.preventDefault();
+        var stage = $(this).data('collapse');
+        var header_selector = ".challenge[data-stage=" + stage + "] .collapsible-header";
+        var state = $(header_selector + ".active").length != 0;
+        if(state)
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        else
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+    });
+    $("form").submit(function(e) {
+        // Loading button
+        var loadBtn = $(this).find(".loader");
+        loadBtn.show();
+
+        var id = $(this).data("challenge");
+        var points = $(this).data("points");
+        var flag = $("#flag-" + id).val();
+        // var updatedScore = score + points;
+        console.log(id);
+        console.log(flag);
+        api.makeCall("/submit/" + id + ".json", {flag: flag, _csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function(data) {
+            if(data.code) {
+                loadBtn.hide();
+                Materialize.toast(data.message, 4000);
+            }
+            else {
+                // Materialize.toast("Correct flag, nice one!", 4000);
+                $("#uncheck-" + id).hide();
+                $("#check-" + id).show();
+                $("#header-" + id).click();
+
+                // update solves box
+                var solves_text = data.solves == 1 ? "Solve" : "Solves";
+                $("#solves-" + id).html(data.solves + " " + solves_text);
+                $("#solves-" + id).parent().show();
+                $("#solutions-" + id).show();
+                $("#youvesolved-" + id).show();
+                $("#empty-" + id).hide();
+                $("#flagform-" + id).hide();
+                if (window.handleCorrectFlag) { window.handleCorrectFlag(id); }
+
+                // update points at top
+                console.log(score);
+                console.log(points);
+                score = calculateLevel(score, points);
+                loadBtn.hide();
+                setTimeout(function(){ launchConfetti(); }, 250);
+            }
+        });
+        return false;
+    });
+</script>
+
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../../faq/index.html">FAQ</a><br>
+        <a href="../../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../../courses/intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../../courses/modular/index.html">Modular Arithmetic</a><br>
+        <a href="../../courses/symmetric/index.html">Symmetric Cryptography</a><br>
+        <a href="../../courses/public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../../courses/elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../general/index.html">General</a><br>
+        <a href="../aes/index.html">Symmetric Ciphers</a><br>
+        <a href="../maths/index.html">Mathematics</a><br>
+        <a href="../rsa/index.html">RSA</a><br>
+        <a href="../diffie-hellman/index.html">Diffie-Hellman</a><br>
+        <a href="../ecc/index.html">Elliptic Curves</a><br>
+        <a href="../hashes/index.html">Hash Functions</a><br>
+        <a href="../web/index.html">Crypto on the Web</a><br>
+        <a href="../post-quantum/index.html">Lattices</a><br>
+        <a href="../isogenies/index.html">Isogenies</a><br>
+        <a href="index.html">Zero-Knowledge Proofs</a><br>
+        <a href="../misc/index.html">Miscellaneous</a><br>
+        <a href="../ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:30:50Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:30:50Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/challenges/zkp/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:24 GMT -->
+</html>

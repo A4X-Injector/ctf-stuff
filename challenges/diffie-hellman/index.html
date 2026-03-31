@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/challenges/diffie-hellman/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; Diffie-Hellman challenges</title>
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+<link rel="stylesheet" href="../../static/css/katex.min.css" >
+<script defer src="../../static/js/katex.min.js"></script>
+<script defer src="../../static/js/katex-auto-render.min.js"></script>
+<script defer src="../../static/js/katex-render-options.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, katex_render_options);
+    });
+</script>
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cryptohack.org" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="https://cryptohack.org/static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="https://cryptohack.org/static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../../courses/index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+
+
+
+<div class="categoryDescription">
+  
+  <div class="categoryText">
+    <h2 class="categoryTitle">Diffie-Hellman</h2>
+    <p>Whitfield Diffie and Martin Hellman's 1976 paper <a href="https://ee.stanford.edu/~hellman/publications/24.pdf">"New Directions in Cryptography"</a> heralded a huge leap forward for the field of cryptography. The paper defined the concepts of public-key cryptosystems, one-way trapdoor functions, and digital signatures, and described a key-exchange method for securely sharing secrets over an insecure channel. Although these were independently discovered at GCHQ some years earlier, Diffie and Hellman were first to share this landmark knowledge with the world.<br /><br />The Diffie-Hellman key exchange (DH) is central to the security of the internet today. As part of the TLS handshake, it's typically used to securely compute a shared AES encryption key over the internet between a web browser and server. Although several other algorithms can be used for key exchange, DH is the only option available in the latest revision of the TLS spec (1.3), showing how it's held up over the years. This is mainly due to how easily DH can be adapted to support <a href="https://en.wikipedia.org/wiki/Forward_secrecy">"forward secrecy"</a>, which we'll discuss more below.<br /><br />DH relies on the assumption that the discrete logarithm problem (DLP) is difficult to solve. However, in practice the parameters need to be chosen carefully or the discrete logarithm can be easy to crack, which we'll explore in these challenges. Furthermore, the most basic version of the protocol is vulnerable to a man-in-the-middle attack, showing how DH requires careful authentication of who you are talking to.</p>
+  </div>
+  <div class="categoryImage">
+  <img src="../../static/img/category/diffie-hellman.png" alt="">
+  </div>
+  
+
+</div>
+
+
+<div class="row">
+    <div class="col s12 m6 noPadding">
+        <div class="left">
+        <select onchange="filterCategories(this);">
+            <option value="*">Show all stages</option>
+            
+            <option value="dh-starter">Starter</option>
+            
+            <option value="dh_mitm">Man In The Middle</option>
+            
+            <option value="dh_groups">Group Theory</option>
+            
+            <option value="misc">Misc</option>
+            
+        </select>
+        </div>
+    </div>
+    <div class="col s12 m6 noPadding">
+      <p class="toggleCheckbox"><input type="checkbox" id="toggleSolved" class="filled-in"><label for="toggleSolved">Hide Solved Challenges</label></p>
+    </div>
+</div>
+
+<span class="stage" data-stage="dh-starter">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Starter</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="dh-starter" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="7" data-stage="dh-starter">
+            <div id="header-dh-starter-1" data-challenge="dh-starter-1" class="collapsible-header">
+                
+                <i id="check-dh-starter-1" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-dh-starter-1" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Working with Fields</div>
+                <span class="right">
+                    
+                    10 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../dh-starter-1/solves/index.html">
+                        <span id="solves-dh-starter-1">9156 Solves</span>
+                    </a>
+                    
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    The set of integers modulo $N$, together with the operations of both addition and multiplication forms a ring $\mathbb{Z}/ N\mathbb{Z}$. Fundamentally, this means that adding or multiplying any two elements in the set returns another element in the set.<br><br>When the modulus is prime: $N = p$, we are additionally guaranteed a multiplicative inverse of every element in the set, and so the ring is promoted to a field. In particular, we refer to this field as a finite field denoted $\Fp$.<br><br>The Diffie-Hellman protocol works with elements of some finite field $\Fp$, where the prime modulus is typically very large (thousands of bits), but for the following challenges we will keep numbers smaller for compactness.<br><br>Given the prime $p = 991$, and the element $g = 209$, find the inverse element $d = g^{-1}$ such that $g \cdot d \mod 991 = 1$.
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-dh-starter-1" class="preventToggle" data-challenge="dh-starter-1" data-points="10">
+                    <div class="input-field">
+                        <input id="flag-dh-starter-1" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-dh-starter-1">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="9" data-stage="dh-starter">
+            <div id="header-dh-starter-2" data-challenge="dh-starter-2" class="collapsible-header">
+                
+                <i id="check-dh-starter-2" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-dh-starter-2" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Generators of Groups</div>
+                <span class="right">
+                    
+                    20 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../dh-starter-2/solves/index.html">
+                        <span id="solves-dh-starter-2">7893 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-dh-starter-2">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../dh-starter-2/solutions/index.html">
+                        25 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Every element of a finite field $\Fp$ can be used to make a subgroup $H$ under repeated action of multiplication. In other words, for an element $g$ the subgroup $H = \langle g \rangle = \{g, g^2, g^3, \ldots \}$<br><br>A primitive element of $\Fp$ is an element whose subgroup $H = \Fp^*$, <i>i.e.</i>, every non-zero element of $\Fp$, can be written as $g^n \mod p$ for some integer $n$. Because of this, primitive elements are sometimes called generators of the finite field.<br><br>For the finite field with $p = 28151$ find the smallest element $g$ which is a primitive element of $\Fp$.<br><br><span class="note"><i class="fas fa-pencil-alt"></i>This problem can be solved by brute-force, but there's also clever ways to speed up the calculation.</span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-dh-starter-2" class="preventToggle" data-challenge="dh-starter-2" data-points="20">
+                    <div class="input-field">
+                        <input id="flag-dh-starter-2" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-dh-starter-2">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="8" data-stage="dh-starter">
+            <div id="header-dh-starter-3" data-challenge="dh-starter-3" class="collapsible-header">
+                
+                <i id="check-dh-starter-3" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-dh-starter-3" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Computing Public Values</div>
+                <span class="right">
+                    
+                    25 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../dh-starter-3/solves/index.html">
+                        <span id="solves-dh-starter-3">7974 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-dh-starter-3">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../dh-starter-3/solutions/index.html">
+                        6 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    The Diffie-Hellman protocol is used because the discrete logarithm is assumed to be a "hard" computation for carefully chosen groups.<br><br>The first step of the protocol is to establish a prime $p$ and some generator of the finite field $g$. These must be carefully chosen to avoid special cases where the discrete log can be solved with efficient algorithms. For example, a safe prime $p = 2 \cdot q +1$ is usually picked such that the only factors of $p - 1$ are $\{2,q\}$ where $q$ is some other large prime. This protects DH from the <a href="https://en.wikipedia.org/wiki/Pohlig–Hellman_algorithm">Pohlig–Hellman algorithm</a>.<br><br>The user then picks a secret integer $a < p - 1$ and calculates $g^a \mod p$. This can be transmitted over an insecure network and due to the assumed difficulty of the discrete logarithm, the secret integer should be infeasible to compute. The value $a$ is known as the secret value, while $A = g^a \mod p$ is the public value.<br><br>Given the NIST parameters:<br><br><span class="codeBlock"> g: 2</br> p: 2410312426921032588552076022197566074856950548502459942654116941958108831682612228890093858261341614673227141477904012196503648957050582631942730706805009223062734745341073406696246014589361659774041027169249453200378729434170325843778659198143763193776859869524088940195577346119843545301547043747207749969763750084308926339295559968882457872412993810129130294592999947926365264059284647209730384947211681434464714438488520940127459844288859336526896320919633919 </span><br><br>Calculate the value of $g^a \mod p$ for<br><br><span class="codeBlock"> a: 972107443837033796245864316200458246846904598488981605856765890478853088246897345487328491037710219222038930943365848626194109830309179393018216763327572120124760140018038673999837643377590434413866611132403979547150659053897355593394492586978400044375465657296027592948349589216415363722668361328689588996541370097559090335137676411595949335857341797148926151694299575970292809805314431447043469447485957669949989090202320234337890323293401862304986599884732815 </span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-dh-starter-3" class="preventToggle" data-challenge="dh-starter-3" data-points="25">
+                    <div class="input-field">
+                        <input id="flag-dh-starter-3" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-dh-starter-3">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="6" data-stage="dh-starter">
+            <div id="header-dh-starter-4" data-challenge="dh-starter-4" class="collapsible-header">
+                
+                <i id="check-dh-starter-4" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-dh-starter-4" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Computing Shared Secrets</div>
+                <span class="right">
+                    
+                    30 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../dh-starter-4/solves/index.html">
+                        <span id="solves-dh-starter-4">7613 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-dh-starter-4">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../dh-starter-4/solutions/index.html">
+                        12 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Now it's time to calculate a shared secret using data received from your friend Alice. Like before, we will be using the NIST parameters:<br><br><span class="codeBlock"> g: 2<br> p: 2410312426921032588552076022197566074856950548502459942654116941958108831682612228890093858261341614673227141477904012196503648957050582631942730706805009223062734745341073406696246014589361659774041027169249453200378729434170325843778659198143763193776859869524088940195577346119843545301547043747207749969763750084308926339295559968882457872412993810129130294592999947926365264059284647209730384947211681434464714438488520940127459844288859336526896320919633919 </span><br><br>You have received the following integer from Alice:<br><br><span class="codeBlock"> A: 70249943217595468278554541264975482909289174351516133994495821400710625291840101960595720462672604202133493023241393916394629829526272643847352371534839862030410331485087487331809285533195024369287293217083414424096866925845838641840923193480821332056735592483730921055532222505605661664236182285229504265881752580410194731633895345823963910901731715743835775619780738974844840425579683385344491015955892106904647602049559477279345982530488299847663103078045601 </span><br><br>You generate your secret integer $b$ and calculate your public value $B = g^b \mod p$, which you send to Alice.<br><br><span class="codeBlock"> b: 12019233252903990344598522535774963020395770409445296724034378433497976840167805970589960962221948290951873387728102115996831454482299243226839490999713763440412177965861508773420532266484619126710566414914227560103715336696193210379850575047730388378348266180934946139100479831339835896583443691529372703954589071507717917136906770122077739814262298488662138085608736103418601750861698417340264213867753834679359191427098195887112064503104510489610448294420720<br> B: 518386956790041579928056815914221837599234551655144585133414727838977145777213383018096662516814302583841858901021822273505120728451788412967971809038854090670743265187138208169355155411883063541881209288967735684152473260687799664130956969450297407027926009182761627800181901721840557870828019840218548188487260441829333603432714023447029942863076979487889569452186257333512355724725941390498966546682790608125613166744820307691068563387354936732643569654017172 </span><br><br><span class="note"><i class="fas fa-lightbulb"></i>Try and compute $B$ yourself and verify things are working using the values above.</span><br><br>You and Alice are now able to calculate a shared secret by using your secret values $a, b$ with each others public values $B, A$. Note that computing this shared value is infeasible knowing only $\{g,p,A,B\}$, it's the knowledge of $a, b$ which allows the generation of the shared value.<br><br>What is your shared secret?
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-dh-starter-4" class="preventToggle" data-challenge="dh-starter-4" data-points="30">
+                    <div class="input-field">
+                        <input id="flag-dh-starter-4" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-dh-starter-4">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="5" data-stage="dh-starter">
+            <div id="header-dh-starter-5" data-challenge="dh-starter-5" class="collapsible-header">
+                
+                <i id="check-dh-starter-5" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-dh-starter-5" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Deriving Symmetric Keys</div>
+                <span class="right">
+                    
+                    40 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../dh-starter-5/solves/index.html">
+                        <span id="solves-dh-starter-5">6812 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-dh-starter-5">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../dh-starter-5/solutions/index.html">
+                        8 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Alice wants to send you her secret flag and asks you to generate a shared secret with her. She also tells you she will be using the NIST standard:<br><br><span class="codeBlock"> g: 2<br> p: 2410312426921032588552076022197566074856950548502459942654116941958108831682612228890093858261341614673227141477904012196503648957050582631942730706805009223062734745341073406696246014589361659774041027169249453200378729434170325843778659198143763193776859869524088940195577346119843545301547043747207749969763750084308926339295559968882457872412993810129130294592999947926365264059284647209730384947211681434464714438488520940127459844288859336526896320919633919 </span><br><br>You receive the following integer from Alice:<br><br><br><br><span class="codeBlock"> A: 112218739139542908880564359534373424013016249772931962692237907571990334483528877513809272625610512061159061737608547288558662879685086684299624481742865016924065000555267977830144740364467977206555914781236397216033805882207640219686011643468275165718132888489024688846101943642459655423609111976363316080620471928236879737944217503462265615774774318986375878440978819238346077908864116156831874695817477772477121232820827728424890845769152726027520772901423784 </span><br><br>You then generate your secret integer and calculate your public one, which you send to Alice.<br><br><span class="codeBlock"> b: 197395083814907028991785772714920885908249341925650951555219049411298436217190605190824934787336279228785809783531814507661385111220639329358048196339626065676869119737979175531770768861808581110311903548567424039264485661330995221907803300824165469977099494284722831845653985392791480264712091293580274947132480402319812110462641143884577706335859190668240694680261160210609506891842793868297672619625924001403035676872189455767944077542198064499486164431451944</br> B: 1241972460522075344783337556660700537760331108332735677863862813666578639518899293226399921252049655031563612905395145236854443334774555982204857895716383215705498970395379526698761468932147200650513626028263449605755661189525521343142979265044068409405667549241125597387173006460145379759986272191990675988873894208956851773331039747840312455221354589910726982819203421992729738296452820365553759182547255998984882158393688119629609067647494762616719047466973581</span><br><br>Individually you each use the shared secret to derive an AES private key. This allows you to encrypt large amounts of data over your channel without needing to exchange keys again.<br><br>Alice sends you the following IV and ciphertext:<br><br><span class="codeBlock"> {'iv': '737561146ff8194f45290f5766ed6aba', 'encrypted_flag': '39c99bf2f0c14678d6a5416faef954b5893c316fc3c48622ba1fd6a9fe85f3dc72a29c394cf4bc8aff6a7b21cae8e12c'} </span><br><br>Decrypt this to obtain your flag!<br><br><span class="note"><i class="fas fa-brain"></i>The <code>decrypt.py</code> script is provided to help you here and on future challenges too.</span><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_0e330e41ce30ead878a4589929aa31a1.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/decrypt_08c0fede9185868aba4a6ae21aca0148.py" download>decrypt.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-dh-starter-5" class="preventToggle" data-challenge="dh-starter-5" data-points="40">
+                    <div class="input-field">
+                        <input id="flag-dh-starter-5" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-dh-starter-5">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="dh_mitm">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Man In The Middle</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="dh_mitm" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="1" data-stage="dh_mitm">
+            <div id="header-parameter_injection" data-challenge="parameter_injection" class="collapsible-header">
+                
+                <i id="check-parameter_injection" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-parameter_injection" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Parameter Injection</div>
+                <span class="right">
+                    
+                    60 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../parameter_injection/solves/index.html">
+                        <span id="solves-parameter_injection">5389 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-parameter_injection">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../parameter_injection/solutions/index.html">
+                        22 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    You're in a position to not only intercept Alice and Bob's DH key exchange, but also rewrite their messages. Think about how you can play with the DH equation that they calculate, and therefore sidestep the need to crack any discrete logarithm problem.<br><br>Use the script from "Deriving Symmetric Keys" to decrypt the flag once you've recovered the shared secret.<br /><br />Connect at <code>socket.cryptohack.org 13371</code>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-parameter_injection" class="preventToggle" data-challenge="parameter_injection" data-points="60">
+                    <div class="input-field">
+                        <input id="flag-parameter_injection" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-parameter_injection">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="3" data-stage="dh_mitm">
+            <div id="header-export_grade" data-challenge="export_grade" class="collapsible-header">
+                
+                <i id="check-export_grade" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-export_grade" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Export-grade</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../export_grade/solves/index.html">
+                        <span id="solves-export_grade">4621 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-export_grade">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../export_grade/solutions/index.html">
+                        19 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Alice and Bob are using legacy codebases and need to negotiate parameters they both support. You've man-in-the-middled this negotiation step, and can passively observe thereafter. How are you going to ruin their day this time?<br /><br />Connect at <code>socket.cryptohack.org 13379</code>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-export_grade" class="preventToggle" data-challenge="export_grade" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-export_grade" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-export_grade">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="2" data-stage="dh_mitm">
+            <div id="header-dh_static" data-challenge="dh_static" class="collapsible-header">
+                
+                <i id="check-dh_static" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-dh_static" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Static Client</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../dh_static/solves/index.html">
+                        <span id="solves-dh_static">2274 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-dh_static">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../dh_static/solutions/index.html">
+                        11 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    You've just finished eavesdropping on a conversation between Alice and Bob. Now you have a chance to talk to Bob. What are you going to say?<br /><br />Connect at <code>socket.cryptohack.org 13373</code>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-dh_static" class="preventToggle" data-challenge="dh_static" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-dh_static" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-dh_static">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="dh_groups">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Group Theory</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="dh_groups" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="4" data-stage="dh_groups">
+            <div id="header-dh_additive" data-challenge="dh_additive" class="collapsible-header">
+                
+                <i id="check-dh_additive" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-dh_additive" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Additive</div>
+                <span class="right">
+                    
+                    70 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../dh_additive/solves/index.html">
+                        <span id="solves-dh_additive">2458 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-dh_additive">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../dh_additive/solutions/index.html">
+                        12 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Alice and Bob decided to do their DHKE in an additive group rather than a multiplicative group. What could go wrong?<br><br>Use the script from "Deriving Symmetric Keys" to decrypt the flag once you've recovered the shared secret.<br /><br />Connect at <code>socket.cryptohack.org 13380</code>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-dh_additive" class="preventToggle" data-challenge="dh_additive" data-points="70">
+                    <div class="input-field">
+                        <input id="flag-dh_additive" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-dh_additive">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="89" data-stage="dh_groups">
+            <div id="header-dh_static2" data-challenge="dh_static2" class="collapsible-header">
+                
+                <i id="check-dh_static2" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-dh_static2" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Static Client 2</div>
+                <span class="right">
+                    
+                    120 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../dh_static2/solves/index.html">
+                        <span id="solves-dh_static2">1606 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-dh_static2">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../dh_static2/solutions/index.html">
+                        15 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Bob got a bit more careful with the way he verifies parameters. He's still insisting on using the $p$ and $g$ values provided by his partner. Wonder if he missed anything?<br /><br />Connect at <code>socket.cryptohack.org 13378</code>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-dh_static2" class="preventToggle" data-challenge="dh_static2" data-points="120">
+                    <div class="input-field">
+                        <input id="flag-dh_static2" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-dh_static2">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="misc">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Misc</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="misc" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="11" data-stage="misc">
+            <div id="header-scriptkiddie" data-challenge="scriptkiddie" class="collapsible-header">
+                
+                <i id="check-scriptkiddie" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-scriptkiddie" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Script Kiddie</div>
+                <span class="right">
+                    
+                    70 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../scriptkiddie/solves/index.html">
+                        <span id="solves-scriptkiddie">2147 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-scriptkiddie">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../scriptkiddie/solutions/index.html">
+                        7 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Found this cool script on Github and I've been using it to keep my secrets from anyone listening in on the school wifi!<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/script_70449139467b5442a859d310e6945690.py" download>script.py</a><br />&nbsp; - <a href="../../static/challenges/output_92cc8b7f0db768b53291efbf969ca3ca.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-scriptkiddie" class="preventToggle" data-challenge="scriptkiddie" data-points="70">
+                    <div class="input-field">
+                        <input id="flag-scriptkiddie" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-scriptkiddie">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="152" data-stage="misc">
+            <div id="header-matrix" data-challenge="matrix" class="collapsible-header">
+                
+                <i id="check-matrix" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-matrix" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">The Matrix</div>
+                <span class="right">
+                    
+                    75 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../matrix/solves/index.html">
+                        <span id="solves-matrix">1163 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-matrix">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../matrix/solutions/index.html">
+                        7 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I must get out of here. I must get free, and in this mind is the key, my key!<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/the_matrix_92a1330e0fc370fbacf7f001ae2933ee.sage" download>the_matrix.sage</a><br />&nbsp; - <a href="../../static/challenges/flag_403b981c77d39217c20390c1729b15f0.enc" download>flag.enc</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/jschnei/index.html">jschnei</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-matrix" class="preventToggle" data-challenge="matrix" data-points="75">
+                    <div class="input-field">
+                        <input id="flag-matrix" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-matrix">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="153" data-stage="misc">
+            <div id="header-matrix_reloaded" data-challenge="matrix_reloaded" class="collapsible-header">
+                
+                <i id="check-matrix_reloaded" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-matrix_reloaded" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">The Matrix Reloaded</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../matrix_reloaded/solves/index.html">
+                        <span id="solves-matrix_reloaded">756 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-matrix_reloaded">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../matrix_reloaded/solutions/index.html">
+                        4 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    It's happening exactly as before... Well, not exactly.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/matrix_reloaded_5994d61c3210bacecfbcd343dc373864.zip" download>matrix_reloaded.zip</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/jschnei/index.html">jschnei</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-matrix_reloaded" class="preventToggle" data-challenge="matrix_reloaded" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-matrix_reloaded" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-matrix_reloaded">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="154" data-stage="misc">
+            <div id="header-matrix_revolutions" data-challenge="matrix_revolutions" class="collapsible-header">
+                
+                <i id="check-matrix_revolutions" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-matrix_revolutions" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">The Matrix Revolutions</div>
+                <span class="right">
+                    
+                    125 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../matrix_revolutions/solves/index.html">
+                        <span id="solves-matrix_revolutions">582 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-matrix_revolutions">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../matrix_revolutions/solutions/index.html">
+                        7 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Everything that has a beginning has an end, Neo.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/matrix_revolutions_2d9c03dde281a05e89519d9cd356d19c.zip" download>matrix_revolutions.zip</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/jschnei/index.html">jschnei</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-matrix_revolutions" class="preventToggle" data-challenge="matrix_revolutions" data-points="125">
+                    <div class="input-field">
+                        <input id="flag-matrix_revolutions" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-matrix_revolutions">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+
+        </div>
+        <script src="../../static/js/jquery.min.js"></script>
+        <script src="../../static/js/materialize.min.js"></script>
+        <script defer src="../../static/js/confetti.browser.min.js"></script>
+        <script src="../../static/js/api.js"></script>
+        <script src="../../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+
+
+<script>
+    var challenges_open = JSON.parse(localStorage.getItem("challenges-open")) || {"dh-starter-1": true, "dh-starter-2": true, "dh-starter-3": true, "dh-starter-4": true, "dh-starter-5": true};
+    Object.keys(challenges_open).forEach(function(el){
+        $(".collapsible-header#header-" + el).addClass("active");
+    });
+
+    $(".collapsible-header").on("click", function(){
+        var chall = $(this).data('challenge');
+        if(challenges_open.hasOwnProperty(chall)) {
+            delete challenges_open[chall];
+        } else {
+            challenges_open[chall] = true;
+            $('html, body').animate({
+                    scrollTop: $(this).offset().top -100
+            }, 700);
+        }
+        localStorage.setItem("challenges-open", JSON.stringify(challenges_open));
+    });
+
+    $(".preventToggle").on("click", function(){
+        event.stopPropagation();
+    });
+
+    var state = $(".collapsible-header.active").length == 0;
+    function updateButton(){
+        if(state){
+            $("#toggleState").html("Expand all challenges");
+        } else {
+            $("#toggleState").html("Collapse all challenges");
+        }
+
+    }
+    updateButton(state);
+    function toggle() {
+        if(state) {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+        } else {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        }
+        state = !state;
+        updateButton(state);
+    }
+    function filterCategories(t) {
+        var v = t.options[t.selectedIndex].value;
+        if(v == "*")
+            $(".stage").show();
+        else {
+            $(".stage[data-stage=" + v + "]").show();
+            $(".stage[data-stage!=" + v + "]").hide();
+        }
+    }
+    function toggleSolved(){
+      $('.fas.fa-star').each(function() {
+        if($(this).css('display') == 'block'){
+          if($(this).parent().next().css('display') == 'block'){
+              $(this).parent().toggle();
+              $(this).parent().click();
+              $(this).parent().next().hide();
+          }
+          else{
+            $(this).parent().toggle();
+          }
+        }
+      });
+    }
+
+
+    $("#toggleSolved").on("click", function(e){
+        // e.preventDefault();
+        toggleSolved();
+        // var text = $(this).next().text();
+        // $(this).next().text(
+        // text == "Hide Solved Challenges" ? "Show Solved Challenges" : "Hide Solved Challenges");
+    });
+
+
+    $("#toggleState").on("click", function(e){
+        // e.preventDefault();
+        toggle();
+    });
+    $(".stage-collapse").on("click", function(e){
+        // e.preventDefault();
+        var stage = $(this).data('collapse');
+        var header_selector = ".challenge[data-stage=" + stage + "] .collapsible-header";
+        var state = $(header_selector + ".active").length != 0;
+        if(state)
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        else
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+    });
+    $("form").submit(function(e) {
+        // Loading button
+        var loadBtn = $(this).find(".loader");
+        loadBtn.show();
+
+        var id = $(this).data("challenge");
+        var points = $(this).data("points");
+        var flag = $("#flag-" + id).val();
+        // var updatedScore = score + points;
+        console.log(id);
+        console.log(flag);
+        api.makeCall("/submit/" + id + ".json", {flag: flag, _csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function(data) {
+            if(data.code) {
+                loadBtn.hide();
+                Materialize.toast(data.message, 4000);
+            }
+            else {
+                // Materialize.toast("Correct flag, nice one!", 4000);
+                $("#uncheck-" + id).hide();
+                $("#check-" + id).show();
+                $("#header-" + id).click();
+
+                // update solves box
+                var solves_text = data.solves == 1 ? "Solve" : "Solves";
+                $("#solves-" + id).html(data.solves + " " + solves_text);
+                $("#solves-" + id).parent().show();
+                $("#solutions-" + id).show();
+                $("#youvesolved-" + id).show();
+                $("#empty-" + id).hide();
+                $("#flagform-" + id).hide();
+                if (window.handleCorrectFlag) { window.handleCorrectFlag(id); }
+
+                // update points at top
+                console.log(score);
+                console.log(points);
+                score = calculateLevel(score, points);
+                loadBtn.hide();
+                setTimeout(function(){ launchConfetti(); }, 250);
+            }
+        });
+        return false;
+    });
+</script>
+
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../../faq/index.html">FAQ</a><br>
+        <a href="../../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../../courses/intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../../courses/modular/index.html">Modular Arithmetic</a><br>
+        <a href="../../courses/symmetric/index.html">Symmetric Cryptography</a><br>
+        <a href="../../courses/public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../../courses/elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../general/index.html">General</a><br>
+        <a href="../aes/index.html">Symmetric Ciphers</a><br>
+        <a href="../maths/index.html">Mathematics</a><br>
+        <a href="../rsa/index.html">RSA</a><br>
+        <a href="index.html">Diffie-Hellman</a><br>
+        <a href="../ecc/index.html">Elliptic Curves</a><br>
+        <a href="../hashes/index.html">Hash Functions</a><br>
+        <a href="../web/index.html">Crypto on the Web</a><br>
+        <a href="../post-quantum/index.html">Lattices</a><br>
+        <a href="../isogenies/index.html">Isogenies</a><br>
+        <a href="../zkp/index.html">Zero-Knowledge Proofs</a><br>
+        <a href="../misc/index.html">Miscellaneous</a><br>
+        <a href="../ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:30:46Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:30:46Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/challenges/diffie-hellman/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:23 GMT -->
+</html>

@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/solutions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; Solutions</title>
+
+        <link rel="stylesheet" type="text/css" href="../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+  <!-- Page Specific Metadata -->
+  <meta property="og:title" content="CryptoHack &ndash; Solutions" />
+  <meta name="twitter:title" content="CryptoHack &ndash; Solutions" />
+  <meta name="description" content="Read and vote on solutions submitted by other players, and post your own" />
+
+  <meta property="og:title" content="CryptoHack &ndash; Solutions" />
+  <meta property="og:description" content="Read and vote on solutions submitted by other players, and post your own" />
+
+  <meta name="twitter:title" content="CryptoHack &ndash; Solutions" />
+  <meta name="twitter:description" content="Read and vote on solutions submitted by other players, and post your own" />
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="../index.html" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="../static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="../static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../courses/index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../challenges/index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+
+<div class="categoryDescription">
+  <div class="categoryTitle">
+    <h2>Solutions</h2>
+    <div class="scoreboardStats">
+        You may view, vote, and submit solutions for a challenge after you have solved it. Please see the <a href="../faq/index.html#solutions">FAQ</a> for our policy on sharing solutions.
+    </div>
+  </div>
+  <div class="categoryImage">
+      <img src="../static/img/solutions.png" width="250" alt="computer celebrating">
+  </div>
+</div>
+
+<h5>Recent Solutions</h5>
+
+<table>
+    <thead>
+      <tr class="row">
+        <td class="col s2">Date</td><td class="col s3">User</td><td class="col s4">Challenge</td><td class="col s2"></td><td class="col s1">Rating</td>
+      </tr>
+    </thead>
+    <tbody>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-03-25T12:18:24Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-03-25T12:18:24Z</span></td>
+            <td class="col s3"><a href="../user/wapoy64924/index.html">wapoy64924</a></td>
+            <td class="col s4">Computing Public Values</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-03-25T10:55:28Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-03-25T10:55:28Z</span></td>
+            <td class="col s3"><a href="../user/a1372321/index.html">a1372321</a></td>
+            <td class="col s4">Quadratic Residues</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-03-24T08:26:16Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-03-24T08:26:16Z</span></td>
+            <td class="col s3"><a href="../user/a1372321/index.html">a1372321</a></td>
+            <td class="col s4">Favourite byte</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-03-24T07:32:00Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-03-24T07:32:00Z</span></td>
+            <td class="col s3"><a href="../user/m0ckinjay/index.html">m0ckinjay</a></td>
+            <td class="col s4">Favourite byte</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-03-21T22:45:19Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-03-21T22:45:19Z</span></td>
+            <td class="col s3"><a href="../user/S7AN/index.html">S7AN</a></td>
+            <td class="col s4">Greatest Common Divisor</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-03-16T13:45:40Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-03-16T13:45:40Z</span></td>
+            <td class="col s3"><a href="../user/B0tm4n/index.html">B0tm4n</a></td>
+            <td class="col s4">Quadratic Residues</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-03-13T17:05:33Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-03-13T17:05:33Z</span></td>
+            <td class="col s3"><a href="../user/mpg/index.html">mpg</a></td>
+            <td class="col s4">The Matrix</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-03-11T05:04:59Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-03-11T05:04:59Z</span></td>
+            <td class="col s3"><a href="../user/red909/index.html">red909</a></td>
+            <td class="col s4">Square Eyes</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-28T18:50:03Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-28T18:50:03Z</span></td>
+            <td class="col s3"><a href="../user/Sparrow09/index.html">Sparrow09</a></td>
+            <td class="col s4">Round Keys</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-28T18:35:11Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-28T18:35:11Z</span></td>
+            <td class="col s3"><a href="../user/Sparrow09/index.html">Sparrow09</a></td>
+            <td class="col s4">Structure of AES</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-28T17:55:37Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-28T17:55:37Z</span></td>
+            <td class="col s3"><a href="../user/crim_x64/index.html">crim_x64</a></td>
+            <td class="col s4">ECB Oracle</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-28T17:49:29Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-28T17:49:29Z</span></td>
+            <td class="col s3"><a href="../user/crim_x64/index.html">crim_x64</a></td>
+            <td class="col s4">Triple DES</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-28T09:15:34Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-28T09:15:34Z</span></td>
+            <td class="col s3"><a href="../user/crim_x64/index.html">crim_x64</a></td>
+            <td class="col s4">Flipping Cookie</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-26T23:35:13Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-26T23:35:13Z</span></td>
+            <td class="col s3"><a href="../user/rattmanthestupid/index.html">rattmanthestupid</a></td>
+            <td class="col s4">Encoding Challenge</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-26T20:29:19Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-26T20:29:19Z</span></td>
+            <td class="col s3"><a href="../user/Kless/index.html">Kless</a></td>
+            <td class="col s4">Extended GCD</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-24T17:26:38Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-24T17:26:38Z</span></td>
+            <td class="col s3"><a href="../user/crim_x64/index.html">crim_x64</a></td>
+            <td class="col s4">Modular Inverting</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-22T20:06:46Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-22T20:06:46Z</span></td>
+            <td class="col s3"><a href="../user/crim_x64/index.html">crim_x64</a></td>
+            <td class="col s4">Structure of AES</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-21T22:41:53Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-21T22:41:53Z</span></td>
+            <td class="col s3"><a href="../user/trihelium/index.html">trihelium</a></td>
+            <td class="col s4">Legendre Symbol</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-19T17:30:37Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-19T17:30:37Z</span></td>
+            <td class="col s3"><a href="../user/trihelium/index.html">trihelium</a></td>
+            <td class="col s4">Extended GCD</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-18T10:09:41Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-18T10:09:41Z</span></td>
+            <td class="col s3"><a href="../user/PeterPetrecere/index.html">PeterPetrecere</a></td>
+            <td class="col s4">XOR Properties</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-17T12:57:16Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-17T12:57:16Z</span></td>
+            <td class="col s3"><a href="../user/justOmarMoamen/index.html">justOmarMoamen</a></td>
+            <td class="col s4">Oh SNAP</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-17T12:26:57Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-17T12:26:57Z</span></td>
+            <td class="col s3"><a href="../user/LashaG/index.html">LashaG</a></td>
+            <td class="col s4">Factoring</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-14T18:26:10Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-14T18:26:10Z</span></td>
+            <td class="col s3"><a href="../user/rexaa/index.html">rexaa</a></td>
+            <td class="col s4">Favourite byte</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-10T19:48:38Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-10T19:48:38Z</span></td>
+            <td class="col s3"><a href="../user/ispo/index.html">ispo</a></td>
+            <td class="col s4">Beatboxer</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2"><span class="flask-moment" data-timestamp="2026-02-09T20:12:11Z" data-function="format" data-format="D MMM" data-refresh="0" style="display: none">2026-02-09T20:12:11Z</span></td>
+            <td class="col s3"><a href="../user/0xmvmd/index.html">0xmvmd</a></td>
+            <td class="col s4">XOR Properties</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 0</span></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<div>&nbsp; <br><br><br></div>
+
+<h5>Top Solutions</h5>
+
+<table>
+    <thead>
+      <tr class="row">
+        <td class="col s2">Rank</td><td class="col s3">User</td><td class="col s4">Challenge</td><td class="col s2"></td><td class="col s1">Rating</td>
+      </tr>
+    </thead>
+    <tbody>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#1</td>
+            <td class="col s3"><a href="../user/medvedisko/index.html">medvedisko</a></td>
+            <td class="col s4">XOR Properties</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 326</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#2</td>
+            <td class="col s3"><a href="../user/oushanmu/index.html">oushanmu</a></td>
+            <td class="col s4">You either know, XOR you don&#39;t</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 262</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#3</td>
+            <td class="col s3"><a href="../user/Robin_Jadoul/index.html">Robin_Jadoul</a></td>
+            <td class="col s4">Adrien&#39;s Signs</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 204</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#4</td>
+            <td class="col s3"><a href="../user/bigtuple/index.html">bigtuple</a></td>
+            <td class="col s4">Favourite byte</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 197</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#5</td>
+            <td class="col s3"><a href="../user/Robin_Jadoul/index.html">Robin_Jadoul</a></td>
+            <td class="col s4">Transparency</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 117</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#6</td>
+            <td class="col s3"><a href="../user/D00Movenok/index.html">D00Movenok</a></td>
+            <td class="col s4">You either know, XOR you don&#39;t</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 117</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#7</td>
+            <td class="col s3"><a href="../user/obormot/index.html">obormot</a></td>
+            <td class="col s4">Greatest Common Divisor</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 110</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#8</td>
+            <td class="col s3"><a href="../user/thanoskoutr/index.html">thanoskoutr</a></td>
+            <td class="col s4">Modular Inverting</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 109</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#9</td>
+            <td class="col s3"><a href="../user/Drago/index.html">Drago</a></td>
+            <td class="col s4">Crossed Wires</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 107</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#10</td>
+            <td class="col s3"><a href="../user/amadeus/index.html">amadeus</a></td>
+            <td class="col s4">Quadratic Residues</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 105</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#11</td>
+            <td class="col s3"><a href="../user/Flecart/index.html">Flecart</a></td>
+            <td class="col s4">Legendre Symbol</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 104</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#12</td>
+            <td class="col s3"><a href="../user/exp101t/index.html">exp101t</a></td>
+            <td class="col s4">Modular Binomials</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 101</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#13</td>
+            <td class="col s3"><a href="../user/Robin_Jadoul/index.html">Robin_Jadoul</a></td>
+            <td class="col s4">Encoding Challenge</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 90</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#14</td>
+            <td class="col s3"><a href="../user/StormXploit/index.html">StormXploit</a></td>
+            <td class="col s4">Favourite byte</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 88</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#15</td>
+            <td class="col s3"><a href="../user/Robin_Jadoul/index.html">Robin_Jadoul</a></td>
+            <td class="col s4">Structure of AES</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 87</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#16</td>
+            <td class="col s3"><a href="../user/fecell/index.html">fecell</a></td>
+            <td class="col s4">Extended GCD</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 85</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#17</td>
+            <td class="col s3"><a href="../user/ddddavidee/index.html">ddddavidee</a></td>
+            <td class="col s4">Successive Powers</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 77</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#18</td>
+            <td class="col s3"><a href="../user/Hon/index.html">Hon</a></td>
+            <td class="col s4">Modular Inverting</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 66</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#19</td>
+            <td class="col s3"><a href="../user/aloof/index.html">aloof</a></td>
+            <td class="col s4">Exceptional Curves</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 61</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#20</td>
+            <td class="col s3"><a href="../user/0xEmperor/index.html">0xEmperor</a></td>
+            <td class="col s4">XOR Properties</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 59</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#21</td>
+            <td class="col s3"><a href="../user/Daneallen/index.html">Daneallen</a></td>
+            <td class="col s4">Lemur XOR</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 57</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#22</td>
+            <td class="col s3"><a href="../user/aloof/index.html">aloof</a></td>
+            <td class="col s4">RSA Backdoor Viability</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 55</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#23</td>
+            <td class="col s3"><a href="../user/aloof/index.html">aloof</a></td>
+            <td class="col s4">Everything is Still Big</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 55</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#24</td>
+            <td class="col s3"><a href="../user/GingerCarrot/index.html">GingerCarrot</a></td>
+            <td class="col s4">Extended GCD</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 55</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#25</td>
+            <td class="col s3"><a href="../user/Retr0id/index.html">Retr0id</a></td>
+            <td class="col s4">ECB Oracle</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 52</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#26</td>
+            <td class="col s3"><a href="../user/shoaloak/index.html">shoaloak</a></td>
+            <td class="col s4">Lemur XOR</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 52</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#27</td>
+            <td class="col s3"><a href="../user/boge/index.html">boge</a></td>
+            <td class="col s4">Favourite byte</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 51</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#28</td>
+            <td class="col s3"><a href="../user/obormot/index.html">obormot</a></td>
+            <td class="col s4">Modular Arithmetic 1</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 49</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#29</td>
+            <td class="col s3"><a href="../user/Drago/index.html">Drago</a></td>
+            <td class="col s4">Jack&#39;s Birthday Hash</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 46</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#30</td>
+            <td class="col s3"><a href="../user/shaloo/index.html">shaloo</a></td>
+            <td class="col s4">Greatest Common Divisor</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 46</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#31</td>
+            <td class="col s3"><a href="../user/p4b/index.html">p4b</a></td>
+            <td class="col s4">Cofactor Cofantasy</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 45</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#32</td>
+            <td class="col s3"><a href="../user/Drago/index.html">Drago</a></td>
+            <td class="col s4">Adrien&#39;s Signs</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 45</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#33</td>
+            <td class="col s3"><a href="../user/zademn/index.html">zademn</a></td>
+            <td class="col s4">Fast Primes</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 45</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#34</td>
+            <td class="col s3"><a href="../user/aloof/index.html">aloof</a></td>
+            <td class="col s4">Moving Problems</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 43</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#35</td>
+            <td class="col s3"><a href="../user/Utaha/index.html">Utaha</a></td>
+            <td class="col s4">Roll your Own</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 42</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#36</td>
+            <td class="col s3"><a href="../user/T0t0r0/index.html">T0t0r0</a></td>
+            <td class="col s4">Parameter Injection</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 42</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#37</td>
+            <td class="col s3"><a href="../user/aloof/index.html">aloof</a></td>
+            <td class="col s4">Ellipse Curve Cryptography</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 41</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#38</td>
+            <td class="col s3"><a href="../user/R4GN4R/index.html">R4GN4R</a></td>
+            <td class="col s4">Privacy-Enhanced Mail?</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 41</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#39</td>
+            <td class="col s3"><a href="../user/Robin_Jadoul/index.html">Robin_Jadoul</a></td>
+            <td class="col s4">Modular Binomials</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 40</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#40</td>
+            <td class="col s3"><a href="../user/thanoskoutr/index.html">thanoskoutr</a></td>
+            <td class="col s4">Modular Arithmetic 2</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 39</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#41</td>
+            <td class="col s3"><a href="../user/Darumaseye/index.html">Darumaseye</a></td>
+            <td class="col s4">Generators of Groups</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 39</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#42</td>
+            <td class="col s3"><a href="../user/josephs/index.html">josephs</a></td>
+            <td class="col s4">Cofactor Cofantasy</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 37</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#43</td>
+            <td class="col s3"><a href="../user/glgspg/index.html">glgspg</a></td>
+            <td class="col s4">Round Keys</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 37</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#44</td>
+            <td class="col s3"><a href="../user/Scalpel/index.html">Scalpel</a></td>
+            <td class="col s4">Private Keys</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 36</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#45</td>
+            <td class="col s3"><a href="../user/aschanna123/index.html">aschanna123</a></td>
+            <td class="col s4">Backpack Cryptography</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 35</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#46</td>
+            <td class="col s3"><a href="../user/Likkrid/index.html">Likkrid</a></td>
+            <td class="col s4">Modular Square Root</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 35</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#47</td>
+            <td class="col s3"><a href="../user/Drago/index.html">Drago</a></td>
+            <td class="col s4">Monoprime</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 35</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#48</td>
+            <td class="col s3"><a href="../user/trillian/index.html">trillian</a></td>
+            <td class="col s4">Vote for Pedro</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 34</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#49</td>
+            <td class="col s3"><a href="../user/trillian/index.html">trillian</a></td>
+            <td class="col s4">Smooth Criminal</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 34</span></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s2">#50</td>
+            <td class="col s3"><a href="../user/ctfhacker/index.html">ctfhacker</a></td>
+            <td class="col s4">Modular Square Root</td>
+            <td class="col s2">
+                
+            </td>
+            <td class="col s1"><span><i class="fas fa-thumbs-up gold-text"></i> 34</span></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+
+
+        </div>
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/materialize.min.js"></script>
+        <script defer src="../static/js/confetti.browser.min.js"></script>
+        <script src="../static/js/api.js"></script>
+        <script src="../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../faq/index.html">FAQ</a><br>
+        <a href="../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../courses/intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../courses/modular/index.html">Modular Arithmetic</a><br>
+        <a href="../courses/symmetric/index.html">Symmetric Cryptography</a><br>
+        <a href="../courses/public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../courses/elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../challenges/general/index.html">General</a><br>
+        <a href="../challenges/aes/index.html">Symmetric Ciphers</a><br>
+        <a href="../challenges/maths/index.html">Mathematics</a><br>
+        <a href="../challenges/rsa/index.html">RSA</a><br>
+        <a href="../challenges/diffie-hellman/index.html">Diffie-Hellman</a><br>
+        <a href="../challenges/ecc/index.html">Elliptic Curves</a><br>
+        <a href="../challenges/hashes/index.html">Hash Functions</a><br>
+        <a href="../challenges/web/index.html">Crypto on the Web</a><br>
+        <a href="../challenges/post-quantum/index.html">Lattices</a><br>
+        <a href="../challenges/isogenies/index.html">Isogenies</a><br>
+        <a href="../challenges/zkp/index.html">Zero-Knowledge Proofs</a><br>
+        <a href="../challenges/misc/index.html">Miscellaneous</a><br>
+        <a href="../challenges/ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:29:33Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:29:33Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/solutions/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:22 GMT -->
+</html>

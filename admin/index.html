@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flag Admin</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/main77ae.css?ver=2" />
+  </head>
+  <body class="dark-mode">
+    <div class="container" style="margin-top: 40px;">
+      <h4>Flag Admin</h4>
+      <p>Update flags used by the submit API. This requires an admin key.</p>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="admin-key" type="password" />
+          <label for="admin-key" class="active">Admin Key</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="flags-json" class="materialize-textarea" rows="8" placeholder='{\"enc1\":\"crypto{...}\",\"enc2\":\"crypto{...}\"}'></textarea>
+          <label for="flags-json" class="active">Flags JSON</label>
+        </div>
+      </div>
+
+      <button id="load-btn" class="btn waves-effect waves-light">Load Current Flags</button>
+      <button id="save-btn" class="btn waves-effect waves-light">Save Flags</button>
+
+      <div id="status" style="margin-top: 16px;"></div>
+    </div>
+
+    <script>
+      function setStatus(message, ok) {
+        var el = document.getElementById("status");
+        el.textContent = message;
+        el.style.color = ok ? "#00c853" : "#ff5252";
+      }
+
+      async function callApi(method, body) {
+        var key = document.getElementById("admin-key").value || "";
+        var res = await fetch("/api/admin/flags?key=" + encodeURIComponent(key), {
+          method: method,
+          headers: { "content-type": "application/json" },
+          body: body ? JSON.stringify(body) : null,
+        });
+        var data = await res.json().catch(function(){ return {}; });
+        return { ok: res.ok, data: data };
+      }
+
+      document.getElementById("load-btn").addEventListener("click", async function() {
+        var res = await callApi("GET");
+        if (!res.ok) return setStatus(res.data.error || "Failed to load flags.", false);
+        document.getElementById("flags-json").value = JSON.stringify(res.data.flags || {}, null, 2);
+        setStatus("Flags loaded.", true);
+      });
+
+      document.getElementById("save-btn").addEventListener("click", async function() {
+        var raw = document.getElementById("flags-json").value || \"{}\";
+        var obj = null;
+        try { obj = JSON.parse(raw); } catch (e) {}
+        if (!obj || typeof obj !== "object") return setStatus("Invalid JSON.", false);
+        var res = await callApi("POST", { flags: obj });
+        if (!res.ok) return setStatus(res.data.error || "Failed to save flags.", false);
+        setStatus("Flags saved. Total: " + (res.data.count || 0), true);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/challenges/maths/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; Mathematics challenges</title>
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+<link rel="stylesheet" href="../../static/css/katex.min.css" >
+<script defer src="../../static/js/katex.min.js"></script>
+<script defer src="../../static/js/katex-auto-render.min.js"></script>
+<script defer src="../../static/js/katex-render-options.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, katex_render_options);
+    });
+</script>
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cryptohack.org" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="https://cryptohack.org/static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="https://cryptohack.org/static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../../courses/index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+
+
+
+<div class="categoryDescription">
+  
+  <div class="categoryText">
+    <h2 class="categoryTitle">Mathematics</h2>
+    <p>This category covers more advanced cryptographic math. It's not necessary to solve these before moving to the Symmetric Ciphers and RSA sections. However, the first challenges will expand your modular toolbox, while the later ones are reported to be among the most satisfying puzzles to solve on CryptoHack.</p>
+  </div>
+  <div class="categoryImage">
+  <img src="../../static/img/category/maths.png" alt="">
+  </div>
+  
+
+</div>
+
+
+<div class="row">
+    <div class="col s12 m6 noPadding">
+        <div class="left">
+        <select onchange="filterCategories(this);">
+            <option value="*">Show all stages</option>
+            
+            <option value="modmaths2">Modular Math</option>
+            
+            <option value="brainteasers">Brainteasers Part 1</option>
+            
+            <option value="brainteasers2">Brainteasers Part 2</option>
+            
+            <option value="primenumbers">Primes</option>
+            
+        </select>
+        </div>
+    </div>
+    <div class="col s12 m6 noPadding">
+      <p class="toggleCheckbox"><input type="checkbox" id="toggleSolved" class="filled-in"><label for="toggleSolved">Hide Solved Challenges</label></p>
+    </div>
+</div>
+
+<span class="stage" data-stage="modmaths2">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Modular Math</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="modmaths2" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="92" data-stage="modmaths2">
+            <div id="header-root0" data-challenge="root0" class="collapsible-header">
+                
+                <i id="check-root0" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-root0" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Quadratic Residues</div>
+                <span class="right">
+                    
+                    25 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../root0/solves/index.html">
+                        <span id="solves-root0">19206 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-root0">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../root0/solutions/index.html">
+                        71 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    We've looked at multiplication and division in modular arithmetic, but what does it mean to take the square root modulo an integer?<br><br>For the following discussion, let's work modulo $p = 29$. We can take the integer $a = 11$ and calculate $a^{2} = 5 \mod 29$.<br><br>As $a = 11, a^{2} = 5$, we say the square root of $5$ is $11$.<br><br>This feels good, but now let's think about the square root of $18$. From the above, we know we need to find some integer $a$ such that $a^{2} = 18$<br><br>Your first idea might be to start with $a = 1$ and loop to $a = p-1$. In this discussion $p$ isn't too large and we can quickly check all options.<br><br>Have a go, try coding this and see what you find. If you've coded it right, you'll find that for all $a \in \Fp^{*}$ you never find an $a$ such that $a^{2} = 18$.<br><br>What we are seeing, is that for the elements of $\Fp^{*}$, not every element has a square root. In fact, what we find is that for roughly one half of the elements of $\Fp^{*}$, there is no square root.<br><br><span class="note"><i class="fas fa-lightbulb"></i>We say that an integer $x$ is a <em>Quadratic Residue</em> if there exists an $a$ such that $a^{2} \equiv x \mod p$. If there is no such solution, then the integer is a <em>Quadratic Non-Residue</em>.</span><br><br>In other words, $x$ is a quadratic residue when it is possible to take the square root of $x$ modulo an integer $p$.<br><br>In the below list there are two non-quadratic residues and one quadratic residue.<br><br>Find the quadratic residue and then calculate its square root. Of the two possible roots, submit the smaller one as the flag.<br><br><span class="note"><i class="fas fa-brain"></i>If $a^{2} = x$ then $(-a)^{2} = x$. So if $x$ is a quadratic residue in some finite field, then there are always two solutions for $a$.</span><br><br><span class="mathDisplay"> $p = 29 \quad ints = [14, 6, 11]$ </span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-root0" class="preventToggle" data-challenge="root0" data-points="25">
+                    <div class="input-field">
+                        <input id="flag-root0" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-root0">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="93" data-stage="modmaths2">
+            <div id="header-root1" data-challenge="root1" class="collapsible-header">
+                
+                <i id="check-root1" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-root1" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Legendre Symbol</div>
+                <span class="right">
+                    
+                    35 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../root1/solves/index.html">
+                        <span id="solves-root1">14970 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-root1">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../root1/solutions/index.html">
+                        53 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    In Quadratic Residues we learnt what it means to take the square root modulo an integer. We also saw that taking a root isn't always possible.<br><br>In the previous case when $p = 29$, even the simplest method of calculating the square root was fast enough, but as $p$ gets larger, this method becomes wildly unreasonable.<br><br>Lucky for us, we have a way to check whether an integer is a quadratic residue with a single calculation thanks to Legendre. In the following, we will assume we are working modulo a prime $p$.<br><br>Before looking at Legendre's symbol, let's take a brief detour to see an interesting property of quadratic (non-)residues.<br><br><span class="mathBlock"> Quadratic Residue * Quadratic Residue = Quadratic Residue<br> Quadratic Residue * Quadratic Non-residue = Quadratic Non-residue<br> Quadratic Non-residue * Quadratic Non-residue = Quadratic Residue </span><br><br><span class="note"><i class="fas fa-pencil-alt"></i>Want an easy way to remember this? Replace "Quadratic Residue" with $+1$ and "Quadratic Non-residue" with $-1$, all three results are the same!</span><br><br>So what's the trick? The <a href="https://en.wikipedia.org/wiki/Legendre_symbol" target="_blank" rel="noopener">Legendre Symbol</a> gives an efficient way to determine whether an integer is a quadratic residue modulo an odd prime $p$.<br><br>Legendre's Symbol: $(a / p) \equiv a^{(p-1)/2} \mod p$ obeys:<br><br><span class="mathBlock"> $(a / p) = 1$ if $a$ is a quadratic residue and $a \not\equiv 0 \mod p$<br> $(a / p) = -1$ if $a$ is a quadratic non-residue $\mod p$<br> $(a / p) = 0$ if $a \equiv 0 \mod p$ </span><br><br>Which means given any integer $a$, calculating $a^{(p-1)/2} \mod p$ is enough to determine if $a$ is a quadratic residue.<br><br>Now for the flag. Given the following 1024 bit prime and 10 integers, find the quadratic residue and then calculate its square root; the square root is your flag. Of the two possible roots, submit the larger one as your answer.<br><br><span class="note"><i class="fas fa-brain"></i>So Legendre's symbol tells us which integer is a quadratic residue, but how do we find the square root?! The prime supplied obeys $p = 3 \mod 4$, which allows us easily compute the square root. The answer is online, but you can figure it out yourself if you think about Fermat's little theorem.</span><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/output_479698cde19aaa05d9e9dfca460f5443.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-root1" class="preventToggle" data-challenge="root1" data-points="35">
+                    <div class="input-field">
+                        <input id="flag-root1" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-root1">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="110" data-stage="modmaths2">
+            <div id="header-tonelli-shanks" data-challenge="tonelli-shanks" class="collapsible-header">
+                
+                <i id="check-tonelli-shanks" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-tonelli-shanks" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Modular Square Root</div>
+                <span class="right">
+                    
+                    35 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../tonelli-shanks/solves/index.html">
+                        <span id="solves-tonelli-shanks">12507 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-tonelli-shanks">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../tonelli-shanks/solutions/index.html">
+                        47 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    In Legendre Symbol we introduced a fast way to determine whether a number is a square root modulo a prime. We can go further: there are algorithms for efficiently calculating such roots. The best one in practice is called Tonelli-Shanks, which gets its funny name from the fact that it was first described by an Italian in the 19th century and rediscovered independently by Daniel Shanks in the 1970s.<br><br>All primes that aren't 2 are of the form $p \equiv 1 \mod 4$ or $p \equiv 3 \mod 4$, since all odd numbers obey these congruences. As the previous challenge hinted, in the $p \equiv 3 \mod 4$ case, a really simple formula for computing square roots can be <a href="https://crypto.stackexchange.com/a/20994" target="_blank">derived</a> directly from Fermat's little theorem. That leaves us still with the $p \equiv 1 \mod 4$ case, so a more general algorithm is required.<br><br>In a congruence of the form $r^2 \equiv a \mod p$, Tonelli-Shanks calculates $r$.<br><br><span class="note"><i class="fas fa-pencil-alt"></i>Tonelli-Shanks doesn't work for composite (non-prime) moduli. Finding square roots modulo composites is computationally equivalent to integer factorization - that is, it's a hard problem.</span><br><br>The main use-case for this algorithm is finding elliptic curve coordinates. Its operation is somewhat complex so we're not going to discuss the details, however, implementations are easy to find and Sage has one built-in.<br><br>Find the square root of $a$ modulo the 2048-bit prime $p$. Give the smaller of the two roots as your answer.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/output_abe0beb359a950c8a0a9300897528a9d.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-tonelli-shanks" class="preventToggle" data-challenge="tonelli-shanks" data-points="35">
+                    <div class="input-field">
+                        <input id="flag-tonelli-shanks" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-tonelli-shanks">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="51" data-stage="modmaths2">
+            <div id="header-crt1" data-challenge="crt1" class="collapsible-header">
+                
+                <i id="check-crt1" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-crt1" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Chinese Remainder Theorem</div>
+                <span class="right">
+                    
+                    40 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../crt1/solves/index.html">
+                        <span id="solves-crt1">12857 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-crt1">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../crt1/solutions/index.html">
+                        61 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    The Chinese Remainder Theorem gives a unique solution to a set of linear congruences if their moduli are coprime.<br><br>This means, that given a set of arbitrary integers $a^{i}$, and pairwise coprime integers $n^{i}$, such that the following linear congruences hold:<br><br><span class="note"><i class="fas fa-pencil-alt"></i> Note "pairwise coprime integers" means that if we have a set of integers $\{n^{1}, n^{2}, ..., n^{i}\}$, all pairs of integers selected from the set are coprime: $\gcd(n^{i}, n^{j}) = 1$.</span><br><br><span class="mathBlock"> $x \equiv a^{1} \mod n^{1}$<br> $x \equiv a^{2} \mod n^{2}$<br> $\ldots$<br> $x \equiv a^{n} \mod n^{n}$ </span><br><br>There is a unique solution $x \equiv a \mod N$ where $N = n^{1} \cdot n^{2} \cdot ... \cdot n^{n}$.<br><br>In cryptography, we commonly use the Chinese Remainder Theorem to help us reduce a problem of very large integers into a set of several, easier problems.<br><br>Given the following set of linear congruences:<br><br><span class="mathBlock"> $x \equiv 2 \mod 5$ <br> $x \equiv 3 \mod 11$ <br> $x \equiv 5 \mod 17$ </span><br><br>Find the integer $a$ such that $x \equiv a \mod 935$<br><br><span class="note"><i class="fas fa-brain"></i> Starting with the congruence with the largest modulus, use that for $x \equiv a \mod p$ we can write $x = a + k \cdot p$ for arbitrary integer $k$.</span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-crt1" class="preventToggle" data-challenge="crt1" data-points="40">
+                    <div class="input-field">
+                        <input id="flag-crt1" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-crt1">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="brainteasers">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Brainteasers Part 1</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="brainteasers" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="52" data-stage="brainteasers">
+            <div id="header-powers" data-challenge="powers" class="collapsible-header">
+                
+                <i id="check-powers" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-powers" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Successive Powers</div>
+                <span class="right">
+                    
+                    60 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../powers/solves/index.html">
+                        <span id="solves-powers">4599 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-powers">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../powers/solutions/index.html">
+                        28 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    The following integers: $\{588, 665, 216, 113, 642, 4, 836, 114, 851, 492, 819, 237\}$ are successive large powers of an integer $x$, modulo a three digit prime $p$.<br><br>Find $p$ and $x$ to obtain the flag.<br><br><span class="note"><i class="fas fa-pencil-alt"></i> You can do this with a pen and paper. We've included this challenge as an excuse for you to get used to algebra and modular mathematics.</span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-powers" class="preventToggle" data-challenge="powers" data-points="60">
+                    <div class="input-field">
+                        <input id="flag-powers" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-powers">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="81" data-stage="brainteasers">
+            <div id="header-adrien" data-challenge="adrien" class="collapsible-header">
+                
+                <i id="check-adrien" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-adrien" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Adrien&#39;s Signs</div>
+                <span class="right">
+                    
+                    80 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../adrien/solves/index.html">
+                        <span id="solves-adrien">9532 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-adrien">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../adrien/solutions/index.html">
+                        53 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Adrien's been looking at ways to encrypt his messages with the help of symbols and minus signs. Can you find a way to recover the flag?<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_734d7e14251f950935f83d228f8694ab.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/output_80fc6398d2fd9f272186d0af510323f9.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-adrien" class="preventToggle" data-challenge="adrien" data-points="80">
+                    <div class="input-field">
+                        <input id="flag-adrien" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-adrien">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="50" data-stage="brainteasers">
+            <div id="header-bionomials" data-challenge="bionomials" class="collapsible-header">
+                
+                <i id="check-bionomials" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-bionomials" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Modular Binomials</div>
+                <span class="right">
+                    
+                    80 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../bionomials/solves/index.html">
+                        <span id="solves-bionomials">7815 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-bionomials">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../bionomials/solutions/index.html">
+                        30 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Rearrange the following equations to get the primes <code>p,q</code><br><br><span class="mathBlock"> $N = p \cdot q$ <br> $c_1 = (2 \cdot p + 3 \cdot q)^{e_1} \mod N$ <br> $c_2 = (5 \cdot p + 7 \cdot q)^{e_2} \mod N$ </span><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/data_04a0fe134cf31a6c941377aad75db81c.txt" download>data.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-bionomials" class="preventToggle" data-challenge="bionomials" data-points="80">
+                    <div class="input-field">
+                        <input id="flag-bionomials" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-bionomials">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="109" data-stage="brainteasers">
+            <div id="header-broken-rsa" data-challenge="broken-rsa" class="collapsible-header">
+                
+                <i id="check-broken-rsa" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-broken-rsa" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Broken RSA</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../broken-rsa/solves/index.html">
+                        <span id="solves-broken-rsa">2826 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-broken-rsa">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../broken-rsa/solutions/index.html">
+                        25 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I tried to send you an important message with RSA, however I messed up my RSA implementation really badly. Can you still recover the flag?<br><br><span class="note"><i class="fas fa-brain"></i>If you think you're doing the right thing but getting garbage, be sure to check all possible solutions.</span><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/broken_rsa_34db5007b0788a5cd306f3bd47e9ca71.txt" download>broken_rsa.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-broken-rsa" class="preventToggle" data-challenge="broken-rsa" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-broken-rsa" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-broken-rsa">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="170" data-stage="brainteasers">
+            <div id="header-no-way-back-home" data-challenge="no-way-back-home" class="collapsible-header">
+                
+                <i id="check-no-way-back-home" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-no-way-back-home" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">No Way Back Home</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../no-way-back-home/solves/index.html">
+                        <span id="solves-no-way-back-home">1765 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-no-way-back-home">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../no-way-back-home/solutions/index.html">
+                        11 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Quantum Computers are going to break some of the standard cryptosystems like RSA, ECC and others. We're in some trouble, so why don't we make our own Quantum-Safe Key Exchange Protocol?<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/nowayback_9e0beb8fb2bbb103771ee735a890e387.py" download>nowayback.py</a><br />&nbsp; - <a href="../../static/challenges/out_549f6bbac5f815ee3f197c2248a352cd.txt" download>out.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/DCryp7/index.html">DCryp7</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-no-way-back-home" class="preventToggle" data-challenge="no-way-back-home" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-no-way-back-home" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-no-way-back-home">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="brainteasers2">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Brainteasers Part 2</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="brainteasers2" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="127" data-stage="brainteasers2">
+            <div id="header-ellipse" data-challenge="ellipse" class="collapsible-header">
+                
+                <i id="check-ellipse" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-ellipse" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Ellipse Curve Cryptography</div>
+                <span class="right">
+                    
+                    125 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../ellipse/solves/index.html">
+                        <span id="solves-ellipse">1301 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-ellipse">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../ellipse/solutions/index.html">
+                        16 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I overheard my professor talking about ellipse curve cryptography. I tried googling it, but didn't find anything so I implemented it myself.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_f8d9ededc511666cb0b32e183142b444.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/output_3285d9daa401e33046ada4c3cc077b10.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-ellipse" class="preventToggle" data-challenge="ellipse" data-points="125">
+                    <div class="input-field">
+                        <input id="flag-ellipse" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-ellipse">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="161" data-stage="brainteasers2">
+            <div id="header-roll_your_own" data-challenge="roll_your_own" class="collapsible-header">
+                
+                <i id="check-roll_your_own" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-roll_your_own" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Roll your Own</div>
+                <span class="right">
+                    
+                    125 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../roll_your_own/solves/index.html">
+                        <span id="solves-roll_your_own">1110 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-roll_your_own">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../roll_your_own/solutions/index.html">
+                        7 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Cracking discrete logarithms is hard. Change my mind. I'll even let you to use your own parameters, as long as the modulus is of the given order.<br /><br />Connect at <code>socket.cryptohack.org 13403</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13403_3fc14872be8c0172d0c72a81b6fc9b12.py" download>13403.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Mystiz/index.html">Mystiz</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-roll_your_own" class="preventToggle" data-challenge="roll_your_own" data-points="125">
+                    <div class="input-field">
+                        <input id="flag-roll_your_own" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-roll_your_own">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="116" data-stage="brainteasers2">
+            <div id="header-unencryptable" data-challenge="unencryptable" class="collapsible-header">
+                
+                <i id="check-unencryptable" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-unencryptable" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Unencryptable</div>
+                <span class="right">
+                    
+                    125 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../unencryptable/solves/index.html">
+                        <span id="solves-unencryptable">1671 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-unencryptable">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../unencryptable/solutions/index.html">
+                        11 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I swear I knew what I was doing, but I encrypted some data on my hard drive and nothing happened? RSA is so confusing. Luckily my flag is safe, but it seems I have a lot more learning to do.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_b1dbaf88b6cbdfcc484a693074e668d1.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/output_d8d7a60bdc52b56d3be6f24a000f40cd.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/unblvr/index.html">unblvr</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-unencryptable" class="preventToggle" data-challenge="unencryptable" data-points="125">
+                    <div class="input-field">
+                        <input id="flag-unencryptable" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-unencryptable">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="138" data-stage="brainteasers2">
+            <div id="header-cofactor" data-challenge="cofactor" class="collapsible-header">
+                
+                <i id="check-cofactor" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-cofactor" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Cofactor Cofantasy</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../cofactor/solves/index.html">
+                        <span id="solves-cofactor">997 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-cofactor">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../cofactor/solutions/index.html">
+                        12 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Do you have the power to break out of my cofactor cofantasy?<br><br>Calculating the solution should take less than 15 minutes.<br /><br />Connect at <code>socket.cryptohack.org 13398</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13398_484901f7f3e88604cdaa1ecfc1b46159.py" download>13398.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Robin_Jadoul/index.html">Robin_Jadoul</a> and <a class="gold-link" href="../../user/Thunderlord/index.html">Thunderlord</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-cofactor" class="preventToggle" data-challenge="cofactor" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-cofactor" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-cofactor">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="108" data-stage="brainteasers2">
+            <div id="header-eisenstein" data-challenge="eisenstein" class="collapsible-header">
+                
+                <i id="check-eisenstein" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-eisenstein" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Real Eisenstein</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../eisenstein/solves/index.html">
+                        <span id="solves-eisenstein">1056 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-eisenstein">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../eisenstein/solutions/index.html">
+                        10 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I've hidden my secret among the primes. Reducing the number back down to the flag shouldn't be possible!<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/real_eisenstein_1ce0c3fb87030d17f78337c733db02c9.py" download>real_eisenstein.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/ariana/index.html">ariana</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-eisenstein" class="preventToggle" data-challenge="eisenstein" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-eisenstein" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-eisenstein">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="primenumbers">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Primes</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="primenumbers" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="96" data-stage="primenumbers">
+            <div id="header-prejudice" data-challenge="prejudice" class="collapsible-header">
+                
+                <i id="check-prejudice" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-prejudice" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Prime and Prejudice</div>
+                <span class="right">
+                    
+                    200 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../prejudice/solves/index.html">
+                        <span id="solves-prejudice">1098 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-prejudice">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../prejudice/solutions/index.html">
+                        12 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    You may look through my window and see my flag, but to maintain my modesty, only the first character is available.<br /><br />Connect at <code>socket.cryptohack.org 13385</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13385_d25d40f676ab81262d2b10a0b3b37e6e.py" download>13385.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-prejudice" class="preventToggle" data-challenge="prejudice" data-points="200">
+                    <div class="input-field">
+                        <input id="flag-prejudice" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-prejudice">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+
+        </div>
+        <script src="../../static/js/jquery.min.js"></script>
+        <script src="../../static/js/materialize.min.js"></script>
+        <script defer src="../../static/js/confetti.browser.min.js"></script>
+        <script src="../../static/js/api.js"></script>
+        <script src="../../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+
+
+<script>
+    var challenges_open = JSON.parse(localStorage.getItem("challenges-open")) || {"crt1": true, "root0": true, "root1": true, "tonelli-shanks": true};
+    Object.keys(challenges_open).forEach(function(el){
+        $(".collapsible-header#header-" + el).addClass("active");
+    });
+
+    $(".collapsible-header").on("click", function(){
+        var chall = $(this).data('challenge');
+        if(challenges_open.hasOwnProperty(chall)) {
+            delete challenges_open[chall];
+        } else {
+            challenges_open[chall] = true;
+            $('html, body').animate({
+                    scrollTop: $(this).offset().top -100
+            }, 700);
+        }
+        localStorage.setItem("challenges-open", JSON.stringify(challenges_open));
+    });
+
+    $(".preventToggle").on("click", function(){
+        event.stopPropagation();
+    });
+
+    var state = $(".collapsible-header.active").length == 0;
+    function updateButton(){
+        if(state){
+            $("#toggleState").html("Expand all challenges");
+        } else {
+            $("#toggleState").html("Collapse all challenges");
+        }
+
+    }
+    updateButton(state);
+    function toggle() {
+        if(state) {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+        } else {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        }
+        state = !state;
+        updateButton(state);
+    }
+    function filterCategories(t) {
+        var v = t.options[t.selectedIndex].value;
+        if(v == "*")
+            $(".stage").show();
+        else {
+            $(".stage[data-stage=" + v + "]").show();
+            $(".stage[data-stage!=" + v + "]").hide();
+        }
+    }
+    function toggleSolved(){
+      $('.fas.fa-star').each(function() {
+        if($(this).css('display') == 'block'){
+          if($(this).parent().next().css('display') == 'block'){
+              $(this).parent().toggle();
+              $(this).parent().click();
+              $(this).parent().next().hide();
+          }
+          else{
+            $(this).parent().toggle();
+          }
+        }
+      });
+    }
+
+
+    $("#toggleSolved").on("click", function(e){
+        // e.preventDefault();
+        toggleSolved();
+        // var text = $(this).next().text();
+        // $(this).next().text(
+        // text == "Hide Solved Challenges" ? "Show Solved Challenges" : "Hide Solved Challenges");
+    });
+
+
+    $("#toggleState").on("click", function(e){
+        // e.preventDefault();
+        toggle();
+    });
+    $(".stage-collapse").on("click", function(e){
+        // e.preventDefault();
+        var stage = $(this).data('collapse');
+        var header_selector = ".challenge[data-stage=" + stage + "] .collapsible-header";
+        var state = $(header_selector + ".active").length != 0;
+        if(state)
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        else
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+    });
+    $("form").submit(function(e) {
+        // Loading button
+        var loadBtn = $(this).find(".loader");
+        loadBtn.show();
+
+        var id = $(this).data("challenge");
+        var points = $(this).data("points");
+        var flag = $("#flag-" + id).val();
+        // var updatedScore = score + points;
+        console.log(id);
+        console.log(flag);
+        api.makeCall("/submit/" + id + ".json", {flag: flag, _csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function(data) {
+            if(data.code) {
+                loadBtn.hide();
+                Materialize.toast(data.message, 4000);
+            }
+            else {
+                // Materialize.toast("Correct flag, nice one!", 4000);
+                $("#uncheck-" + id).hide();
+                $("#check-" + id).show();
+                $("#header-" + id).click();
+
+                // update solves box
+                var solves_text = data.solves == 1 ? "Solve" : "Solves";
+                $("#solves-" + id).html(data.solves + " " + solves_text);
+                $("#solves-" + id).parent().show();
+                $("#solutions-" + id).show();
+                $("#youvesolved-" + id).show();
+                $("#empty-" + id).hide();
+                $("#flagform-" + id).hide();
+                if (window.handleCorrectFlag) { window.handleCorrectFlag(id); }
+
+                // update points at top
+                console.log(score);
+                console.log(points);
+                score = calculateLevel(score, points);
+                loadBtn.hide();
+                setTimeout(function(){ launchConfetti(); }, 250);
+            }
+        });
+        return false;
+    });
+</script>
+
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../../faq/index.html">FAQ</a><br>
+        <a href="../../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../../courses/intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../../courses/modular/index.html">Modular Arithmetic</a><br>
+        <a href="../../courses/symmetric/index.html">Symmetric Cryptography</a><br>
+        <a href="../../courses/public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../../courses/elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../general/index.html">General</a><br>
+        <a href="../aes/index.html">Symmetric Ciphers</a><br>
+        <a href="index.html">Mathematics</a><br>
+        <a href="../rsa/index.html">RSA</a><br>
+        <a href="../diffie-hellman/index.html">Diffie-Hellman</a><br>
+        <a href="../ecc/index.html">Elliptic Curves</a><br>
+        <a href="../hashes/index.html">Hash Functions</a><br>
+        <a href="../web/index.html">Crypto on the Web</a><br>
+        <a href="../post-quantum/index.html">Lattices</a><br>
+        <a href="../isogenies/index.html">Isogenies</a><br>
+        <a href="../zkp/index.html">Zero-Knowledge Proofs</a><br>
+        <a href="../misc/index.html">Miscellaneous</a><br>
+        <a href="../ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:30:44Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:30:44Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/challenges/maths/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:23 GMT -->
+</html>

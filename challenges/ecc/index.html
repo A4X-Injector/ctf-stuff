@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/challenges/ecc/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; Elliptic Curves challenges</title>
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+<link rel="stylesheet" href="../../static/css/katex.min.css" >
+<script defer src="../../static/js/katex.min.js"></script>
+<script defer src="../../static/js/katex-auto-render.min.js"></script>
+<script defer src="../../static/js/katex-render-options.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, katex_render_options);
+    });
+</script>
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cryptohack.org" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="https://cryptohack.org/static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="https://cryptohack.org/static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../../courses/index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+
+
+
+<div class="categoryDescription">
+  
+  <div class="categoryText">
+    <h2 class="categoryTitle">Elliptic Curves</h2>
+    <p>The use of elliptic curves for public-key cryptography was first suggested in 1985. After resisting decades of attacks, they started to see widespread use from around 2005, providing several benefits over previous public-key cryptosystems such as RSA.<br /><br />Smaller EC keys offer greater strength, with a 256-bit EC key having the same security level as a 3072-bit RSA key. Furthermore, several operations using those keys (including signing) can be more efficient both time- and memory-wise. Finally, since ECC is more complex than RSA, it has the welcome effect of encouraging developers to make use of trusted libraries rather than rolling their own.<br /><br />These challenges aim to give you an intuition for the trapdoor function behind ECC; dip your toes into the mathematical structure underlying it; and have you breaking popular schemes like ECDSA.</p>
+  </div>
+  <div class="categoryImage">
+  <img src="../../static/img/category/ecc.png" alt="">
+  </div>
+  
+
+</div>
+
+
+<div class="row">
+    <div class="col s12 m6 noPadding">
+        <div class="left">
+        <select onchange="filterCategories(this);">
+            <option value="*">Show all stages</option>
+            
+            <option value="ecc-background">Background</option>
+            
+            <option value="ecc-starter">Starter</option>
+            
+            <option value="ecc-parameters">Parameter Choice</option>
+            
+            <option value="ecc-parameters-2">Parameter Choice 2</option>
+            
+            <option value="ecc-signatures">Signatures</option>
+            
+            <option value="ecc-edwards">Edwards Curves</option>
+            
+            <option value="ecc-side-channels">Side Channels</option>
+            
+        </select>
+        </div>
+    </div>
+    <div class="col s12 m6 noPadding">
+      <p class="toggleCheckbox"><input type="checkbox" id="toggleSolved" class="filled-in"><label for="toggleSolved">Hide Solved Challenges</label></p>
+    </div>
+</div>
+
+<span class="stage" data-stage="ecc-background">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Background</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="ecc-background" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="70" data-stage="ecc-background">
+            <div id="header-bg" data-challenge="bg" class="collapsible-header">
+                
+                <i id="check-bg" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-bg" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Background Reading</div>
+                <span class="right">
+                    
+                    5 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../bg/solves/index.html">
+                        <span id="solves-bg">6442 Solves</span>
+                    </a>
+                    
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Elliptic Curve Cryptography (ECC) is an asymmetric cryptographic protocol that, like RSA and Diffie-Hellman (DH), relies on a trapdoor function. To recap: trapdoor functions allow a client to keep data secret by performing a mathematical operation which is computationally easy to do, but currently understood to be very expensive to undo.<br><br>For RSA, the trapdoor function relies on the hardness of factoring large numbers. For Diffie-Hellman, the trapdoor relies on the hardness of the discrete log problem in a finite field. For both RSA and DH, the operations that run through the veins of the protocol are familiar to us. Multiplying numbers and taking powers of numbers are things we are taught to do in school. ECC stands out, because the group operation in ECC won't pop up in your life unless you are looking for it.<br><br><span class="note"><i class="fas fa-pencil-alt"></i>This discussion here will not be total, and those who are really looking to understand ECC, I recommend these notes <a href="https://web.archive.org/web/20220412170936/https://crypto.stanford.edu/pbc/notes/elliptic/" target="_blank" rel="noopener">Elliptic Curve notes by Ben Lynn</a>, and the textbook "An Introduction to Mathematical Cryptography", <em>Jeffrey Hoffstein, Jill Pipher, Joseph H. Silverman</em>.</span><br><br>Let's start thinking about ECC by looking at what we mean by an elliptic curve. We will be studying Weierstrass equations, which are of the form<br><br><span class="mathDisplay"> $E : Y^{2} = X^{3} + a X + b$ </span><br><br>Elliptic curves have an amazing feature: we can define an operator that we will call "point addition". This operator takes two points on some curve and produces a third point on the curve. Taking the set of points on an elliptic curve, point addition defines an Abelian group operation.<br><br><span class="note"><i class="fas fa-brain"></i>There's a lot of text here. Let's motivate this! We can understand scalar multiplication of a point as the repeated point addition of the same point. $Q = [2]P = P + P$. It turns out that scalar multiplication is a trapdoor function! ECC relies on the hardness of finding the $n$ such that $Q = [n]P$ given $Q$ and $P$.</span><br><br><b>So how do we understand point addition?</b><br><br>Geometrically, we can understand point addition $P + Q$ like so. Take an elliptic curve and mark the two points $P, Q$ along the curve with their $x,y$ coordinates. Draw a straight line that passes through both points. Now continue the line until it intersects your curve a third time. Mark this new intersection $R$. Finally, take $R$ and reflect it along the $y$ direction to produce $R' = R(x,-y)$. The result of the point addition is $P + Q = R'$<br><br>What if we want to add two of the same point together: $P + P$? We can't draw a unique line through one point, but we can pick a unique line by calculating the tangent line to the curve at the point. Calculate the tangent line at the point $P$. Continue the line until it intersects with the curve at point $R$. Reflect this point as before: $P + P = R' = R(x,-y)$.<br><br>What happens if there is no third intersection? Sometimes you will pick two points $P, Q$ and the line will not touch the curve again. In this case we say that the line intersects with the point ($O$) which is a single point located at the end of every vertical line at infinity. As such, point addition for an elliptic curve is defined in 2D space, with an additional point located at infinity.<br><br>Included below is a diagram as a visual aid to these different cases</p><br><br><p style="text-align: center; margin: -5em 0;"> <img style="max-width: 100%;" src="../../static/img/ECClines.svg" alt="diagram of ECC addition"> </p> <p><br><br>The point $O$ acts as the identity operator of the group: $P + O = P$ and $P + (-P) = O$.<br><br>This brings us to the point of defining an elliptic curve.<br><br><b>Definition</b>: An elliptic curve $E$ is the set of solutions to a Weierstrass equation<br><br><span class="mathDisplay">$E: Y^{2} = X^{3} + a X + b$</span><br><br>together with a point at infinity $O$. The constants $a,b$ must satisfy the relationship<br><br><span class="mathDisplay">$4a^{3} + 27 b^{2} \neq 0$</span><br><br>to ensure there are no singularities on the curve.<br><br>Formally, let E be an elliptic curve, point addition has the following properties<br><br><span class="mathBlock"> (a) $P + O = O + P = P$<br> (b) $P + (−P) = O$ <br> (c) $(P + Q) + R = P + (Q + R)$ <br> (d) $P + Q = Q + P$ </span><br><br>In ECC, we study elliptic curves over a finite field $\Fp$. This means we look at the curve modulo the characteristic $p$ and an elliptic curve will no longer be a curve, but a collection of points whose $x,y$ coordinates are integers in $\Fp$.<br><br>The following starter challenges will take you through the calculations for ECC and get you used to the basic operations that ECC is built upon, have fun!<br><br>Property <code>(d)</code> shows that point addition is commutative. The flag is the name we give groups with a commutative operation.
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-bg" class="preventToggle" data-challenge="bg" data-points="5">
+                    <div class="input-field">
+                        <input id="flag-bg" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-bg">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="ecc-starter">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Starter</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="ecc-starter" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="74" data-stage="ecc-starter">
+            <div id="header-ecc0" data-challenge="ecc0" class="collapsible-header">
+                
+                <i id="check-ecc0" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-ecc0" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Point Negation</div>
+                <span class="right">
+                    
+                    10 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../ecc0/solves/index.html">
+                        <span id="solves-ecc0">5539 Solves</span>
+                    </a>
+                    
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    In the background section, we covered the basics of how we can view point addition over an elliptic curve as being an abelian group operation. In this geometric picture we allowed the coordinates on the curve to be any real number.<br><br>To apply elliptic curves in a cryptographic setting, we study elliptic curves which have coordinates in a finite field $\Fp$.<br><br>We will still be considering elliptic curves of the form $E: Y^{2} = X^{3} + a X + b $, which satisfy the following conditions: $a,b \in \Fp$ and $4a^{3} + 27 b^{2} \neq 0$. However, we no longer think of the elliptic curve as a geometric object, but rather a set of points defined by<br><br><span class="mathDisplay"> $E(\Fp) = \{(x,y) : x,y \in \Fp \textrm{ satisfying } y^{2} = x^{3} + a x + b \} \cup O$ </span><br><br><span class="note"><i class="fas fa-pencil-alt"></i> Note: Everything we covered in the background still holds. The identity of the group is the point at infinity: $O$, and the addition law is unchanged. Given two points in $E(\Fp)$, the addition law will generate another point in $E(\Fp)$.</span><br><br>For all the challenges in the starter set, we will be working with the elliptic curve<br><br><span class="mathDisplay"> $E: Y^{2} = X^{3} + 497 X + 1768 \mod 9739$ </span><br><br>Using the above curve, and the point $P(8045,6936)$, find the point $Q(x,y)$ such that $P + Q = O$.<br><br><span class="note"><i class="fas fa-brain"></i> Remember, we're working in a finite field now, so you'll need to correctly handle negative numbers.</span><br /><br /><b>Resources:</b><br />&nbsp; - <a href="https://curves.xargs.org/" target="_blank">The Animated Elliptic Curve: Visualizing Elliptic Curve Cryptography</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-ecc0" class="preventToggle" data-challenge="ecc0" data-points="10">
+                    <div class="input-field">
+                        <input id="flag-ecc0" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-ecc0">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="73" data-stage="ecc-starter">
+            <div id="header-ecc1" data-challenge="ecc1" class="collapsible-header">
+                
+                <i id="check-ecc1" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-ecc1" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Point Addition</div>
+                <span class="right">
+                    
+                    30 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../ecc1/solves/index.html">
+                        <span id="solves-ecc1">4909 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-ecc1">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../ecc1/solutions/index.html">
+                        27 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    While working with elliptic curve cryptography, we will need to add points together. In the background challenges, we did this geometrically by finding a line that passed through two points, finding the third intersection and then reflecting along the $y$-axis.<br><br>It turns out that there is an efficient algorithm for calculating the point addition law for an elliptic curve.<br><br>Taken from "An Introduction to Mathematical Cryptography", <i>Jeffrey Hoffstein, Jill Pipher, Joseph H. Silverman</i>, the following algorithm will calculate the addition of two points on an elliptic curve<br><br><span class="mathBlock"> <b>Algorithm for the addition of two points: $P + Q$</b><br> <br> (a) If $P = O$, then $P + Q = Q$.<br> (b) Otherwise, if $Q = O$, then $P + Q = P$.<br> (c) Otherwise, write $P = (x_{1}, y_{1})$ and $Q = (x_{2}, y_{2})$.<br> (d) If $x_{1} = x_{2}$ and $y_{1} = −y_{2}$, then $P + Q = O$.<br> (e) Otherwise:<br> &nbsp;  (e1) if $P \neq Q$: $\lambda = (y_{2} - y_{1}) / (x_{2} - x_{1})$<br> &nbsp;  (e2) if $P = Q$: $\lambda = (3x_{1}^2 + a) / 2y_{1}$<br> (f) $x_{3} = λ^2 − x_{1} − x_{2}$<br> (h) $y_{3} = λ(x_{1} −x_{3}) − y_{1}$<br> (i) $P + Q = (x_{3}, y_{3})$<br> </span><br><br><span class="note"><i class="fas fa-pencil-alt"></i>We are working with a finite field, so the above calculations should be done modulo $p$, and we do not "divide" by an integer, we instead multiply by the modular inverse of a number. e.g. $5^{-1} \equiv 9 \mod 11$.</span><br><br>We will work with the following elliptic curve, and prime:<br><br><span class="mathDisplay"> $E: Y^{2} = X^{3} + 497 X + 1768 \mod 9739$ </span><br><br><span class="note"><i class="fas fa-lightbulb"></i>You can test your algorithm by asserting: $X + Y = (1024, 4440)$ and $X + X = (7284, 2107)$ for $X = (5274, 2841)$ and $Y = (8669, 740)$.</span><br><br>Using the above curve, and the points $P = (493, 5564), Q = (1539, 4742), R = (4403,5202)$, find the point $S(x,y) = P + P + Q + R$ by implementing the above algorithm.<br><br><span class="note"><i class="fas fa-brain"></i>After calculating $S$, substitute the coordinates into the curve. Assert that the point $S$ is in $E(\Fp)$</span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-ecc1" class="preventToggle" data-challenge="ecc1" data-points="30">
+                    <div class="input-field">
+                        <input id="flag-ecc1" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-ecc1">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="80" data-stage="ecc-starter">
+            <div id="header-ecc2" data-challenge="ecc2" class="collapsible-header">
+                
+                <i id="check-ecc2" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-ecc2" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Scalar Multiplication</div>
+                <span class="right">
+                    
+                    35 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../ecc2/solves/index.html">
+                        <span id="solves-ecc2">4441 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-ecc2">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../ecc2/solutions/index.html">
+                        22 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Scalar multiplication of two points is defined by repeated addition: $[3]P = P + P + P$.<br><br>In the next few challenges, we will use scalar multiplication to create a shared secret over an insecure channel similarly to the Diffie-Hellman challenges.<br><br>Taken from "An Introduction to Mathematical Cryptography", <i>Jeffrey Hoffstein, Jill Pipher, Joseph H. Silverman</i>, the following algorithm will efficently calculate scalar multiplication of a point on an elliptic curve<br><br><span class="mathBlock"> <b>Double and Add algorithm for the scalar multiplication</b><br> <br> Input: $P \in E(\Fp)$ and an integer $n > 0$ <br> Output: $Q = [n]P \in E(\Fp)$<br><br>1. Set $Q = P$ and $R = O$.<br> 2. Loop while n > 0.<br> &nbsp;&nbsp;3. If $n \equiv 1 \mod 2$, set $R = R + Q$.<br> &nbsp;&nbsp;4. Set $Q = [2] Q$ and $n = \lfloor n/2 \rfloor$.<br> &nbsp;&nbsp;5. If $n > 0$, continue with loop at Step 2.<br> 6. Return the point $R$, which equals $[n]P$.<br> </span><br><br><span class="note"><i class="fas fa-pencil-alt"></i>This is not the most efficient algorithm, there are many interesting ways to improve this calculation up, but this will be sufficient for our work.</span><br><br>We will work with the following elliptic curve, and prime:<br><br><span class="mathDisplay"> $E: Y^2 = X^3 + 497 X + 1768 \mod 9739$ </span><br><br><span class="note"><i class="fas fa-lightbulb"></i>You can test your algorithm by asserting: $[1337] X = (1089, 6931)$ for $X = (5323, 5438)$.</span><br><br>Using the above curve, and the points $P = (2339, 2213)$, find the point $Q(x,y) = [7863] P$ by implementing the above algorithm.<br><br><span class="note"><i class="fas fa-brain"></i>After calculating $Q$, substitute the coordinates into the curve. Assert that the point $Q$ is in $E(\Fp)$.</span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-ecc2" class="preventToggle" data-challenge="ecc2" data-points="35">
+                    <div class="input-field">
+                        <input id="flag-ecc2" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-ecc2">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="79" data-stage="ecc-starter">
+            <div id="header-ecc3" data-challenge="ecc3" class="collapsible-header">
+                
+                <i id="check-ecc3" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-ecc3" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Curves and Logs</div>
+                <span class="right">
+                    
+                    40 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../ecc3/solves/index.html">
+                        <span id="solves-ecc3">4233 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-ecc3">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../ecc3/solutions/index.html">
+                        14 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    The Elliptic Curve Discrete Logarithm Problem (ECDLP) is the problem of finding an integer $n$ such that $Q = [n]P$.<br><br>Like we encountered with the discrete logarithm problem, scalar multiplication of a point in $E(\Fp)$ seems to be be a hard problem to undo, with the most efficient algorithm running at $q^{1/2}$ time when $P$ generates a subgroup of size $q$.<br><br>This makes it a great candidate for a trapdoor function.<br><br>Alice and Bob are talking and they want to create a shared secret so they can start encrypting their messages with some symmetric cryptographic protocol Alice and Bob don't trust their connection, so they need a way to create a secret others can't replicate.<br><br>To start thing off, Alice and Bob agree on a curve $E$, a prime $p$ and a generator point $G$ which generates a subgroup $H = \langle G \rangle$ of prime order $q$<br><br><span class="note"><i class="fas fa-pencil-alt"></i>In elliptic curve cryptography, it is important that the order of $G$ is prime. Constructing secure curves is complicated and it is recommended to use a preconstructed curve where a client is given the curve, the prime and the generator to use.</span><br><br>The Elliptic Curve Diffie-Hellman Key Exchange goes as follows:<br><br><ul> <li>Alice generates a secret random integer $n_A$ and calculates $Q_A = [n_A]G$</li> <li>Bob generates a secret random integer $n_B$ and calculates $Q_B = [n_B]G$</li> <li>Alice sends Bob $Q_A$, and Bob sends Alice $Q_B$. Due to the hardness of ECDLP, an onlooker Eve is unable to calculate $n_{A/B}$ in reasonable time.</li> <li>Alice then calculates $[n_A]Q_B$, and Bob calculates $[n_B]Q_A$.</li> <li>Due to the associativity of scalar multiplication, $S = [n_A]Q_B = [n_B]Q_A$.</li> <li>Alice and Bob can use $S$ as their shared secret.</li><br><br>Using the curve, prime and generator:<br><br><span class="mathDisplay"> $E: Y^{2} = X^{3} + 497 X + 1768 \mod 9739, \quad G: (1804,5368)$ </span><br><br>Calculate the shared secret after Alice sends you $Q_A = (815, 3190)$, with your secret integer $n_B = 1829$.<br><br>Generate a key by calculating the SHA1 hash of the $x$ coordinate (take the integer representation of the coordinate and cast it to a string). The flag is the hexdigest you find.<br><br><span class="note"><i class="fas fa-exclamation-triangle"></i>This curve is not cryptographically secure!! We've picked a small prime for these starter challenges to keep everything fast while you learn. Cryptographically secure curves have primes of bit size &asymp; 256</span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-ecc3" class="preventToggle" data-challenge="ecc3" data-points="40">
+                    <div class="input-field">
+                        <input id="flag-ecc3" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-ecc3">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="78" data-stage="ecc-starter">
+            <div id="header-ecc4" data-challenge="ecc4" class="collapsible-header">
+                
+                <i id="check-ecc4" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-ecc4" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Efficient Exchange</div>
+                <span class="right">
+                    
+                    50 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../ecc4/solves/index.html">
+                        <span id="solves-ecc4">3831 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-ecc4">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../ecc4/solutions/index.html">
+                        20 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Alice and Bob are looking at the Elliptic Curve Discrete Logarithm Problem and thinking about the data they send.<br><br>They want to try and keep their data transfer as efficient as possible and realise that sending both the $x$ and $y$ coordinate of their public key isn't necessary.<br><br>As long as Alice and Bob agree on the curve parameters, there are only ever two possible values of $y$ for a given $x$.<br><br>In fact, given <i>either</i> of the values of $y$ permissible from the value $x$ they receive, the $x$ coordinate of their shared secret will be the same.<br><br><span class="note"><i class="fas fa-brain"></i> For these challenges, we have used a prime $p \equiv 3 \mod 4$, which will help you find $y$ from $y^{2}$.</span><br><br>Using the curve, prime and generator:<br><br><span class="mathDisplay"> $E: Y^{2} = X^{3} + 497 X + 1768 \mod 9739, \quad G: (1804,5368)$ </span><br><br>Calculate the shared secret after Alice sends you $x(Q_A) = 4726$, with your secret integer $n_B = 6534$.<br><br>Use the <code>decrypt.py</code> file to decode the flag<br><br><span class="codeBlock"> {'iv': 'cd9da9f1c60925922377ea952afc212c', 'encrypted_flag': 'febcbe3a3414a730b125931dccf912d2239f3e969c4334d95ed0ec86f6449ad8'} </span><br><br><span class="note"><i class="fas fa-pencil-alt"></i>You can specify which of the two possible values your public $y$ coordinate has taken by sending only one bit. Try and think about how you could do this. How are the two $y$ values related to each other?</span><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/decrypt_08c0fede9185868aba4a6ae21aca0148.py" download>decrypt.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-ecc4" class="preventToggle" data-challenge="ecc4" data-points="50">
+                    <div class="input-field">
+                        <input id="flag-ecc4" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-ecc4">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="ecc-parameters">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Parameter Choice</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="ecc-parameters" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="77" data-stage="ecc-parameters">
+            <div id="header-criminal" data-challenge="criminal" class="collapsible-header">
+                
+                <i id="check-criminal" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-criminal" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Smooth Criminal</div>
+                <span class="right">
+                    
+                    60 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../criminal/solves/index.html">
+                        <span id="solves-criminal">2538 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-criminal">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../criminal/solutions/index.html">
+                        13 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Spent my morning reading up on ECC and now I'm ready to start encrypting my messages. Sent a flag to Bob today, but you'll never read it.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_ba064d03b53a5fd7321dd0007b72906b.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/output_6cf0cf5ca7ab93bb829e557dd77e08ff.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-criminal" class="preventToggle" data-challenge="criminal" data-points="60">
+                    <div class="input-field">
+                        <input id="flag-criminal" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-criminal">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="76" data-stage="ecc-parameters">
+            <div id="header-exceptional" data-challenge="exceptional" class="collapsible-header">
+                
+                <i id="check-exceptional" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-exceptional" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Exceptional Curves</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../exceptional/solves/index.html">
+                        <span id="solves-exceptional">1422 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-exceptional">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../exceptional/solutions/index.html">
+                        8 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Learning from my mistakes... This time I've ensured my curve is of prime order. This flag will be safe forever.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_51cefb9344efd163a8f0c62470aac279.sage" download>source.sage</a><br />&nbsp; - <a href="../../static/challenges/output_db96ba0b779440f32de9b556d0514b35.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-exceptional" class="preventToggle" data-challenge="exceptional" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-exceptional" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-exceptional">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="86" data-stage="ecc-parameters">
+            <div id="header-micro" data-challenge="micro" class="collapsible-header">
+                
+                <i id="check-micro" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-micro" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Micro Transmissions</div>
+                <span class="right">
+                    
+                    120 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../micro/solves/index.html">
+                        <span id="solves-micro">1046 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-micro">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../micro/solutions/index.html">
+                        9 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Been fine tuning my bit lengths to ensure my data packages and calculation times are super efficient.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_78fc27e69b84e3cf75538d4bff66c4a8.sage" download>source.sage</a><br />&nbsp; - <a href="../../static/challenges/output_aabbd844dd2b52cbab4978e8f0b3b95c.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-micro" class="preventToggle" data-challenge="micro" data-points="120">
+                    <div class="input-field">
+                        <input id="flag-micro" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-micro">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="90" data-stage="ecc-parameters">
+            <div id="header-node" data-challenge="node" class="collapsible-header">
+                
+                <i id="check-node" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-node" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Elliptic Nodes</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../node/solves/index.html">
+                        <span id="solves-node">1005 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-node">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../node/solutions/index.html">
+                        8 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I've included an extra layer of security by picking my own curve parameters <code>a,b</code> and keeping them secret.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/output_470597e226bbe018d357db4af841ef48.txt" download>output.txt</a><br />&nbsp; - <a href="../../static/challenges/source_4755240157baa8a69793602383932b17.py" download>source.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-node" class="preventToggle" data-challenge="node" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-node" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-node">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="98" data-stage="ecc-parameters">
+            <div id="header-moving" data-challenge="moving" class="collapsible-header">
+                
+                <i id="check-moving" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-moving" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Moving Problems</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../moving/solves/index.html">
+                        <span id="solves-moving">1525 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-moving">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../moving/solutions/index.html">
+                        10 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I've learnt that when life gives you lemons, if you look at things the right way they taste just like pairs.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_d3b18de2c91f41f6e7431fb9854cf74f.sage" download>source.sage</a><br />&nbsp; - <a href="../../static/challenges/output_6dc28a4d1223789dc760b8ce9235a667.txt" download>output.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-moving" class="preventToggle" data-challenge="moving" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-moving" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-moving">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="ecc-parameters-2">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Parameter Choice 2</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="ecc-parameters-2" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="290" data-stage="ecc-parameters-2">
+            <div id="header-twisted_mind" data-challenge="twisted_mind" class="collapsible-header">
+                
+                <i id="check-twisted_mind" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-twisted_mind" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">A Twisted Mind</div>
+                <span class="right">
+                    
+                    80 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../twisted_mind/solves/index.html">
+                        <span id="solves-twisted_mind">314 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-twisted_mind">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../twisted_mind/solutions/index.html">
+                        4 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I implemented the scalar multiplication from another challenge. It is secure enough, so you will never guess my private key!<br><br>You are allowed to send *two* base points, and I give you *two minutes* to prove me wrong.<br /><br />Connect at <code>socket.cryptohack.org 13416</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13416_dd153eac2721ba79d1fb34d574791d15.py" download>13416.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Aloof/index-2.html">Aloof</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-twisted_mind" class="preventToggle" data-challenge="twisted_mind" data-points="80">
+                    <div class="input-field">
+                        <input id="flag-twisted_mind" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-twisted_mind">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="289" data-stage="ecc-parameters-2">
+            <div id="header-exceptional_twisted_mind" data-challenge="exceptional_twisted_mind" class="collapsible-header">
+                
+                <i id="check-exceptional_twisted_mind" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-exceptional_twisted_mind" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">An Exceptional Twisted Mind</div>
+                <span class="right">
+                    
+                    125 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../exceptional_twisted_mind/solves/index.html">
+                        <span id="solves-exceptional_twisted_mind">216 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-exceptional_twisted_mind">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../exceptional_twisted_mind/solutions/index.html">
+                        4 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    For this last one, I chose a very secure elliptic curve. Finally, my private key is safe.<br><br>You are allowed to send *one* base point, and you have *30 seconds* to find my private key.<br /><br />Connect at <code>socket.cryptohack.org 13417</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13417_ad4ad7eaab29474bcba890bad92ce145.py" download>13417.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Aloof/index-2.html">Aloof</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-exceptional_twisted_mind" class="preventToggle" data-challenge="exceptional_twisted_mind" data-points="125">
+                    <div class="input-field">
+                        <input id="flag-exceptional_twisted_mind" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-exceptional_twisted_mind">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="292" data-stage="ecc-parameters-2">
+            <div id="header-checkpoint" data-challenge="checkpoint" class="collapsible-header">
+                
+                <i id="check-checkpoint" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-checkpoint" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Checkpoint</div>
+                <span class="right">
+                    
+                    150 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../checkpoint/solves/index.html">
+                        <span id="solves-checkpoint">237 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-checkpoint">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../checkpoint/solutions/index.html">
+                        6 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    During an internal audit, you find a custom service performing ECDH key exchange to establish secure communications with clients. Can you exploit it?<br><br><span class="note"><i class="fas fa-exclamation-triangle"></i> Depending on the speed of your computer, the solution may take a while to calculate.</span><br /><br />Connect at <code>socket.cryptohack.org 13419</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13419_b1d972f9f40f4d7140def981e7cf5d2e.py" download>13419.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/%24in/index.html">$in</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-checkpoint" class="preventToggle" data-challenge="checkpoint" data-points="150">
+                    <div class="input-field">
+                        <input id="flag-checkpoint" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-checkpoint">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="291" data-stage="ecc-parameters-2">
+            <div id="header-evil_twisted_mind" data-challenge="evil_twisted_mind" class="collapsible-header">
+                
+                <i id="check-evil_twisted_mind" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-evil_twisted_mind" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">An Evil Twisted Mind</div>
+                <span class="right">
+                    
+                    175 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../evil_twisted_mind/solves/index.html">
+                        <span id="solves-evil_twisted_mind">194 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-evil_twisted_mind">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../evil_twisted_mind/solutions/index.html">
+                        7 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    For more security, I made some changes on the curve parameters! This time, I am sure my private key cannot be found.<br><br>You are allowed to send one base point, and you have one minute to find my private key.<br /><br />Connect at <code>socket.cryptohack.org 13418</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13418_695b1481532c74b80c84a5e5f6956bb3.py" download>13418.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/Aloof/index-2.html">Aloof</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-evil_twisted_mind" class="preventToggle" data-challenge="evil_twisted_mind" data-points="175">
+                    <div class="input-field">
+                        <input id="flag-evil_twisted_mind" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-evil_twisted_mind">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="163" data-stage="ecc-parameters-2">
+            <div id="header-real_curves" data-challenge="real_curves" class="collapsible-header">
+                
+                <i id="check-real_curves" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-real_curves" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Real Curve Crypto</div>
+                <span class="right">
+                    
+                    200 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../real_curves/solves/index.html">
+                        <span id="solves-real_curves">329 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-real_curves">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../real_curves/solutions/index.html">
+                        12 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    When developing a secure crypto system, the most important rule is to keep it real.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/output_8d82e413d29d7810ee8eff5d1226453d.txt" download>output.txt</a><br />&nbsp; - <a href="../../static/challenges/source_cee18f5928ec01cfbfffe8faf981f63e.py" download>source.py</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/jschnei/index.html">jschnei</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-real_curves" class="preventToggle" data-challenge="real_curves" data-points="200">
+                    <div class="input-field">
+                        <input id="flag-real_curves" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-real_curves">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="ecc-signatures">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Signatures</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="ecc-signatures" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="229" data-stage="ecc-signatures">
+            <div id="header-digestive" data-challenge="digestive" class="collapsible-header">
+                
+                <i id="check-digestive" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-digestive" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Digestive</div>
+                <span class="right">
+                    
+                    60 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../digestive/solves/index.html">
+                        <span id="solves-digestive">754 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-digestive">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../digestive/solutions/index.html">
+                        6 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Should ECDSA be avoided for better digestive health?<br /><br />Play at <a href="https://web.cryptohack.org/digestive" target="_blank">https://web.cryptohack.org/digestive</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-digestive" class="preventToggle" data-challenge="digestive" data-points="60">
+                    <div class="input-field">
+                        <input id="flag-digestive" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-digestive">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="85" data-stage="ecc-signatures">
+            <div id="header-curveball" data-challenge="curveball" class="collapsible-header">
+                
+                <i id="check-curveball" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-curveball" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Curveball</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../curveball/solves/index.html">
+                        <span id="solves-curveball">1792 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-curveball">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../curveball/solutions/index.html">
+                        20 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Here's my secure search engine, which will only search for hosts it has in its trusted certificate cache.<br /><br />Connect at <code>socket.cryptohack.org 13382</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13382_edfe1f04767ab6d72d689fc13a002dcc.py" download>13382.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-curveball" class="preventToggle" data-challenge="curveball" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-curveball" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-curveball">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="75" data-stage="ecc-signatures">
+            <div id="header-ps3" data-challenge="ps3" class="collapsible-header">
+                
+                <i id="check-ps3" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-ps3" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">ProSign 3</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../ps3/solves/index.html">
+                        <span id="solves-ps3">1485 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-ps3">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../ps3/solutions/index.html">
+                        20 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    This is my secure timestamp signing server. Only if you can produce a signature for "unlock" can you learn more.<br /><br />Connect at <code>socket.cryptohack.org 13381</code><br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/13381_7fd5a5da326879dc4a3995cad969a165.py" download>13381.py</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-ps3" class="preventToggle" data-challenge="ps3" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-ps3" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-ps3">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="125" data-stage="ecc-signatures">
+            <div id="header-norandom" data-challenge="norandom" class="collapsible-header">
+                
+                <i id="check-norandom" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-norandom" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">No Random, No Bias</div>
+                <span class="right">
+                    
+                    120 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../norandom/solves/index.html">
+                        <span id="solves-norandom">670 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-norandom">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../norandom/solutions/index.html">
+                        8 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    Relying on randomness is bad with a bad entropy source, so I got rid of it and changed to a better signature generation method.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_a911b46ac71942190489524c4456a1be.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/output_b141b43860f2ca53f0e36df40f42f2db.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/aloof/index.html">aloof</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-norandom" class="preventToggle" data-challenge="norandom" data-points="120">
+                    <div class="input-field">
+                        <input id="flag-norandom" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-norandom">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="ecc-edwards">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Edwards Curves</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="ecc-edwards" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="124" data-stage="ecc-edwards">
+            <div id="header-degenerate" data-challenge="degenerate" class="collapsible-header">
+                
+                <i id="check-degenerate" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-degenerate" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Edwards Goes Degenerate</div>
+                <span class="right">
+                    
+                    100 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../degenerate/solves/index.html">
+                        <span id="solves-degenerate">601 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-degenerate">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../degenerate/solutions/index.html">
+                        4 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    I heard elliptic curves in Edwards form have nice and efficient point addition formulas that work with any points.<br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_4dbd62b026616ba5f1c257632d4972c4.py" download>source.py</a><br />&nbsp; - <a href="../../static/challenges/output_09a749469d6013824d26be039494ae00.txt" download>output.txt</a><br /><br /><br />Challenge contributed by <a class="gold-link" href="../../user/aloof/index.html">aloof</a>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-degenerate" class="preventToggle" data-challenge="degenerate" data-points="100">
+                    <div class="input-field">
+                        <input id="flag-degenerate" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-degenerate">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+<span class="stage" data-stage="ecc-side-channels">
+    <hr />
+    <div class="challengeInfo">
+      <span><h4>Side Channels</h4></span>
+      <span class="flexToggle"><a class="stage-collapse" data-collapse="ecc-side-channels" href="#">Toggle</a></span>
+    </div>
+    
+    <div class="clearfix"></div>
+    <ul class="collapsible popout" data-collapsible="expandable">
+        
+        <li class="challenge" data-category="156" data-stage="ecc-side-channels">
+            <div id="header-ladder" data-challenge="ladder" class="collapsible-header">
+                
+                <i id="check-ladder" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-ladder" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Montgomery&#39;s Ladder</div>
+                <span class="right">
+                    
+                    40 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../ladder/solves/index.html">
+                        <span id="solves-ladder">1885 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-ladder">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../ladder/solutions/index.html">
+                        20 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    This category is filled with insecure implementations of elliptic curve cryptography. Picking bad curves leads to broken protocols and fun puzzles, but private keys can be extracted from devices even when the curves picked are safe! <br><br>One technique to learn private information is through side channel analysis. At a high level, a system performing operations with a secret can leak information about the secret through data such as the time taken, or work done by the circuit. <br><br>Timing attacks against ECDSA signing can leak information about the nonce, which together with sophisticated attacks like <a href="https://eprint.iacr.org/2020/615.pdf">LadderLeak</a> can be lethal for the protocol. To protect against this, a lot of work has been done to make scalar multiplication of points on an elliptic curve to run in constant time.<br><br>A key component of constant time algorithms for scalar multiplication for points on elliptic curves are based on Montgomery's Ladder. In this challenge, the aim is to implement the most basic version of this: Montgomery’s binary algorithm in the group $E(\Fp)$. <br><br><span class="mathBlock"> <b>Montgomery’s binary algorithm in the group</b> $E(\Fp)$<br> <br> Input: $P \in E(\Fp)$ and an n-bit integer $k = \sum 2^i k_i$ where $k_{n-1} = 1$<br> Output: $[k]P \in E(\Fp)$<br><br>1. Set $(R_0, R_1)$ to $(P, [2]P)$ <br> 2. for i = n - 2 down to 0 do<br> 3. &nbsp;&nbsp;If $k_i = 0$ then<br> 4. &nbsp;&nbsp;&nbsp;&nbsp; Set $(R_0, R_1)$ to $([2]R_0, R_0 + R_1)$<br> 5. &nbsp;&nbsp;Else:<br> 6. &nbsp;&nbsp;&nbsp;&nbsp; Set $(R_0, R_1)$ to $(R_0 + R_1, [2]R_1)$<br> 7. Return $R_0$<br> </span><br><br><span class="note"><i class="fas fa-pencil-alt"></i>At a high level, notice that regardless of the bit of k, we perform both a doubling and an addition operation for each step. Compare this to the double and add algorithm we gave in the starter challenges. There are a couple obvious problems within here still: the number of steps taken leaks the bit length of k and there's an if statement, which could leak data on the bit structure of k due to branching. For the interested learner, we recommend improving your algorithm to match Alg. 8 in this resource: <a href="https://eprint.iacr.org/2017/212.pdf">Montgomery curves and their arithmetic</a>.</span><br><br>We will work with the following elliptic curve:<br><br><span class="mathDisplay"> $E: Y^{2} = X^{3} + 486662 X^{2} + X \mod 2^{255} - 19 $ </span><br><br>Using the above curve, and the generator point with <code>G.x = 9</code>, find the $x$-coordinate (decimal representation) of point <code>Q = [0x1337c0decafe] G</code> by implementing the above algorithm.<br><br>This curve is in Montgomery form, rather than Weierstrass like many of the curves in these challenges. Although this curve can be mapped to Weierstrass form and old doubling and addition formula can be reused, we recommend working directly with the formula for Montgomery curves: $ E : By^{2} = x^{3} + Ax^{2} + x$. To encourage this, we give the addition and doubling formulas for the curve in affine coordinates. Please see <a href="https://eprint.iacr.org/2017/293.pdf">Montgomery curves and the Montgomery ladder</a> for a beautiful and fast set of formula in projective coordinates. <br><br><span class="mathBlock"> <b>Addition formula for Montgomery Curve (Affine)</b><br> <br> Input: $P, Q \in E(\Fp)$ with $P \neq Q$<br> Output: $R = (P + Q) \in E(\Fp)$<br><br>$(x_1, y_1), (x_2, y_2) = P, Q$<br> $\alpha = (y_{2} - y_{1}) / (x_{2} - x_{1} )$<br> $x_{3} = B \alpha^{2} - A - x_{1} - x_{2}$<br> $y_{3} =  \alpha (x_{1} - x_{3}) - y_{1}$ $R = (x_{3}, y_{3})$ </span><br><br><span class="mathBlock"> <b>Doubling formula for Montgomery Curve (Affine)</b><br> <br> Input: $P \in E(\Fp)$<br> Output: $R = [2]P \in E(\Fp)$<br><br>$(x_1, y_1) = P$<br> $\alpha = (3x^{2}_{1} + 2Ax_{1} + 1) / (2By_{1})$<br> $x_{3} = B\alpha^{2} - A - 2x_{1}$<br> $y_{3} = \alpha(x_{1} - x_{3}) - y_{1}$ $R = (x_{3}, y_{3})$ </span><br><br>Note that all operations are performed modulo $p$.<br><br><span class="note"><i class="fas fa-brain"></i>For a general overview of Montgomery's ladder, we recommend: <a href="https://eprint.iacr.org/2017/293.pdf">Montgomery curves and the Montgomery ladder</a>. For a clean algorithm to implement, we recommend Alg. 4 <code>LADDER</code> in <a href="https://eprint.iacr.org/2017/212.pdf">Montgomery curves and their arithmetic</a> together with Alg. 1 <code>xADD</code> and Alg. 2 <code>xDBL</code>.</span>
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-ladder" class="preventToggle" data-challenge="ladder" data-points="40">
+                    <div class="input-field">
+                        <input id="flag-ladder" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-ladder">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+        <li class="challenge" data-category="155" data-stage="ecc-side-channels">
+            <div id="header-double_and_broken" data-challenge="double_and_broken" class="collapsible-header">
+                
+                <i id="check-double_and_broken" class="fas fa-star gold-text tooltipped" style="display: none;" data-tooltip="You have solved this challenge"></i>
+                <i id="uncheck-double_and_broken" class="far fa-star grey-text tooltipped" data-tooltip="You have not yet solved this challenge"></i>
+                
+                <div class="challenge-text truncate">Double and Broken</div>
+                <span class="right">
+                    
+                    50 pts <b>&middot;</b>
+                    
+                    <span class="mobileSolves">
+                    
+                    <a class="gold-link preventToggle" href="../double_and_broken/solves/index.html">
+                        <span id="solves-double_and_broken">720 Solves</span>
+                    </a>
+                    
+                    
+                    <span class="solutions_links solutionsHide" id="solutions-double_and_broken">
+                      <b>&middot;</b>
+                      <a class="gold-link preventToggle" href="../double_and_broken/solutions/index.html">
+                        7 Solutions
+                      </a>
+                    </span>
+                    
+                    </span>
+                </span>
+            </div>
+            <div class="collapsible-body">
+                <div class="challengeDescription">
+                <!-- <p> -->
+                    We've managed to get power readings from scalar multiplication on the Secp256k1 curve. Can you recover the private key from the data dump from 50 repeated multiplications? <br /><br /><b>Challenge files:</b><br />&nbsp; - <a href="../../static/challenges/source_snippet_0b89127bb905d47db49281e0449d6bd6.py" download>source_snippet.py</a><br />&nbsp; - <a href="../../static/challenges/collected_data_3b1eecad8d7b9a4e92b93efcdbf8113b.txt" download>collected_data.txt</a><br />
+                <!-- </p> -->
+                </div>
+
+                
+                <form id="flagform-double_and_broken" class="preventToggle" data-challenge="double_and_broken" data-points="50">
+                    <div class="input-field">
+                        <input id="flag-double_and_broken" type="text" placeholder="Enter flag">
+                        <label class="active" for="flag-double_and_broken">Flag</label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+                    <span class="loader" style="display:none; margin-left: 10px;">Submitting...</span>
+                </form>
+                <br>
+
+                
+        </li>
+        
+    </ul>
+</span>
+
+
+
+        </div>
+        <script src="../../static/js/jquery.min.js"></script>
+        <script src="../../static/js/materialize.min.js"></script>
+        <script defer src="../../static/js/confetti.browser.min.js"></script>
+        <script src="../../static/js/api.js"></script>
+        <script src="../../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+
+
+<script>
+    var challenges_open = JSON.parse(localStorage.getItem("challenges-open")) || {"bg": true};
+    Object.keys(challenges_open).forEach(function(el){
+        $(".collapsible-header#header-" + el).addClass("active");
+    });
+
+    $(".collapsible-header").on("click", function(){
+        var chall = $(this).data('challenge');
+        if(challenges_open.hasOwnProperty(chall)) {
+            delete challenges_open[chall];
+        } else {
+            challenges_open[chall] = true;
+            $('html, body').animate({
+                    scrollTop: $(this).offset().top -100
+            }, 700);
+        }
+        localStorage.setItem("challenges-open", JSON.stringify(challenges_open));
+    });
+
+    $(".preventToggle").on("click", function(){
+        event.stopPropagation();
+    });
+
+    var state = $(".collapsible-header.active").length == 0;
+    function updateButton(){
+        if(state){
+            $("#toggleState").html("Expand all challenges");
+        } else {
+            $("#toggleState").html("Collapse all challenges");
+        }
+
+    }
+    updateButton(state);
+    function toggle() {
+        if(state) {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+        } else {
+            $(".collapsible-header").each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        }
+        state = !state;
+        updateButton(state);
+    }
+    function filterCategories(t) {
+        var v = t.options[t.selectedIndex].value;
+        if(v == "*")
+            $(".stage").show();
+        else {
+            $(".stage[data-stage=" + v + "]").show();
+            $(".stage[data-stage!=" + v + "]").hide();
+        }
+    }
+    function toggleSolved(){
+      $('.fas.fa-star').each(function() {
+        if($(this).css('display') == 'block'){
+          if($(this).parent().next().css('display') == 'block'){
+              $(this).parent().toggle();
+              $(this).parent().click();
+              $(this).parent().next().hide();
+          }
+          else{
+            $(this).parent().toggle();
+          }
+        }
+      });
+    }
+
+
+    $("#toggleSolved").on("click", function(e){
+        // e.preventDefault();
+        toggleSolved();
+        // var text = $(this).next().text();
+        // $(this).next().text(
+        // text == "Hide Solved Challenges" ? "Show Solved Challenges" : "Hide Solved Challenges");
+    });
+
+
+    $("#toggleState").on("click", function(e){
+        // e.preventDefault();
+        toggle();
+    });
+    $(".stage-collapse").on("click", function(e){
+        // e.preventDefault();
+        var stage = $(this).data('collapse');
+        var header_selector = ".challenge[data-stage=" + stage + "] .collapsible-header";
+        var state = $(header_selector + ".active").length != 0;
+        if(state)
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") && $(x).click(); });
+        else
+            $(header_selector).each(function(i, x){ $(x).hasClass("active") || $(x).click(); });
+    });
+    $("form").submit(function(e) {
+        // Loading button
+        var loadBtn = $(this).find(".loader");
+        loadBtn.show();
+
+        var id = $(this).data("challenge");
+        var points = $(this).data("points");
+        var flag = $("#flag-" + id).val();
+        // var updatedScore = score + points;
+        console.log(id);
+        console.log(flag);
+        api.makeCall("/submit/" + id + ".json", {flag: flag, _csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function(data) {
+            if(data.code) {
+                loadBtn.hide();
+                Materialize.toast(data.message, 4000);
+            }
+            else {
+                // Materialize.toast("Correct flag, nice one!", 4000);
+                $("#uncheck-" + id).hide();
+                $("#check-" + id).show();
+                $("#header-" + id).click();
+
+                // update solves box
+                var solves_text = data.solves == 1 ? "Solve" : "Solves";
+                $("#solves-" + id).html(data.solves + " " + solves_text);
+                $("#solves-" + id).parent().show();
+                $("#solutions-" + id).show();
+                $("#youvesolved-" + id).show();
+                $("#empty-" + id).hide();
+                $("#flagform-" + id).hide();
+                if (window.handleCorrectFlag) { window.handleCorrectFlag(id); }
+
+                // update points at top
+                console.log(score);
+                console.log(points);
+                score = calculateLevel(score, points);
+                loadBtn.hide();
+                setTimeout(function(){ launchConfetti(); }, 250);
+            }
+        });
+        return false;
+    });
+</script>
+
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../../faq/index.html">FAQ</a><br>
+        <a href="../../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../../courses/intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../../courses/modular/index.html">Modular Arithmetic</a><br>
+        <a href="../../courses/symmetric/index.html">Symmetric Cryptography</a><br>
+        <a href="../../courses/public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../../courses/elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../general/index.html">General</a><br>
+        <a href="../aes/index.html">Symmetric Ciphers</a><br>
+        <a href="../maths/index.html">Mathematics</a><br>
+        <a href="../rsa/index.html">RSA</a><br>
+        <a href="../diffie-hellman/index.html">Diffie-Hellman</a><br>
+        <a href="index.html">Elliptic Curves</a><br>
+        <a href="../hashes/index.html">Hash Functions</a><br>
+        <a href="../web/index.html">Crypto on the Web</a><br>
+        <a href="../post-quantum/index.html">Lattices</a><br>
+        <a href="../isogenies/index.html">Isogenies</a><br>
+        <a href="../zkp/index.html">Zero-Knowledge Proofs</a><br>
+        <a href="../misc/index.html">Miscellaneous</a><br>
+        <a href="../ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:30:46Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:30:46Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/challenges/ecc/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:23 GMT -->
+</html>

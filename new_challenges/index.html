@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/new_challenges/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; New Challenges</title>
+
+        <link rel="stylesheet" type="text/css" href="../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+  <!-- Page Specific Metadata -->
+  <meta property="og:title" content="CryptoHack &ndash; New Challenges" />
+  <meta name="twitter:title" content="CryptoHack &ndash; New Challenges" />
+  <meta name="description" content="List of newest challenges released" />
+
+  <meta property="og:title" content="CryptoHack &ndash; New Challenges" />
+  <meta property="og:description" content="List of newest challenges released" />
+
+  <meta name="twitter:title" content="CryptoHack &ndash; New Challenges" />
+  <meta name="twitter:description" content="List of newest challenges released" />
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="../index.html" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="../static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="../static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../courses/index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../challenges/index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+
+<div class="categoryDescription">
+  <div class="categoryTitle">
+    <h2>New Challenges</h2>
+    <div class="scoreboardStats">
+        This page contains lists of recent and most difficult challenges. To play the challenges, please go to the <a href="../challenges/index.html">challenges section</a>.
+    </div>
+  </div>
+  <div class="categoryImage">
+      <img src="../static/img/levelup.png" width="250" alt="computer celebrating">
+  </div>
+</div>
+
+<h5>Recently Released</h5>
+
+<table>
+  <thead>
+    <tr class="row">
+        <td class="col s3">Category</td><td class="col s4">Challenge</td><td class="col s2">Points</td><td class="col s2">Solves</td>
+    </tr>
+  </thead>
+    <tbody>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Do you have good eyes? (Breizh CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">20 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">RSATogether (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">14 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Authentification 1 (Breizh CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">50 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">One Round Crypto (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">8 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Greatest Common Multiple (CODEGATE CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">14 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Verilicious (Cyber Apocalypse 2025)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">19 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">OffTopic (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">17 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Authentification 2 (Breizh CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">23 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">U-turn (Breizh CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">33 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Quo vadis? (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">9 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Smithing contest (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">10 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">ECLCG (HITCON CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">20 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Sus (ImaginaryCTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">25 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Share (HITCON CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">16 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Leet Universe (ImaginaryCTF (Daily))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">31 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Hyper512 (HITCON CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">16 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Maybe Someday (GoogleCTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">14 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Hamiltonicity 2 (CryptoHack)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">136 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Fischlin&#39;s Transformation (CryptoHack)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">143 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">OR Proof (CryptoHack)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">324 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Ticket Maestro (CryptoHack)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">118 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Additional problems (CSC Belgium)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">31 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Hamiltonicity (CryptoHack)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">240 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Symmetric Ciphers</a></td>
+            <td class="col s4">Pad Thai</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 80</td>
+            <td class="col s2">876 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Symmetric Ciphers</a></td>
+            <td class="col s4">The Good, The Pad, The Ugly</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 100</td>
+            <td class="col s2">634 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Symmetric Ciphers</a></td>
+            <td class="col s4">Oracular Spectacular</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 150</td>
+            <td class="col s2">303 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Hash Functions</a></td>
+            <td class="col s4">Merkle Trees</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 25</td>
+            <td class="col s2">659 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Elliptic Curves</a></td>
+            <td class="col s4">Checkpoint</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 150</td>
+            <td class="col s2">237 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Elliptic Curves</a></td>
+            <td class="col s4">An Evil Twisted Mind</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 175</td>
+            <td class="col s2">194 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Elliptic Curves</a></td>
+            <td class="col s4">A Twisted Mind</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 80</td>
+            <td class="col s2">314 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Elliptic Curves</a></td>
+            <td class="col s4">An Exceptional Twisted Mind</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 125</td>
+            <td class="col s2">216 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Introduction to Isogenies</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 10</td>
+            <td class="col s2">738 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Montgomery Curves</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 30</td>
+            <td class="col s2">433 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Where&#39;s the Supersingular Curve</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 25</td>
+            <td class="col s2">486 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Image Point Arithmetic</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 30</td>
+            <td class="col s2">486 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">DLOG on the Surface</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 40</td>
+            <td class="col s2">349 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">The j-invariant</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 20</td>
+            <td class="col s2">627 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Better than Linear</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 85</td>
+            <td class="col s2">239 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Meet me in the Claw</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 120</td>
+            <td class="col s2">190 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">André Encoding</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 80</td>
+            <td class="col s2">232 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Dual Masters</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 90</td>
+            <td class="col s2">201 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">What&#39;s My Kernel</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 70</td>
+            <td class="col s2">260 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Abelian SIDH</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 90</td>
+            <td class="col s2">216 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">A True Genus</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 175</td>
+            <td class="col s2">179 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Secret Exponents</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 60</td>
+            <td class="col s2">280 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Special Isogenies</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 30</td>
+            <td class="col s2">298 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Twisted CSIDH Isogenies</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 70</td>
+            <td class="col s2">268 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Prime Power Isogenies</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 50</td>
+            <td class="col s2">286 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">CSIDH Key Exchange</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 90</td>
+            <td class="col s2">253 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">Isogenies</a></td>
+            <td class="col s4">Composite Isogenies</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 60</td>
+            <td class="col s2">335 solves</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<div>&nbsp; <br><br><br></div>
+
+<h5>Least Solved</h5>
+
+<table>
+  <thead>
+    <tr class="row">
+        <td class="col s3">Category</td><td class="col s4">Challenge</td><td class="col s2">Points</td><td class="col s2">Solves</td>
+    </tr>
+  </thead>
+    <tbody>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">One Round Crypto (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">8 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Quo vadis? (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">9 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Smithing contest (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">10 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Greatest Common Multiple (CODEGATE CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">14 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">diffecient (SekaiCTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">14 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">RSATogether (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">14 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Maybe Someday (GoogleCTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">14 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">unrandom DSA (HackTM CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">14 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Substitution Cipher III (DownUnderCTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">15 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">FaILProof Revenge (SekaiCTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">15 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Maybe Someday (Maybe Someday CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">15 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Functional (ICC Athens)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">15 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">GLP420 (HackTM CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">15 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Hyper512 (HITCON CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">16 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Share (HITCON CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">16 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Authenticator (Firebird Internal CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">16 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">SpongeBob SquarePants / Battle for Bikini Bottom - Rehydrated (HTB Cyber Apocalypse)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">17 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Probability (SEETF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">17 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Key recovery (DCTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">17 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">OffTopic (ECSC 2024 (Italy))</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">17 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">FaILProof (SekaiCTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">18 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">RSA Permutation (WACON)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">19 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Sign In Please, Again (HKCERT CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">19 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">Verilicious (Cyber Apocalypse 2025)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">19 solves</td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s3">CTF Archive</a></td>
+            <td class="col s4">ECLCG (HITCON CTF)</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 0</td>
+            <td class="col s2">20 solves</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+
+
+        </div>
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/materialize.min.js"></script>
+        <script defer src="../static/js/confetti.browser.min.js"></script>
+        <script src="../static/js/api.js"></script>
+        <script src="../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../faq/index.html">FAQ</a><br>
+        <a href="../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../courses/intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../courses/modular/index.html">Modular Arithmetic</a><br>
+        <a href="../courses/symmetric/index.html">Symmetric Cryptography</a><br>
+        <a href="../courses/public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../courses/elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../challenges/general/index.html">General</a><br>
+        <a href="../challenges/aes/index.html">Symmetric Ciphers</a><br>
+        <a href="../challenges/maths/index.html">Mathematics</a><br>
+        <a href="../challenges/rsa/index.html">RSA</a><br>
+        <a href="../challenges/diffie-hellman/index.html">Diffie-Hellman</a><br>
+        <a href="../challenges/ecc/index.html">Elliptic Curves</a><br>
+        <a href="../challenges/hashes/index.html">Hash Functions</a><br>
+        <a href="../challenges/web/index.html">Crypto on the Web</a><br>
+        <a href="../challenges/post-quantum/index.html">Lattices</a><br>
+        <a href="../challenges/isogenies/index.html">Isogenies</a><br>
+        <a href="../challenges/zkp/index.html">Zero-Knowledge Proofs</a><br>
+        <a href="../challenges/misc/index.html">Miscellaneous</a><br>
+        <a href="../challenges/ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:29:25Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:29:25Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/new_challenges/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:32:21 GMT -->
+</html>

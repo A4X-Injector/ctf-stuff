@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<!-- Mirrored from cryptohack.org/courses/symmetric/course_details/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:34:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>CryptoHack &ndash; Symmetric Cryptography - </title>
+
+        <link rel="stylesheet" type="text/css" href="../../../static/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../../static/css/main77ae.css?ver=2" />
+        <link rel="stylesheet" type="text/css" href="../../../static/css/light.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../../static/css/flag-icon.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../../static/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../../static/css/v4-shims.min.css" />
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        
+<link rel="stylesheet" href="../../../static/css/katex.min.css" >
+<script defer src="../../../static/js/katex.min.js"></script>
+<script defer src="../../../static/js/katex-auto-render.min.js"></script>
+<script defer src="../../../static/js/katex-render-options.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, katex_render_options);
+    });
+</script>
+
+
+        <!-- Generic Metadata -->
+        <link rel="canonical" href="../../../index.html" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cryptohack.org" />
+        <meta property="og:site_name" content="CryptoHack" />
+        <meta property="og:image" content="https://cryptohack.org/static/img/banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@CryptoHack__" />
+        <meta name="twitter:image" content="https://cryptohack.org/static/img/banner.png" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="../../../static/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../../../static/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../../../static/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../../../static/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../../../static/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../../../static/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../../../static/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../../../static/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../static/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="36x36"  href="../../../static/favicon/android-icon-36x36.png">
+        <link rel="icon" type="image/png" sizes="48x48"  href="../../../static/favicon/android-icon-48x48.png">
+        <link rel="icon" type="image/png" sizes="72x72"  href="../../../static/favicon/android-icon-72x72.png">
+        <link rel="icon" type="image/png" sizes="96x96"  href="../../../static/favicon/android-icon-96x96.png">
+        <link rel="icon" type="image/png" sizes="144x144"  href="../../../static/favicon/android-icon-144x144.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../../../static/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../../static/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../../../static/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../static/favicon/favicon-16x16.png">
+
+        <script>
+            function isLightThemeSelected() {
+                return document.cookie.match(/theme=light/i) != null
+            }
+
+            function setThemeFromCookie() {
+                var html = document.getElementsByTagName('html')[0]
+                html.className = isLightThemeSelected() ? 'light-mode' : 'dark-mode'
+                console.log('Loaded cookie: ' + document.cookie)
+            }
+
+            (function() {
+              setThemeFromCookie()
+            })();
+        </script>
+    </head>
+    <body class="competition-page">
+      <div class="wrapper">
+        <header>
+            <nav class="top-nav nav-fixed">
+                <div class="nav-wrapper">
+
+                    <div><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="fas fa-bars" aria-label="Menu Bars"></i></a></div>
+                    <a class="logo-link" href="../../../index.html"><span class="outline">CRYPTOHACK</span></a>
+
+                    
+
+                    <ul class="right hide-on-med-and-down">
+</ul>
+                </div>
+
+            </nav>
+            <ul id="nav-mobile" class="side-nav fixed">
+
+
+                <li><a href="../../index.html">
+                    <div class="side-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="side-text">Courses</div>
+                </a></li>
+
+                <li><a href="../../../challenges/index.html">
+                    <div class="side-icon"><i class="fas fa-flag"></i></div>
+                    <div class="side-text">Challenges</div>
+                </a></li>
+
+                <!-- <div class="divider" /></div> -->
+                
+                <li><a href="../../../scoreboard/index.html">
+                    <div class="side-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="side-text">Scoreboard</div>
+                </a></li>
+
+                <li><a href="../../../blog/index.html">
+                    <div class="side-icon"><i class="fas fa-brain" style="margin-left: -2px;"></i></div>
+                    <div class="side-text">Blog</div>
+                </a></li>
+
+                <li><a href="../../../chat/index.html">
+                    <div class="side-icon"><i class="fas fa-comments"></i></div>
+<!--                     <div class="side-icon"><img src="/static/img/Discord-Logo-Color.svg" width="25" style="margin: 14px 0 0 -5px;"></div> -->
+                    <div class="side-text">Chat</div>
+                </a></li>
+
+                <li><a href="../../../careers/index.html">
+                    <div class="side-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="side-text">Careers</div>
+                </a></li>
+
+                <li><a href="../../../faq/index.html">
+                    <div class="side-icon"><i class="fas fa-question"></i></div>
+                    <div class="side-text">FAQ</div>
+                </a></li>
+</ul>
+        </header>
+        <div class="cont">
+            
+        </div>
+        <div class="cont">
+            
+
+
+<div class="course-page">
+
+<div class="course-navigation">
+    <div>
+        
+        <span class="btn course-nav-btn disabled"></span>
+        
+    </div>
+    <div class="course-title-box"><h2 class="course-title">Symmetric Cryptography</h2></div>
+    <div>
+        
+        <a id="nextBtnTop" href="../aes0/index.html" class="btn course-nav-btn ">Next&nbsp;--></a>
+        
+    </div>
+</div>
+
+
+<h3 class="course-overview">Overview</h3>
+<div class="course-tags">
+    
+    <div class="course-tag">intermediate</div>
+    
+    <div class="course-tag">AES</div>
+    
+</div>
+
+<div class="categoryDescription">
+  <div class="categoryText">
+    <p>Symmetric-key ciphers are algorithms that use the same key both to encrypt and decrypt data. The goal is to use short secret keys to securely and efficiently send long messages.<br /><br />The most famous symmetric-key cipher is Advanced Encryption Standard (AES), standardised in 2001. It's so widespread that modern processors even contain special instruction sets to perform AES operations. The first series of challenges here guides you through the inner workings of AES, showing you how its separate components work together to make it a secure cipher. By the end you will have built your own code for doing AES decryption!<br /><br />We can split symmetric-key ciphers into two types, block ciphers and stream ciphers. Block ciphers break up a plaintext into fixed-length blocks, and send each block through an encryption function together with a secret key. Stream ciphers meanwhile encrypt one byte of plaintext at a time, by XORing a pseudo-random keystream with the data. AES is a block cipher but can be turned into a stream cipher using modes of operation such as CTR. <br /><br />Block ciphers only specify how to encrypt and decrypt individual blocks, and a mode of operation must be used to apply the cipher to longer messages. This is the point where real world implementations often fail spectacularly, since developers do not understand the subtle implications of using particular modes. The remainder of the challenges see you attacking common misuses of various modes.</p>
+  </div>
+
+  <div class="categoryImage">
+  <img src="../../../static/img/courses/symmetric.png" alt="">
+  </div>
+</div>
+
+<div class="course-stats">
+    <div class="card course-stats-card">
+        <img src="../../../static/img/team.png" alt="" width=120>
+        
+        <div class="course-stats-text">19900 Players Solving</div>
+        
+    </div>
+
+    <div class="card course-stats-card">
+        <img src="../../../static/img/main.png" alt="" width=120>
+        
+        <div class="course-stats-text">4353 Players Completed</div>
+        
+    </div>
+
+    <div class="card course-stats-card">
+        <img src="../../../static/img/levelup.png" alt="" width=120>
+        <div class="course-stats-text">505 Points to Earn</div>
+    </div>
+</div>
+
+<div class="course-start">
+    <a id="nextBtnTop" href="../aes0/index.html" class="btn course-start-btn">Start&nbsp;Course</a>
+</div>
+
+<h3 class="course-overview">Contents</h3>
+
+<table>
+  <thead>
+    <tr class="row">
+        <td class="col s5">Category</td><td class="col s4">Challenge</td><td class="col s2">Points</td><td class="col s1">&nbsp;</td>
+    </tr>
+  </thead>
+    <tbody>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - How AES Works</a></td>
+            <td class="col s4">Keyed Permutations</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 5</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - How AES Works</a></td>
+            <td class="col s4">Resisting Bruteforce</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 10</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - How AES Works</a></td>
+            <td class="col s4">Structure of AES</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 15</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - How AES Works</a></td>
+            <td class="col s4">Round Keys</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 20</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - How AES Works</a></td>
+            <td class="col s4">Confusion through Substitution</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 25</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - How AES Works</a></td>
+            <td class="col s4">Diffusion through Permutation</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 30</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - How AES Works</a></td>
+            <td class="col s4">Bringing It All Together</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 50</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - Symmetric Starter</a></td>
+            <td class="col s4">Modes of Operation Starter</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 15</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - Symmetric Starter</a></td>
+            <td class="col s4">Passwords as Keys</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 50</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - Block Ciphers 1</a></td>
+            <td class="col s4">ECB Oracle</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 60</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - Block Ciphers 1</a></td>
+            <td class="col s4">ECB CBC WTF</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 55</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - Block Ciphers 1</a></td>
+            <td class="col s4">Flipping Cookie</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 60</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - Stream Ciphers</a></td>
+            <td class="col s4">Symmetry</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 50</td>
+            <td class="col s1"></td>
+        </tr>
+        
+        <tr class="userrow visible row">
+            <td class="col s5">Symmetric Ciphers - Stream Ciphers</a></td>
+            <td class="col s4">Bean Counter</td>
+            <td class="col s2"><i class='fas fa-star gold-text tooltipped' data-tooltip='Points'></i> 60</td>
+            <td class="col s1"></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+
+
+
+<div class="course-navigation lower">
+    <div>
+        
+        <span class="btn course-nav-btn disabled"></span>
+        
+    </div>
+
+    <div class="course-progress"> 
+      <div id="courseProgress" class="course-sticker tooltipped" data-tooltip="You've solved 0 of 14 challenges in this course (0%)">
+        <div id="courseProgressColor" class="course-sticker-color">
+          <img src="../../../static/img/icons/course-completed.png" width="50" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div>
+        
+        <a id="nextBtnBot" href="../aes0/index.html" class="btn course-nav-btn ">Next --></a>
+        
+    </div>
+</div>
+
+
+</div>
+
+        </div>
+        <script src="../../../static/js/jquery.min.js"></script>
+        <script src="../../../static/js/materialize.min.js"></script>
+        <script defer src="../../../static/js/confetti.browser.min.js"></script>
+        <script src="../../../static/js/api.js"></script>
+        <script src="../../../static/js/moment-with-locales.min.js"></script>
+
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {{
+    const timestamp = moment(elem.dataset.timestamp);
+    const func = elem.dataset.function;
+    const format = elem.dataset.format;
+    const timestamp2 = elem.dataset.timestamp2;
+    const no_suffix = elem.dataset.nosuffix;
+    const units = elem.dataset.units;
+    let args = [];
+    if (format)
+        args.push(format);
+    if (timestamp2)
+        args.push(moment(timestamp2));
+    if (no_suffix)
+        args.push(no_suffix);
+    if (units)
+        args.push(units);
+    elem.textContent = timestamp[func].apply(timestamp, args);
+    elem.classList.remove('flask-moment');
+    elem.style.display = "";
+}}
+function flask_moment_render_all() {{
+    const moments = document.querySelectorAll('.flask-moment');
+    moments.forEach(function(moment) {{
+        flask_moment_render(moment);
+        const refresh = moment.dataset.refresh;
+        if (refresh && refresh > 0) {{
+            (function(elem, interval) {{
+                setInterval(function() {{
+                    flask_moment_render(elem);
+                }}, interval);
+            }})(moment, refresh);
+        }}
+    }})
+}}
+document.addEventListener("DOMContentLoaded", flask_moment_render_all);
+</script>
+
+        <script>
+            function dismissNotification(id) {
+                api.makeCall("/dismiss/" + id + ".json", {_csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function() {
+                    $("#notification" + id).slideUp();
+                });
+            }
+
+            $( document ).ready(function() {
+              $('select').material_select();
+            });
+
+            var pointsLevels = [0, 10, 20, 40, 80, 160, 320, 640, 1280, 1920, 2560, 3200, 3840, 4480, 5120, 5760, 6400, 7040, 7680, 8320, 8960, 9600, 10240, 10880, 11520, 12160, 12800, 13440, 14080, 14720, 15360, 16000, 16640, 17280, 17920, 18560, 19200, 19840, 20480];
+        </script>
+        
+        <script>
+        $(function() {
+            $('.button-collapse').sideNav();
+        });
+        </script>
+        <script id="toasts" type="text/javascript">
+            
+        </script>
+        
+
+
+<script>
+
+    function updateProgress(percentComplete, solvedChallenges) {
+        let newTooltip = "You've solved " + solvedChallenges + " of 14 challenges in this course (" + percentComplete + "%)"
+        $("#courseProgressColor").css("max-height", percentComplete + "%");
+        $("#courseProgress").attr("data-tooltip", newTooltip);
+    }
+
+    let initialPercentage = "0";
+    let solvedChallenges = "0"
+    updateProgress(initialPercentage, solvedChallenges);
+
+    $("form").submit(function(e) {
+        // Loading button
+        var loadBtn = $(this).find(".loader");
+        loadBtn.show();
+
+        var id = $(this).data("challenge");
+        var points = $(this).data("points");
+        var flag = $("#flag-" + id).val();
+        // var updatedScore = score + points;
+        console.log(id);
+        console.log(flag);
+        api.makeCall("/submit/" + id + ".json", {flag: flag, _csrf_token: "snobq8wzzmb46dxdlqb03cbucetvraea12nfuoocdm3vtivtx5r3m7ik4h7l1as9"}, function(data) {
+            if(data.code) {
+                loadBtn.hide();
+                Materialize.toast(data.message, 4000);
+            }
+            else {
+                // Compute new percentage
+                let solvedTotal = parseInt("0") + 1;
+                let maxTotal = "14"
+                let percentage = parseInt((solvedTotal / maxTotal) * 100);
+                updateProgress(percentage, solvedTotal);
+
+                // Materialize.toast("Correct flag, nice one!", 4000);
+                $("#uncheck-" + id).hide();
+                $("#check-" + id).show();
+                $("#header-" + id).click();
+
+                // update solves box
+                var solves_text = data.solves == 1 ? "Solve" : "Solves";
+                $("#solves-" + id).html(data.solves + " " + solves_text);
+                $("#solves-" + id).parent().show();
+                $("#solutions-" + id).show();
+                $("#youvesolved-" + id).show();
+                $("#youvesolvedgap-" + id).show();
+                $("#empty-" + id).hide();
+                $("#flagform-" + id).hide();
+
+                // update nav bar
+                $("#nextBtnTop").addClass("solved");
+                $("#nextBtnBot").addClass("solved");
+
+                // update points at top
+                console.log(score);
+                console.log(points);
+                score = calculateLevel(score, points);
+                loadBtn.hide();
+                setTimeout(function(){ launchConfetti(); }, 250);
+            }
+        });
+        return false;
+    });
+</script>
+
+
+      </div>
+
+      <div id="levelUpPop" class="levelup">
+        <div class="levelUpCard">
+          <h3>Level Up</h3>
+          <img src="../../../static/img/levelup.png" width="180" height="202" alt="level up icon">
+          <p>You are now level <span id="currentlevel" class="gold-text">Current level</span></p>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+    <div class="footerLinks">
+      <div>
+        <h5>CryptoHack</h5>
+        <a id="changeTheme">Light Mode</a><br>
+        <a href="../../../faq/index.html">FAQ</a><br>
+        <a href="../../../blog/index.html">Blog</a><br>
+        <span class="footerIcon">
+          <a href="https://twitter.com/cryptohack__" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/h9E7cna5pV" aria-label="Discord"><img src="../../../static/img/Discord-Logo-Color.svg" width="25"></i></a>
+          <a href="https://patreon.com/cryptohack" aria-label="Patreon"><i class="fab fa-patreon"></i></a>
+        </span><br>
+
+      </div>
+
+      <div>
+        <h5>Courses</h5>
+        <a href="../../intro/index.html">Introduction to CryptoHack</a><br>
+        <a href="../../modular/index.html">Modular Arithmetic</a><br>
+        <a href="../index.html">Symmetric Cryptography</a><br>
+        <a href="../../public-key/index.html">Public-Key Cryptography</a><br>
+        <a href="../../elliptic/index.html">Elliptic Curves</a><br>
+      </div>
+
+      <div>
+        <h5>Categories</h5>
+        <a href="../../../challenges/general/index.html">General</a><br>
+        <a href="../../../challenges/aes/index.html">Symmetric Ciphers</a><br>
+        <a href="../../../challenges/maths/index.html">Mathematics</a><br>
+        <a href="../../../challenges/rsa/index.html">RSA</a><br>
+        <a href="../../../challenges/diffie-hellman/index.html">Diffie-Hellman</a><br>
+        <a href="../../../challenges/ecc/index.html">Elliptic Curves</a><br>
+        <a href="../../../challenges/hashes/index.html">Hash Functions</a><br>
+        <a href="../../../challenges/web/index.html">Crypto on the Web</a><br>
+        <a href="../../../challenges/post-quantum/index.html">Lattices</a><br>
+        <a href="../../../challenges/isogenies/index.html">Isogenies</a><br>
+        <a href="../../../challenges/zkp/index.html">Zero-Knowledge Proofs</a><br>
+        <a href="../../../challenges/misc/index.html">Miscellaneous</a><br>
+        <a href="../../../challenges/ctf-archive/index.html">CTF Archive</a><br>
+      </div>
+    </div>
+
+
+    <div class="credits">
+      <h5>Credits</h5>
+      Illustrations from <a href="https://icons8.com/">Ouch.pics</a><br>
+      Drawn by <a href="https://dribbble.com/thierryfousse">Thierry Fousse</a> and <a href="https://icons8.com/illustrations/author/60ab64bc8e3740e9be238b13">Tatyana Krasutskaya</a>
+
+    </div>
+
+    <div class="copyright">
+      <span>
+        <a href="../../../privacy-policy/index.html">Privacy Policy</a> &nbsp;
+      </span>
+
+      <span>
+        © <span class="flask-moment" data-timestamp="2026-03-30T15:42:28Z" data-function="format" data-format="YYYY" data-refresh="0" style="display: none">2026-03-30T15:42:28Z</span> CryptoHack
+      </span>
+    </div>
+    </footer>
+
+    <script type="text/javascript">
+    function updateThemeToggleFooter() {
+      var elem = document.querySelector('#changeTheme');
+      elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    (function() {
+      updateThemeToggleFooter()
+    })();
+
+    function togglePageContentLightDark() {
+        var html = document.getElementsByTagName('html')[0]
+        var currentClass = html.className
+        var newClass = html.className == 'dark-mode' ? 'light-mode' : 'dark-mode'
+        html.className = newClass
+
+        document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark') + ';SameSite=Strict;path=/;domain=cryptohack.org;expires=Fri, 31 Dec 9999 23:59:59 GMT'
+        console.log('Cookies are now: ' + document.cookie)
+
+        var elem = document.querySelector('#changeTheme');
+        elem.innerHTML = isLightThemeSelected() ? 'Dark Mode' : 'Light Mode'
+    }
+
+    $("#changeTheme").on("click", function(e){
+    togglePageContentLightDark();
+
+    if ($("#darktheme").length) {
+      if(isLightThemeSelected()){
+        $('#darktheme').prop('checked', false);
+        $('#lighttheme').prop('checked', true);
+      }
+      else{
+        $('#darktheme').prop('checked', true);
+        $('#lighttheme').prop('checked', false);
+      }
+    }
+    });
+    </script>
+
+<!-- Mirrored from cryptohack.org/courses/symmetric/course_details/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Mar 2026 16:34:55 GMT -->
+</html>
